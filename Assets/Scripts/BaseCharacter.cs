@@ -7,7 +7,7 @@ public class BaseCharacter : MonoBehaviour {
 	bool facingRight = true;
 
 	public float maxspeed = 10f;
-	public float jumpForce = 200f;
+	public float jumpForce = 400f;
 
 	bool doubled = false;
 
@@ -39,11 +39,13 @@ public class BaseCharacter : MonoBehaviour {
 	void Update(){
 		Rigidbody2D rb = GetComponent<Rigidbody2D>();
 		if ((isGrounded || !doubled)&& Input.GetKeyDown (KeyCode.UpArrow)) {
-			rb.AddForce (new Vector2 (0, jumpForce));
 			if (isGrounded) {
 				doubled = false;
+				rb.AddForce (new Vector2 (0, jumpForce));
 			} else {
+				rb.velocity = Vector3.zero; 
 				doubled = true;
+				rb.AddForce (new Vector2 (0, jumpForce * 0.5f));
 			}
 		}
 	}
