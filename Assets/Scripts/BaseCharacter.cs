@@ -21,7 +21,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		spawn ();
 	}
 
 	void FixedUpdate(){
@@ -68,13 +68,12 @@ public class BaseCharacter : MonoBehaviour {
 	}
 		
 
-
-
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if(col.gameObject.tag == "Border"){
 			Debug.Log("character hit border");
 			currentHp = 0;
+			spawn ();
 		}
 		
 		
@@ -120,15 +119,16 @@ public class BaseCharacter : MonoBehaviour {
 			}
 		}
 	}
-//
-//	void OnTriggerExit2D()
-//	{
-//		groundCounter--;
-//		print("trigger exit");
-//		if (groundCounter <= 0) {
-//			isGrounded = false;
-//		}
-//	}
+
+	void spawn(){
+		currentHp = maxHp;
+		var gObj = GameObject.Find("Player" + assignedPlayer + "_spawn");
+		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+		rb.velocity = Vector3.zero;
+		if (gObj){
+			transform.position = gObj.transform.position;
+		}
+	}
 
 }
 
