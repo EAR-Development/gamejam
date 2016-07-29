@@ -11,20 +11,24 @@ public class UIUpdater : MonoBehaviour {
 	public bool refresh;
 	public HumanPlayer player;
 	public Material m;
+	public BaseCharacter character;
+	public float aimhp;
 
 
 
 
 	// Use this for initialization
 	void Start () {
-	
+		
 		healthBar.material.EnableKeyword("_Health");
 		m = Instantiate (healthBar.material);
 		healthBar.material = m;
 
+
 		playerName.text = player.nameHuman;
 		killCounter.text = "" + player.kills;
 		deathCounter.text ="" +  player.deaths;
+		aimhp = 0;
 	
 			
 	}
@@ -36,6 +40,17 @@ public class UIUpdater : MonoBehaviour {
 			killCounter.text = "" + player.kills;
 			deathCounter.text ="" +  player.deaths;
 
+				if(aimhp<m.GetFloat("_Health")){
+					m.SetFloat("_Health",m.GetFloat("_Health")-Time.deltaTime );//material.setColor("_OutlineColor", Color.red);
+				}
+				if(aimhp>m.GetFloat("_Health")){
+					m.SetFloat("_Health",m.GetFloat("_Health")+Time.deltaTime );//material.setColor("_OutlineColor", Color.red);
+				}
+				if(aimhp==m.GetFloat("_Health")){
+					refresh = false;
+				}
+
+
 		}
 
 	}
@@ -43,6 +58,7 @@ public class UIUpdater : MonoBehaviour {
 
 	public void repaint(){
 		refresh = true;
+		aimhp=(float)character.currentHp/(float)character.maxHp ;
 	}
 
 
