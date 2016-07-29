@@ -76,6 +76,49 @@ public class BaseCharacter : MonoBehaviour {
 			Debug.Log("character hit border");
 			currentHp = 0;
 		}
+		
+		
+	}
+	
+	void OnCollisionEnter2D(Collision2D col){
+		if(col.gameObject.tag == "Block"){
+			Block tempBlock  = col.gameObject.GetComponent<Block>();
+			if(tempBlock.blockType == "Fire"){
+			
+			}
+			else if(tempBlock.blockType == "Water"){
+			
+			}
+			else if(tempBlock.blockType == "Bounce"){
+				
+			}
+			else if(tempBlock.blockType == "Slow"){
+				Debug.Log("slow effect");
+				jumpForce = jumpForce / 2;
+				maxspeed = maxspeed / 2;
+			}
+		}
+	}
+	
+	
+	void OnCollisionExit2D(Collision2D col){
+		if(col.gameObject.tag == "Block"){
+			Block tempBlock  = col.gameObject.GetComponent<Block>();
+			if(tempBlock.blockType == "Fire"){
+			
+			}
+			else if(tempBlock.blockType == "Water"){
+			
+			}
+			else if(tempBlock.blockType == "Bounce"){
+				
+			}
+			else if(tempBlock.blockType == "Slow"){
+				Debug.Log("slow effect");
+				jumpForce = jumpForce * 2;
+				maxspeed = maxspeed * 2;
+			}
+		}
 	}
 //
 //	void OnTriggerExit2D()

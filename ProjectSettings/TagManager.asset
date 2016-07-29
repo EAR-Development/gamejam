@@ -9,6 +9,7 @@ TagManager:
   - Slow
   - Solid
   - Border
+  - Block
   layers:
   - Default
   - TransparentFX

@@ -28,4 +28,6 @@ public class Block : MonoBehaviour {
 			GetComponent<BoxCollider2D>().enabled = true;
 		}
 	}
+	
+	
 }
