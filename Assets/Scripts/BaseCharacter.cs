@@ -33,7 +33,9 @@ public class BaseCharacter : MonoBehaviour {
 		}
 
 		Rigidbody2D rb = GetComponent<Rigidbody2D>();
-		rb.AddForce (new Vector2 (move * maxspeed, 0));
+		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
+			rb.AddForce (new Vector2 (move * maxspeed, 0));
+		}
 	}
 
 	void Update(){
@@ -43,9 +45,9 @@ public class BaseCharacter : MonoBehaviour {
 				doubled = false;
 				rb.AddForce (new Vector2 (0, jumpForce));
 			} else {
-				rb.velocity = Vector3.zero; 
+				rb.velocity = new Vector2 (rb.velocity.x, 0); 
 				doubled = true;
-				rb.AddForce (new Vector2 (0, jumpForce * 0.5f));
+				rb.AddForce (new Vector2 (0, jumpForce * 0.9f));
 			}
 		}
 	}
