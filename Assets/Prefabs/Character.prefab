@@ -150,6 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0351d642696bb4281bc05100b4bb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHp: 100
+  maxHp: 100
   maxspeed: 10
   jumpForce: 200
   groundCheck: {fileID: 474954}
@@ -162,7 +164,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: currentHp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170578}

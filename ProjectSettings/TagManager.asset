@@ -8,6 +8,7 @@ TagManager:
   - Fire
   - Slow
   - Solid
+  - Border
   layers:
   - Default
   - TransparentFX

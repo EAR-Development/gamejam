@@ -6,6 +6,8 @@ public class BaseCharacter : MonoBehaviour {
 	bool isGrounded = false;
 	bool facingRight = true;
 
+	public float currentHp;
+	public float maxHp;
 	public float maxspeed = 10f;
 	public float jumpForce = 400f;
 
@@ -75,13 +77,13 @@ public class BaseCharacter : MonoBehaviour {
 
 
 
-//	void OnTriggerEnter2D()
-//	{
-//		groundCounter++;
-//		print("trigger enter");
-//		isGrounded = true;
-//		jumpCount = 0;
-//	}
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if(col.gameObject.tag == "Border"){
+			Debug.Log("character hit border");
+			currentHp = 0;
+		}
+	}
 //
 //	void OnTriggerExit2D()
 //	{
