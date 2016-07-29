@@ -3,13 +3,17 @@ using System.Collections;
 
 public class BaseCharacter : MonoBehaviour {
 
-	bool isGrounded = true;
-	float jumpImpulse = 4f;
+	bool isGrounded = false;
+	bool facingRight = true;
 
-	float maxspeed = 10f;
+	public float maxspeed = 10f;
+	public float jumpForce = 200f;
 
-	int groundCounter = 0;
-	int jumpCount = 0;
+	bool doubled = false;
+
+	public Transform groundCheck;
+	float groundRadius = 0.2f;
+	public LayerMask whatIsGround;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +21,9 @@ public class BaseCharacter : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
+		isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
+
+
 		float move = 0f;
 		if (Input.GetKey (KeyCode.RightArrow)) {
 			move = 1f;
@@ -24,8 +31,23 @@ public class BaseCharacter : MonoBehaviour {
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			move = -1f;
 		}
+
+		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+		rb.AddForce (new Vector2 (move * maxspeed, 0));
 	}
-	
+
+	void Update(){
+		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+		if ((isGrounded || !doubled)&& Input.GetKeyDown (KeyCode.UpArrow)) {
+			rb.AddForce (new Vector2 (0, jumpForce));
+			if (isGrounded) {
+				doubled = false;
+			} else {
+				doubled = true;
+			}
+		}
+	}
+		
 	// Update is called once per frame
 //	void Update () {
 //
@@ -49,22 +71,22 @@ public class BaseCharacter : MonoBehaviour {
 
 
 
-	void OnTriggerEnter2D()
-	{
-		groundCounter++;
-		print("trigger enter");
-		isGrounded = true;
-		jumpCount = 0;
-	}
-
-	void OnTriggerExit2D()
-	{
-		groundCounter--;
-		print("trigger exit");
-		if (groundCounter <= 0) {
-			isGrounded = false;
-		}
-	}
+//	void OnTriggerEnter2D()
+//	{
+//		groundCounter++;
+//		print("trigger enter");
+//		isGrounded = true;
+//		jumpCount = 0;
+//	}
+//
+//	void OnTriggerExit2D()
+//	{
+//		groundCounter--;
+//		print("trigger exit");
+//		if (groundCounter <= 0) {
+//			isGrounded = false;
+//		}
+//	}
 
 }
 
