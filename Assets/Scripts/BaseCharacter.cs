@@ -17,6 +17,8 @@ public class BaseCharacter : MonoBehaviour {
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
 
+	public int assignedPlayer = 1;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -25,14 +27,7 @@ public class BaseCharacter : MonoBehaviour {
 	void FixedUpdate(){
 		isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 
-
-		float move = 0f;
-		if (Input.GetKey (KeyCode.RightArrow)) {
-			move = 1f;
-		}
-		if (Input.GetKey (KeyCode.LeftArrow)) {
-			move = -1f;
-		}
+		float move = Input.GetAxis ("Player" + assignedPlayer + "_x");
 
 		Rigidbody2D rb = GetComponent<Rigidbody2D>();
 		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
@@ -40,9 +35,27 @@ public class BaseCharacter : MonoBehaviour {
 		}
 	}
 
+
+	private bool m_isAxisInUse = false;
+
 	void Update(){
 		Rigidbody2D rb = GetComponent<Rigidbody2D>();
-		if ((isGrounded || !doubled)&& Input.GetKeyDown (KeyCode.UpArrow)) {
+		bool jumpKeyDown = false;
+
+		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") != 0){
+
+			if(m_isAxisInUse == false)
+			{
+				jumpKeyDown = true;
+				m_isAxisInUse = true;
+			}
+		}
+		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") == 0){
+			m_isAxisInUse = false;
+		}  
+
+
+		if ((isGrounded || !doubled) && jumpKeyDown) {
 			if (isGrounded) {
 				doubled = false;
 				rb.AddForce (new Vector2 (0, jumpForce));
@@ -54,26 +67,6 @@ public class BaseCharacter : MonoBehaviour {
 		}
 	}
 		
-	// Update is called once per frame
-//	void Update () {
-//
-//		Rigidbody2D rb = GetComponent<Rigidbody2D>();
-//		var speed = rb.velocity.magnitude;
-//		print (speed);
-//
-//		if (Input.GetKeyDown (KeyCode.UpArrow) && (isGrounded || jumpCount < 2)) {
-//			rb.AddForce (Vector3.up * jumpImpulse, ForceMode2D.Impulse);
-//			jumpCount++;
-//		}
-//
-//		if (Input.GetKey (KeyCode.RightArrow) && speed < maxspeed) {
-//			rb.AddForce (Vector3.right * movementSpeed * Time.deltaTime);
-//		}
-//		if (Input.GetKey (KeyCode.LeftArrow) && speed < maxspeed) {
-//			rb.AddForce (Vector3.left * movementSpeed * Time.deltaTime);
-//		}
-//
-//	}
 
 
 
