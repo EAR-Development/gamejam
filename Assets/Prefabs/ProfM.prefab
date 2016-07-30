@@ -895,7 +895,7 @@ MonoBehaviour:
   backCheck: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 492288
   assignedPlayer: 1
   debuffTime: 1
   fireDPS: 0
@@ -4094,6 +4094,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: whatIsGround.m_Bits
+      value: 492288
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
