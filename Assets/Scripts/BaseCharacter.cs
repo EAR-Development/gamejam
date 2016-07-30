@@ -19,6 +19,8 @@ public class BaseCharacter : MonoBehaviour {
 
 	public int assignedPlayer = 1;
 
+	public HumanPlayer humanPlayer;
+
 	// Use this for initialization
 	void Start () {
 		spawn ();
@@ -73,6 +75,8 @@ public class BaseCharacter : MonoBehaviour {
 		if(col.gameObject.tag == "Border"){
 			Debug.Log("character hit border");
 			currentHp = 0;
+			humanPlayer.deaths = humanPlayer.deaths + 1;
+			humanPlayer.repaint ();
 			spawn ();
 		}
 		
