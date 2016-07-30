@@ -451,7 +451,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2116818, y: -4.1018753, z: 0}
+  m_LocalPosition: {x: -3.4163704, y: -4.0688887, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405686}
@@ -733,12 +733,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   assignedPlayer: 2
-  slowEffekt: {fileID: 19835460}
+  slowEffect: {fileID: 0}
+  fireEffect: {fileID: 0}
   currentHp: 100
   meleeAttackCounter: 1
   speedFactor: 1
   jumpFactor: 1
-  rb: {fileID: 0}
+  rb: {fileID: 5443632}
   animator: {fileID: 9582490}
 --- !u!135 &13523170
 SphereCollider:
