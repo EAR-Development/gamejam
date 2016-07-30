@@ -43,6 +43,8 @@ public class HumanPlayer : MonoBehaviour {
 		g.GetComponent<RectTransform> ().position = new Vector3 ((Screen.width / 2) / GameController.totalPlayers * playerNumber,200,0);
 		uiUpdater = g.GetComponent<UIUpdater> ();
 		uiUpdater.player = this;
+			instantiateUI = false;
+			uiUpdater.repaint();
 		}
 
 	}
