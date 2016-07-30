@@ -82,7 +82,28 @@ public class BaseCharacter : MonoBehaviour {
 
 		//ATTACK
 		
-		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") ){
+		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				//initiate attack
+				animator.SetBool("atkDefault",true);
+				meleeAttackCounter = 0;
+			} 
+		}		
+		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") != 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				//initiate attack
+				animator.SetBool("atkForward",true);
+				meleeAttackCounter = 0;
+			} 
+		}
+		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") < 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				//initiate attack
+				animator.SetBool("atkDown",true);
+				meleeAttackCounter = 0;
+			} 
+		}
+		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
 				//initiate attack
 				animator.SetBool("atkForward",true);
