@@ -238,16 +238,11 @@ public class BaseCharacter : MonoBehaviour {
 
 		if(fireCounter > 0f){
 			fireCounter -= Time.deltaTime;
-			currentHp -= fireDPS * Time.deltaTime;
+			doDamage(fireDPS * Time.deltaTime);
 			if(fireCounter <= 0f){
 				var fem = fireEffect.emission;
 				fem.enabled = false;
 			}
-		}
-
-		if (currentHp <= 0) {
-			die ();
-			spawn ();
 		}
 	}
 		
@@ -257,7 +252,6 @@ public class BaseCharacter : MonoBehaviour {
 			
 			currentHp = 0;
 			die();
-			spawn ();
 		}
 	}
 
@@ -314,10 +308,7 @@ public class BaseCharacter : MonoBehaviour {
 	}
 
 	void checkGroundStatus(){
-
 		isGrounded =  Physics.OverlapSphere (groundCheck.position, groundRadius, whatIsGround).Length!=0;
-
-		
 	}
 
 	void checkSideStatus(){
@@ -333,6 +324,7 @@ public class BaseCharacter : MonoBehaviour {
 
 
 	void spawn(){
+		gameObject.SetActive (true);
 		currentHp = maxHp;
 
 		slowCounter = 0f;
@@ -348,20 +340,32 @@ public class BaseCharacter : MonoBehaviour {
 		rb.velocity = Vector3.zero;
 		if (gObj){
 			transform.position = gObj.transform.position;
+			rb.velocity = Vector3.zero;
 		}
 	}
 	
 	void die(){
 		audioSource.clip = audioClips[2];
 		audioSource.Play();
+		
+		rb.velocity = Vector3.zero;
+
 		animator.SetTrigger("isDead");
+		Invoke("spawn", 3);
+		gameObject.SetActive (false);
 	}
 
 
 	public void enableGroundCheck(){
-
 		groundCheckPause = false;
+	}
 
+	public void doDamage(float dmg){
+		currentHp -= dmg;
+	
+		if (currentHp <= 0) {
+			die ();
+		}
 	}
 
 
