@@ -317,6 +317,7 @@ public class BaseCharacter : MonoBehaviour {
 
 
 	void spawn(){
+		gameObject.SetActive (true);
 		currentHp = maxHp;
 		animator.SetLayerWeight (2, 0);
 
