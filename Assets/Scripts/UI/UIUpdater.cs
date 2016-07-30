@@ -20,15 +20,7 @@ public class UIUpdater : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		healthBar.material.EnableKeyword("_Health");
-		m = Instantiate (healthBar.material);
-		healthBar.material = m;
-
-
-		playerName.text = player.nameHuman;
-		killCounter.text = "" + player.kills;
-		deathCounter.text ="" +  player.deaths;
-		aimhp = 0;
+	
 	
 			
 	}
@@ -37,6 +29,17 @@ public class UIUpdater : MonoBehaviour {
 	void Update () {
 	
 		if(refresh){
+
+			healthBar.material.EnableKeyword("_Health");
+			m = Instantiate (healthBar.material);
+			healthBar.material = m;
+
+
+			playerName.text = player.nameHuman;
+			killCounter.text = "" + player.kills;
+			deathCounter.text ="" +  player.deaths;
+			aimhp = 0;
+
 			killCounter.text = "" + player.kills;
 			deathCounter.text ="" +  player.deaths;
 
