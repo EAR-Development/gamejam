@@ -985,6 +985,8 @@ MonoBehaviour:
     m_Bits: 768
   assignedPlayer: 1
   debuffTime: 1
+  jumpCooldown: 0.5
+  maxAirVelocity: 5
   slowEffect: {fileID: 19803856}
   fireEffect: {fileID: 19867376}
   currentHp: 100
@@ -996,13 +998,11 @@ MonoBehaviour:
   rb: {fileID: 5452996}
   animator: {fileID: 9585280}
   jumpkeyWasUsed: 0
-  jumpCooldown: 0.5
   groundCheckPause: 0
+  isFlying: 0
   jumpingMidAir: 1
   sidedRight: 0
   sidedLeft: 0
-  isFlying: 0
-  maxAirVelocity: 5
 --- !u!137 &13747036
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
