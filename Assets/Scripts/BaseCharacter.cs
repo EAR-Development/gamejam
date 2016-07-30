@@ -45,6 +45,9 @@ public class BaseCharacter : MonoBehaviour {
 	public float slowCounter = 0f;
 	public float fireCounter = 0f;
 
+	public AudioSource audioSource;
+	public AudioClip[] audioClips;
+	
 	public Rigidbody rb;
 	public Animator animator;
 	public bool jumpkeyWasUsed = false;
@@ -177,7 +180,8 @@ public class BaseCharacter : MonoBehaviour {
 		//Attack while standing still
 		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0)){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
-				
+				audioSource.clip = audioClips[0];
+				audioSource.Play();
 				animator.SetBool("atkDefault",true);
 				meleeAttackCounter = 0;
 			} 
@@ -185,7 +189,8 @@ public class BaseCharacter : MonoBehaviour {
 		//attack while moving on X		
 		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") != 0)){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
-				
+				audioSource.clip = audioClips[0];
+				audioSource.Play();
 				animator.SetBool("atkForward",true);
 				meleeAttackCounter = 0;
 			} 
@@ -193,7 +198,8 @@ public class BaseCharacter : MonoBehaviour {
 		//Attack up
 		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
-				
+				audioSource.clip = audioClips[0];
+				audioSource.Play();
 				animator.SetBool("atkUp",true);
 				meleeAttackCounter = 0;
 			} 
@@ -201,7 +207,8 @@ public class BaseCharacter : MonoBehaviour {
 		//attack while moving down
 		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") < 0)){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
-				
+				audioSource.clip = audioClips[0];
+				audioSource.Play();
 				animator.SetBool("atkDown",true);
 				meleeAttackCounter = 0;
 			} 
@@ -209,7 +216,8 @@ public class BaseCharacter : MonoBehaviour {
 		//attack while moving up
 		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
-				
+				audioSource.clip = audioClips[0];
+				audioSource.Play();
 				animator.SetBool("atkForward",true);
 				meleeAttackCounter = 0;
 			} 
@@ -344,6 +352,8 @@ public class BaseCharacter : MonoBehaviour {
 	}
 	
 	void die(){
+		audioSource.clip = audioClips[2];
+		audioSource.Play();
 		animator.SetTrigger("isDead");
 	}
 
