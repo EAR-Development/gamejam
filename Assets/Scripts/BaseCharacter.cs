@@ -33,6 +33,7 @@ public class BaseCharacter : MonoBehaviour {
 	[Header("Partikel")]
 	public ParticleSystem slowEffect;
 	public ParticleSystem fireEffect;
+	public ParticleSystem borderDeathEffect;
 
 
 	[Header("Status")]
@@ -61,6 +62,8 @@ public class BaseCharacter : MonoBehaviour {
 	public int walljumpCounter = 3;
 	
 	public Collider[] col_fists;
+
+	private ParticleSystem deathParticles;
 
 	void Start () {
 
@@ -252,7 +255,7 @@ public class BaseCharacter : MonoBehaviour {
 		if(col.gameObject.tag == "Border"){
 			
 			currentHp = 0;
-			die();
+			dieFromBorder ();
 		}
 	}
 
@@ -332,6 +335,8 @@ public class BaseCharacter : MonoBehaviour {
 		slowCounter = 0f;
 		fireCounter = 0f;
 
+		Destroy (deathParticles);
+
 		var sem = slowEffect.emission;
 		var fem = fireEffect.emission;
 		sem.enabled = false;
@@ -354,13 +359,26 @@ public class BaseCharacter : MonoBehaviour {
 		}
 		rb.velocity = Vector3.zero;
 		animator.SetLayerWeight (2, 1);
-		audioSource.clip = audioClips[2];
-		audioSource.Play();
+		//audioSource.clip = audioClips[2];
+		//audioSource.Play();
 
 		animator.SetTrigger("isDead");
 		Invoke("spawn", 3);
 		isDead = true;
 		rb.isKinematic = true;
+	}
+
+	void dieFromBorder(){
+		if (isDead) {
+			return;
+		}
+		rb.velocity = Vector3.zero;
+		Invoke("spawn", 3);
+		isDead = true;
+		gameObject.SetActive (false);
+		deathParticles = (ParticleSystem)Object.Instantiate (borderDeathEffect, transform.position, transform.rotation);
+		var em = deathParticles.emission;
+		em.enabled = true;
 	}
 
 
