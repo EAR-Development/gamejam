@@ -73,7 +73,75 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Head/Hand_L
+        weight: 1
+      - path: Head/Hand_L/Finger_1
+        weight: 1
+      - path: Head/Hand_L/Finger_1/joint5
+        weight: 1
+      - path: Head/Hand_L/Finger_2
+        weight: 1
+      - path: Head/Hand_L/Finger_2/joint6
+        weight: 1
+      - path: Head/Hand_L/Finger_3
+        weight: 1
+      - path: Head/Hand_L/Finger_3/joint8
+        weight: 1
+      - path: Head/Hand_R
+        weight: 1
+      - path: Head/Hand_R/Finger_1 1
+        weight: 1
+      - path: Head/Hand_R/Finger_1 1/joint5 1
+        weight: 1
+      - path: Head/Hand_R/Finger_2 1
+        weight: 1
+      - path: Head/Hand_R/Finger_2 1/joint6 1
+        weight: 1
+      - path: Head/Hand_R/Finger_3 1
+        weight: 1
+      - path: Head/Hand_R/Finger_3 1/joint8 1
+        weight: 1
+      - path: Rig
+        weight: 1
+      - path: Rig/pSphere1
+        weight: 1
+      - path: Rig/pSphere4
+        weight: 1
+      - path: Rig/pSphere5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
