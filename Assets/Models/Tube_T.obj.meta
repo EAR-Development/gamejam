@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: 557be275d6b555f4fbdaaae7895d56ce
+timeCreated: 1469838530
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Rohr_gebogen1_Rohr2_Rohr_T
+    100002: Rohr_T_Mutter_Rohr_gebogen2_pCylinder10
+    100004: Rohr_T_Mutter_Rohr_gebogen2_pCylinder11
+    100006: Rohr_T_Mutter_Rohr_gebogen2_pCylinder12
+    100008: Rohr_T_Mutter_Rohr_gebogen2_pCylinder13
+    100010: Rohr_T_Mutter_Rohr_gebogen2_pCylinder14
+    100012: Rohr_T_pCylinder3_Schraube1_Rohr_gebogen1_Rohr1
+    100014: Rohr_T_pCylinder9_Mutter_Rohr_gebogen2
+    100016: Rohr_T_Rohr_gebogen2_pCylinder3_Schraube
+    100018: Rohr_T_Rohr_gebogen2_Schraube_pCylinder4
+    100020: Rohr_T_Rohr_gebogen2_Schraube_pCylinder5
+    100022: Rohr_T_Rohr_gebogen2_Schraube_pCylinder6
+    100024: Rohr_T_Rohr_gebogen2_Schraube_pCylinder7
+    100026: Rohr_T_Rohr_gebogen2_Schraube_pCylinder8
+    100028: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder4
+    100030: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder5
+    100032: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder6
+    100034: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder7
+    100036: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder8
+    100038: //RootNode
+    400000: Rohr_gebogen1_Rohr2_Rohr_T
+    400002: Rohr_T_Mutter_Rohr_gebogen2_pCylinder10
+    400004: Rohr_T_Mutter_Rohr_gebogen2_pCylinder11
+    400006: Rohr_T_Mutter_Rohr_gebogen2_pCylinder12
+    400008: Rohr_T_Mutter_Rohr_gebogen2_pCylinder13
+    400010: Rohr_T_Mutter_Rohr_gebogen2_pCylinder14
+    400012: Rohr_T_pCylinder3_Schraube1_Rohr_gebogen1_Rohr1
+    400014: Rohr_T_pCylinder9_Mutter_Rohr_gebogen2
+    400016: Rohr_T_Rohr_gebogen2_pCylinder3_Schraube
+    400018: Rohr_T_Rohr_gebogen2_Schraube_pCylinder4
+    400020: Rohr_T_Rohr_gebogen2_Schraube_pCylinder5
+    400022: Rohr_T_Rohr_gebogen2_Schraube_pCylinder6
+    400024: Rohr_T_Rohr_gebogen2_Schraube_pCylinder7
+    400026: Rohr_T_Rohr_gebogen2_Schraube_pCylinder8
+    400028: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder4
+    400030: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder5
+    400032: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder6
+    400034: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder7
+    400036: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder8
+    400038: //RootNode
+    2300000: Rohr_gebogen1_Rohr2_Rohr_T
+    2300002: Rohr_T_Mutter_Rohr_gebogen2_pCylinder10
+    2300004: Rohr_T_Mutter_Rohr_gebogen2_pCylinder11
+    2300006: Rohr_T_Mutter_Rohr_gebogen2_pCylinder12
+    2300008: Rohr_T_Mutter_Rohr_gebogen2_pCylinder13
+    2300010: Rohr_T_Mutter_Rohr_gebogen2_pCylinder14
+    2300012: Rohr_T_pCylinder3_Schraube1_Rohr_gebogen1_Rohr1
+    2300014: Rohr_T_pCylinder9_Mutter_Rohr_gebogen2
+    2300016: Rohr_T_Rohr_gebogen2_pCylinder3_Schraube
+    2300018: Rohr_T_Rohr_gebogen2_Schraube_pCylinder4
+    2300020: Rohr_T_Rohr_gebogen2_Schraube_pCylinder5
+    2300022: Rohr_T_Rohr_gebogen2_Schraube_pCylinder6
+    2300024: Rohr_T_Rohr_gebogen2_Schraube_pCylinder7
+    2300026: Rohr_T_Rohr_gebogen2_Schraube_pCylinder8
+    2300028: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder4
+    2300030: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder5
+    2300032: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder6
+    2300034: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder7
+    2300036: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder8
+    3300000: Rohr_gebogen1_Rohr2_Rohr_T
+    3300002: Rohr_T_Mutter_Rohr_gebogen2_pCylinder10
+    3300004: Rohr_T_Mutter_Rohr_gebogen2_pCylinder11
+    3300006: Rohr_T_Mutter_Rohr_gebogen2_pCylinder12
+    3300008: Rohr_T_Mutter_Rohr_gebogen2_pCylinder13
+    3300010: Rohr_T_Mutter_Rohr_gebogen2_pCylinder14
+    3300012: Rohr_T_pCylinder3_Schraube1_Rohr_gebogen1_Rohr1
+    3300014: Rohr_T_pCylinder9_Mutter_Rohr_gebogen2
+    3300016: Rohr_T_Rohr_gebogen2_pCylinder3_Schraube
+    3300018: Rohr_T_Rohr_gebogen2_Schraube_pCylinder4
+    3300020: Rohr_T_Rohr_gebogen2_Schraube_pCylinder5
+    3300022: Rohr_T_Rohr_gebogen2_Schraube_pCylinder6
+    3300024: Rohr_T_Rohr_gebogen2_Schraube_pCylinder7
+    3300026: Rohr_T_Rohr_gebogen2_Schraube_pCylinder8
+    3300028: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder4
+    3300030: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder5
+    3300032: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder6
+    3300034: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder7
+    3300036: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder8
+    4300000: Rohr_gebogen1_Rohr2_Rohr_T
+    4300002: Rohr_T_Mutter_Rohr_gebogen2_pCylinder10
+    4300004: Rohr_T_Mutter_Rohr_gebogen2_pCylinder11
+    4300006: Rohr_T_Mutter_Rohr_gebogen2_pCylinder12
+    4300008: Rohr_T_Mutter_Rohr_gebogen2_pCylinder13
+    4300010: Rohr_T_Mutter_Rohr_gebogen2_pCylinder14
+    4300012: Rohr_T_pCylinder3_Schraube1_Rohr_gebogen1_Rohr1
+    4300014: Rohr_T_pCylinder9_Mutter_Rohr_gebogen2
+    4300016: Rohr_T_Rohr_gebogen2_pCylinder3_Schraube
+    4300018: Rohr_T_Rohr_gebogen2_Schraube_pCylinder4
+    4300020: Rohr_T_Rohr_gebogen2_Schraube_pCylinder5
+    4300022: Rohr_T_Rohr_gebogen2_Schraube_pCylinder6
+    4300024: Rohr_T_Rohr_gebogen2_Schraube_pCylinder7
+    4300026: Rohr_T_Rohr_gebogen2_Schraube_pCylinder8
+    4300028: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder4
+    4300030: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder5
+    4300032: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder6
+    4300034: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder7
+    4300036: Rohr_T_Schraube1_Rohr_gebogen1_Rohr1_pCylinder8
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
