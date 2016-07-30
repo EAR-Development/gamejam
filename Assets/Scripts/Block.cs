@@ -10,6 +10,7 @@ public class Block : MonoBehaviour {
 
 	public Material normalMaterial;
 	public Material slowMaterial;
+	public Material fireMaterial;
 
 	public Renderer rend;
 	
@@ -18,17 +19,23 @@ public class Block : MonoBehaviour {
 		rend = GetComponent<Renderer> ();
 		rend.enabled = true;
 
-		var rand = Random.Range (0f, 1f);
-		if (rand >= 0.8f) {
-			ChangeBlockType("Slow");
-		}else{
-			ChangeBlockType("Normal");
-		}
+		setRandomType ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void setRandomType(){
+		var rand = Random.Range (0f, 1f);
+		if (rand >= 0.8f) {
+			ChangeBlockType("Slow");
+		}else if (rand >= 0.6f) {
+			ChangeBlockType("Fire");
+		}else{
+			ChangeBlockType("Normal");
+		}
 	}
 	
 	void ChangeVisibility(int visibility){
@@ -50,6 +57,9 @@ public class Block : MonoBehaviour {
 		switch(type){
 		case "Slow":
 			rend.sharedMaterial = slowMaterial;
+			break;
+		case "Fire":
+			rend.sharedMaterial = fireMaterial;
 			break;
 		case "Normal":
 			rend.sharedMaterial = normalMaterial;
