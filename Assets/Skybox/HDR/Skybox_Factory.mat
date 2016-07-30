@@ -137,11 +137,11 @@ Material:
       data:
         first:
           name: _Exposure
-        second: 1
+        second: 2.07
       data:
         first:
           name: _Rotation
-        second: 0
+        second: 279
     m_Colors:
       data:
         first:

@@ -4,7 +4,7 @@ using System.Collections;
 public class BaseCharacter : MonoBehaviour {
 
 	public bool isGrounded = false;
-	bool facingRight = true;
+	public bool facingRight = true;
 
 	[Header("Settings")]
 	public float maxHp;
@@ -13,7 +13,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	public float meleeAttackCooldown;
 
-	bool doubled = false;
+	public bool doubled = false;
 
 	public Transform groundCheck;
 	float groundRadius = 0.1f;
@@ -22,6 +22,15 @@ public class BaseCharacter : MonoBehaviour {
 	public int assignedPlayer = 1;
 
 	public float debuffTime = 1f;
+
+	public float jumpCooldown;
+
+
+
+
+
+
+	public float maxAirVelocity;
 
 	[Header("Partikel")]
 	public ParticleSystem slowEffect;
@@ -40,10 +49,15 @@ public class BaseCharacter : MonoBehaviour {
 
 	public Rigidbody rb;
 	public Animator animator;
-	private bool jumpkeyWasUsed = false;
+	public bool jumpkeyWasUsed = false;
 
-	public float jumpCooldown;
 	public bool groundCheckPause;
+	public bool isFlying;
+	public bool jumpingMidAir;
+	public bool sidedRight;
+	public bool sidedLeft;
+	
+	public Collider[] col_fists;
 
 	void Start () {
 
@@ -71,6 +85,14 @@ public class BaseCharacter : MonoBehaviour {
 	}
 		
 	void Update(){
+
+		if(jumpingMidAir){
+			if(rb.velocity.magnitude>maxAirVelocity){
+				rb.velocity *= 0.9f;
+
+			}
+		}
+
 		if(animator){
 			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
 			if(isGrounded){
@@ -110,18 +132,26 @@ public class BaseCharacter : MonoBehaviour {
 			} else {
 
 				if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") < 0) {
+					Vector3 tempVel=rb.velocity;
 					if (rb.velocity.x > 0) {
 						//print ("rechts zu links");
+
+						tempVel.x = tempVel.x * -1;
+						rb.velocity = tempVel;
+
 
 					} else {
 					//	print ("rechts zu rechts");
 					}
 				} else {
+					Vector3 tempVel=rb.velocity;
 					if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") > 0) {
 						if (rb.velocity.x > 0) {
 							
 							//print ("links zu links");
 						} else {
+							tempVel.x = tempVel.x * -1;
+							rb.velocity = tempVel;
 							//print ("links zu rechts");
 						}
 					}
@@ -205,7 +235,7 @@ public class BaseCharacter : MonoBehaviour {
 	void OnTriggerEnter(Collider col)
 	{
 		if(col.gameObject.tag == "Border"){
-			Debug.Log("character hit border");
+			
 			currentHp = 0;
 			die();
 			spawn ();
@@ -246,35 +276,6 @@ public class BaseCharacter : MonoBehaviour {
 		}
 	}
 
-//	void OnCollisionExit(Collision col){
-//		if(col.gameObject.tag == "Block"){
-//			Block tempBlock  = col.gameObject.GetComponent<Block>();
-//
-//			switch (tempBlock.blockType) {
-//			case "Fire":
-//				appliedFireDebuffs--;
-//				if (appliedSlowDebuffs == 0) {
-//					var fem = fireEffect.emission;
-//					fem.enabled = false;
-//				}
-//				break;
-//			case "Water":
-//				break;
-//			case "Bounce":
-//				break;
-//			case "Slow":
-//				appliedSlowDebuffs--;
-//				if (appliedSlowDebuffs == 0) {
-//					var sem = slowEffect.emission;
-//					sem.enabled = false;
-//				}
-//				break;
-//
-//			}
-//		}
-//	}
-
-
 	void applyHorizontalMovement(float inputMovementstrength){
 		
 
@@ -299,6 +300,14 @@ public class BaseCharacter : MonoBehaviour {
 
 		
 	}
+
+	void checkSidedStatus(){
+
+		isGrounded =  Physics.OverlapSphere (groundCheck.position, groundRadius, whatIsGround).Length!=0;
+
+
+	}
+
 
 	void spawn(){
 		currentHp = maxHp;
