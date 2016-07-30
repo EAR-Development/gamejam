@@ -154,10 +154,14 @@ MonoBehaviour:
   maxHp: 100
   maxspeed: 10
   jumpForce: 260
+  meleeAttackCounter: 1
+  meleeAttackCooldown: 1
+  rb: {fileID: 0}
   groundCheck: {fileID: 474954}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
+  assignedPlayer: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -176,6 +180,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: jumpForce
       value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: meleeAttackCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: meleeAttackCounter
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

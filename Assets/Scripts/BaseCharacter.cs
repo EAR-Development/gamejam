@@ -10,6 +10,11 @@ public class BaseCharacter : MonoBehaviour {
 	public float maxHp;
 	public float maxspeed = 10f;
 	public float jumpForce = 400f;
+	
+	public float meleeAttackCounter;
+	public float meleeAttackCooldown;
+	
+	public Rigidbody2D rb;
 
 	bool doubled = false;
 
@@ -21,10 +26,13 @@ public class BaseCharacter : MonoBehaviour {
 
 	public ParticleSystem slowEffekt;
 
+
 	private bool jumpkeyWasUsed = false;
+
 
 	void Start () {
 		spawn ();
+		rb = GetComponent<Rigidbody2D>();
 	}
 		
 	void FixedUpdate(){
@@ -35,7 +43,7 @@ public class BaseCharacter : MonoBehaviour {
 	}
 		
 	void Update(){
-		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+		
 		bool jumpKeyDown = false;
 
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") != 0){
@@ -61,6 +69,18 @@ public class BaseCharacter : MonoBehaviour {
 				rb.AddForce (new Vector2 (0, jumpForce * 0.9f));
 			}
 		}
+		
+		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") ){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				//initiate attack
+				meleeAttackCounter = 0;
+			} 
+		}
+		
+		if( meleeAttackCounter < meleeAttackCooldown ){
+			meleeAttackCounter += Time.deltaTime;
+		}
+		
 	}
 		
 	void OnTriggerEnter2D(Collider2D col)
@@ -68,6 +88,7 @@ public class BaseCharacter : MonoBehaviour {
 		if(col.gameObject.tag == "Border"){
 			Debug.Log("character hit border");
 			currentHp = 0;
+
 			spawn ();
 		}
 	}
@@ -75,6 +96,7 @@ public class BaseCharacter : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
+
 			switch (tempBlock.blockType) {
 			case "Fire":
 				break;
@@ -85,6 +107,7 @@ public class BaseCharacter : MonoBehaviour {
 			case "Slow":
 				addSlowDebuff ();
 				break;
+
 			}
 		}
 	}
@@ -92,6 +115,7 @@ public class BaseCharacter : MonoBehaviour {
 	void OnCollisionExit2D(Collision2D col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
+
 			switch (tempBlock.blockType) {
 			case "Fire":
 				break;
@@ -102,6 +126,7 @@ public class BaseCharacter : MonoBehaviour {
 			case "Slow":
 				removeSlowDebuff ();
 				break;
+
 			}
 		}
 	}

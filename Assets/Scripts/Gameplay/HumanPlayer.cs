@@ -14,6 +14,7 @@ public class HumanPlayer : MonoBehaviour {
 	//character char
 	// Use this for initialization
 	void Start () {
+		
 		GameController.totalPlayers = 1;
 		kills = 0;
 		deaths = 0;
@@ -32,5 +33,9 @@ public class HumanPlayer : MonoBehaviour {
 
 
 
+	}
+
+	public void repaint(){
+		uiUpdater.repaint ();
 	}
 }
