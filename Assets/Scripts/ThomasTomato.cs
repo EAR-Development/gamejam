@@ -73,7 +73,7 @@ public class ThomasTomato : BaseCharacter {
 			if(isGrounded){
 				if( meleeAttackCounter >= meleeAttackCooldown ){
 					
-					animator.SetBool("atkForward",true);
+					animator.SetBool("atkDefault",true);
 					meleeAttackCounter = 0;
 				} 
 			}
