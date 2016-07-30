@@ -20,7 +20,7 @@ public class BaseCharacter : MonoBehaviour {
 	bool doubled = false;
 
 	public Transform groundCheck;
-	float groundRadius = 0.2f;
+	float groundRadius = 0.1f;
 	public LayerMask whatIsGround;
 
 	public int assignedPlayer = 1;
@@ -52,8 +52,6 @@ public class BaseCharacter : MonoBehaviour {
 			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
 		}
 		bool jumpKeyDown = false;
-
-
 
 		// JUMP
 
