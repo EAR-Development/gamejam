@@ -79,7 +79,7 @@ public class BaseCharacter : MonoBehaviour {
 		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") ){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
 				//initiate attack
-				animator.SetBool("meleeAttack",true);
+				animator.SetBool("atkForward",true);
 				meleeAttackCounter = 0;
 			} 
 		}

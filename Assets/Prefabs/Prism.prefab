@@ -375,7 +375,7 @@ GameObject:
   - 114: {fileID: 11452794}
   m_Layer: 0
   m_Name: Prism
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ Transform:
   m_Children:
   - {fileID: 465952}
   m_Father: {fileID: 451282}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &413002
 Transform:
   m_ObjectHideFlags: 1
@@ -504,7 +504,7 @@ Transform:
   m_Children:
   - {fileID: 478706}
   m_Father: {fileID: 472020}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!4 &416136
 Transform:
   m_ObjectHideFlags: 1
@@ -516,7 +516,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472020}
-  m_RootOrder: 4
+  m_RootOrder: 6
 --- !u!4 &422226
 Transform:
   m_ObjectHideFlags: 1
@@ -528,7 +528,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472020}
-  m_RootOrder: 9
+  m_RootOrder: 11
 --- !u!4 &426252
 Transform:
   m_ObjectHideFlags: 1
@@ -540,7 +540,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472020}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!4 &431918
 Transform:
   m_ObjectHideFlags: 1
@@ -564,7 +564,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472020}
-  m_RootOrder: 6
+  m_RootOrder: 8
 --- !u!4 &438006
 Transform:
   m_ObjectHideFlags: 1
@@ -576,7 +576,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472020}
-  m_RootOrder: 7
+  m_RootOrder: 9
 --- !u!4 &443184
 Transform:
   m_ObjectHideFlags: 1
@@ -600,7 +600,6 @@ Transform:
   m_LocalPosition: {x: -0.046473503, y: -3.465175e-15, z: 1.1432646e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 496064}
   - {fileID: 412306}
   m_Father: {fileID: 469280}
   m_RootOrder: 0
@@ -615,7 +614,7 @@ Transform:
   m_LocalScale: {x: 0.5425611, y: 0.8191521, z: 1}
   m_Children: []
   m_Father: {fileID: 472020}
-  m_RootOrder: 11
+  m_RootOrder: 1
 --- !u!4 &460422
 Transform:
   m_ObjectHideFlags: 1
@@ -627,7 +626,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472020}
-  m_RootOrder: 8
+  m_RootOrder: 10
 --- !u!4 &465766
 Transform:
   m_ObjectHideFlags: 1
@@ -667,7 +666,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472020}
-  m_RootOrder: 10
+  m_RootOrder: 12
 --- !u!4 &469280
 Transform:
   m_ObjectHideFlags: 1
@@ -692,7 +691,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472020}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!4 &472020
 Transform:
   m_ObjectHideFlags: 1
@@ -703,6 +702,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 496064}
+  - {fileID: 459062}
   - {fileID: 413002}
   - {fileID: 426252}
   - {fileID: 483158}
@@ -714,7 +715,6 @@ Transform:
   - {fileID: 460422}
   - {fileID: 422226}
   - {fileID: 468108}
-  - {fileID: 459062}
   m_Father: {fileID: 403976}
   m_RootOrder: 0
 --- !u!4 &473178
@@ -728,7 +728,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472020}
-  m_RootOrder: 5
+  m_RootOrder: 7
 --- !u!4 &477106
 Transform:
   m_ObjectHideFlags: 1
@@ -779,7 +779,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472020}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!4 &484896
 Transform:
   m_ObjectHideFlags: 1
@@ -812,11 +812,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171810}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 0.028, y: 0, z: -0}
+  m_LocalRotation: {x: 1.7763568e-14, y: -0.7071068, z: 0.00000008940701, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 0.36913013, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 451282}
+  m_Father: {fileID: 472020}
   m_RootOrder: 0
 --- !u!50 &5074524
 Rigidbody2D:
