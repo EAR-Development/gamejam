@@ -1141,7 +1141,7 @@ MonoBehaviour:
   tempVec: {x: 0, y: 0, z: 0}
   aBlocks:
   - {fileID: 0}
-  shouldRotate: 0
+  shouldRotate: 1
   rotateTimer: 10
   blockTimer: 5
   rotateCounter: 0
