@@ -1109,6 +1109,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 99810966}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &102632650 stripped
+BoxCollider:
+  m_PrefabParentObject: {fileID: 6509920, guid: c2b004396dd75ab43a24dc61626bf19e,
+    type: 2}
+  m_PrefabInternal: {fileID: 533850434}
 --- !u!1 &114239891
 GameObject:
   m_ObjectHideFlags: 0
@@ -6545,6 +6550,14 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11467006, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
+      propertyPath: col_fists.Array.data[0]
+      value: 
+      objectReference: {fileID: 102632650}
+    - target: {fileID: 11467006, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
+      propertyPath: col_fists.Array.data[1]
+      value: 
+      objectReference: {fileID: 889129041}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
   m_IsPrefabParent: 0
@@ -9232,6 +9245,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 799ae0ef0e9696749a1804a206aff076, type: 3}
   m_IsPrefabParent: 0
+--- !u!65 &889129041 stripped
+BoxCollider:
+  m_PrefabParentObject: {fileID: 6566400, guid: c2b004396dd75ab43a24dc61626bf19e,
+    type: 2}
+  m_PrefabInternal: {fileID: 533850434}
 --- !u!1 &899816936
 GameObject:
   m_ObjectHideFlags: 0
