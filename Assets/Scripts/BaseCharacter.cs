@@ -29,6 +29,9 @@ public class BaseCharacter : MonoBehaviour {
 	public float currentHp;
 	public float meleeAttackCounter;
 
+	public float speedFactor = 1f;
+	public float jumpFactor = 1f;
+
 	public Rigidbody rb;
 	public Animator animator;
 	private bool jumpkeyWasUsed = false;
@@ -45,15 +48,13 @@ public class BaseCharacter : MonoBehaviour {
 		
 	void FixedUpdate(){
 		checkGroundStatus ();
+		calculateDebuffFactors ();
 
 		float inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
 		applyHorizontalMovement (inputMovementstrength);
 	}
 		
 	void Update(){
-
-
-
 		if(animator){
 			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
 			if(isGrounded){
@@ -83,12 +84,12 @@ public class BaseCharacter : MonoBehaviour {
 		if ((isGrounded || !doubled) && jumpKeyDown) {
 			if (isGrounded) {
 				doubled = false;
-				rb.AddForce (new Vector2 (0, jumpForce));
+				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor));
 				animator.SetTrigger("jump");
 			} else {
 				rb.velocity = new Vector2 (rb.velocity.x, 0); 
 				doubled = true;
-				rb.AddForce (new Vector2 (0, jumpForce * 0.9f));
+				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor * 0.9f));
 				animator.SetTrigger("jump");
 			}
 		}
@@ -150,7 +151,19 @@ public class BaseCharacter : MonoBehaviour {
 			spawn ();
 		}
 	}
-	
+
+	// DEBUFF SECTION
+	int appliedSlowDebuffs = 0;
+
+	void calculateDebuffFactors(){
+		speedFactor = 1f;
+		jumpFactor = 1f;
+		if (appliedSlowDebuffs > 0) {
+			speedFactor *= 0.5f;
+			jumpFactor *= 0.5f;
+		}
+	}
+
 	void OnCollisionEnter(Collision col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
@@ -163,7 +176,9 @@ public class BaseCharacter : MonoBehaviour {
 			case "Bounce":
 				break;
 			case "Slow":
-				addSlowDebuff ();
+				appliedSlowDebuffs++;
+				var em = slowEffekt.emission;
+				em.enabled = true;
 				break;
 
 			}
@@ -182,31 +197,23 @@ public class BaseCharacter : MonoBehaviour {
 			case "Bounce":
 				break;
 			case "Slow":
-				removeSlowDebuff ();
+				appliedSlowDebuffs--;
+				if (appliedSlowDebuffs == 0) {
+					var em = slowEffekt.emission;
+					em.enabled = false;
+				}
 				break;
 
 			}
 		}
 	}
-		
-	void addSlowDebuff(){
-		jumpForce = jumpForce / 2;
-		maxspeed = maxspeed / 2;
-		var em = slowEffekt.emission;
-		em.enabled = true;
-	}
-	void removeSlowDebuff(){
-		jumpForce = jumpForce * 2;
-		maxspeed = maxspeed * 2;
-		var em = slowEffekt.emission;
-		em.enabled = false;
-	}
+
 
 	void applyHorizontalMovement(float inputMovementstrength){
 		
 
 		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
-			rb.AddForce (new Vector2 (inputMovementstrength * maxspeed, 0));
+			rb.AddForce (new Vector2 (inputMovementstrength * maxspeed * speedFactor, 0));
 		}
 
 		if (inputMovementstrength < 0 && facingRight) {
