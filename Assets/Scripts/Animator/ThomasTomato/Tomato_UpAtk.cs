@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Tomato_DownAtk : StateMachineBehaviour
+public class Tomato_UpAtk : StateMachineBehaviour
 {
 	public Rigidbody rb;
 	public Collider[] colliders;
@@ -13,7 +13,7 @@ public class Tomato_DownAtk : StateMachineBehaviour
 		characterScript = animator.GetComponent<ThomasTomato>();
 		colliders = characterScript.col_fists;
 		
-		colliders[0].enabled = true;
+		//colliders[0].enabled = true;
 		colliders[1].enabled = true;
     }
 
@@ -21,7 +21,7 @@ public class Tomato_DownAtk : StateMachineBehaviour
     // This will be called once the animator has transitioned out of the state.
     override public void OnStateExit (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-		colliders[0].enabled = false;
+		//colliders[0].enabled = false;
 		colliders[1].enabled = false;
     }
 	
