@@ -78,11 +78,20 @@ public class ThomasTomato : BaseCharacter {
 		}			
 		//attack while moving on X		
 		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") != 0)){
-			if( meleeAttackCounter >= meleeAttackCooldown ){
-				
-				animator.SetBool("atkForward",true);
-				meleeAttackCounter = 0;
-			} 
+			if(isGrounded){
+				if( meleeAttackCounter >= meleeAttackCooldown ){
+					
+					animator.SetBool("atkForward",true);
+					meleeAttackCounter = 0;
+				} 
+			}
+			else if(!isGrounded){
+				if( meleeAttackCounter >= meleeAttackCooldown ){
+					
+					animator.SetBool("atkDefault",true);
+					meleeAttackCounter = 0;
+				} 
+			}
 		}
 		//Attack up
 		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
