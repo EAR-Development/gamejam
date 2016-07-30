@@ -6,11 +6,20 @@ public class EnvironmentController : MonoBehaviour {
 	public Vector3 targetAngle = new Vector3(0f, 0f, 0f);
 	private Vector3 currentAngle;
 	public Vector3 tempVec;
-	public Block[] aBlocks;
+	public GameObject[] aBlocks;
+
+	[Header("Timer")]
+	public float rotateTimer = 10f;
+	public float blockTimer = 5f;
+
+	[Header("Status")]
+	public float rotateCounter = 0f;
+	public float blockCounter = 0f;
 
 	public void Start()	{
 		currentAngle = transform.eulerAngles;
-		
+
+		aBlocks = GameObject.FindGameObjectsWithTag("Block");
 	}
 	
 	public void Update(){		
@@ -19,14 +28,43 @@ public class EnvironmentController : MonoBehaviour {
 		}		
 		
 		if(Input.GetButtonDown("RotateLeft")){				
-			tempVec +=  new Vector3(0f, 0f, 90f);
-			SetTargetAngle(tempVec);
+			rotateRight ();
 		}
 		
 		if(Input.GetButtonDown("RotateRight")){				
-			tempVec -=  new Vector3(0f, 0f, 90f);
-			SetTargetAngle(tempVec);
+			rotateRight ();
 		}
+
+		rotateCounter += Time.deltaTime;
+		blockCounter += Time.deltaTime;
+
+		if(rotateCounter > rotateTimer){
+			if (Random.Range (0f, 1f) < 0.5f) {
+				rotateLeft ();
+			} else {
+				rotateRight ();
+			}
+
+			rotateCounter = 0f;
+		}
+			
+		if(blockCounter > blockTimer){
+			foreach (GameObject block  in aBlocks) {
+				Block b = block.GetComponent<Block>();
+				b.setRandomType ();
+			}
+
+			blockCounter = 0f;
+		}
+	}
+
+	void rotateLeft(){
+		tempVec +=  new Vector3(0f, 0f, 90f);
+		SetTargetAngle(tempVec);
+	}
+	void rotateRight(){
+		tempVec -=  new Vector3(0f, 0f, 90f);
+		SetTargetAngle(tempVec);
 	}
 
 	public void Rotate(Vector3 targetAngle) 	{

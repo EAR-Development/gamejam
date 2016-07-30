@@ -21,6 +21,8 @@ public class BaseCharacter : MonoBehaviour {
 
 	public int assignedPlayer = 1;
 
+	public float debuffTime = 1f;
+
 	[Header("Partikel")]
 	public ParticleSystem slowEffect;
 	public ParticleSystem fireEffect;
@@ -32,6 +34,9 @@ public class BaseCharacter : MonoBehaviour {
 
 	public float speedFactor = 1f;
 	public float jumpFactor = 1f;
+
+	public float slowCounter = 0f;
+	public float fireCounter = 0f;
 
 	public Rigidbody rb;
 	public Animator animator;
@@ -165,7 +170,23 @@ public class BaseCharacter : MonoBehaviour {
 		if( meleeAttackCounter < meleeAttackCooldown ){
 			meleeAttackCounter += Time.deltaTime;
 		}
-		
+
+		//Debuff
+		if(slowCounter > 0f){
+			slowCounter -= Time.deltaTime;
+			if(slowCounter <= 0f){
+				var sem = slowEffect.emission;
+				sem.enabled = false;
+			}
+		}
+
+		if(fireCounter > 0f){
+			fireCounter -= Time.deltaTime;
+			if(fireCounter <= 0f){
+				var fem = fireEffect.emission;
+				fem.enabled = false;
+			}
+		}
 	}
 		
 	void OnTriggerEnter(Collider col)
@@ -179,25 +200,22 @@ public class BaseCharacter : MonoBehaviour {
 	}
 
 	// DEBUFF SECTION
-	int appliedSlowDebuffs = 0;
-	int appliedFireDebuffs = 0;
-
 	void calculateDebuffFactors(){
 		speedFactor = 1f;
 		jumpFactor = 1f;
-		if (appliedSlowDebuffs > 0) {
+		if (slowCounter > 0f) {
 			speedFactor *= 0.5f;
 			jumpFactor *= 0.5f;
 		}
 	}
 
-	void OnCollisionEnter(Collision col){
+	void OnCollisionStay(Collision col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
 
 			switch (tempBlock.blockType) {
 			case "Fire":
-				appliedFireDebuffs++;
+				fireCounter = debuffTime;
 				var fem = fireEffect.emission;
 				fem.enabled = true;
 				break;
@@ -206,7 +224,7 @@ public class BaseCharacter : MonoBehaviour {
 			case "Bounce":
 				break;
 			case "Slow":
-				appliedSlowDebuffs++;
+				slowCounter = debuffTime;
 				var sem = slowEffect.emission;
 				sem.enabled = true;
 				break;
@@ -215,33 +233,33 @@ public class BaseCharacter : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionExit(Collision col){
-		if(col.gameObject.tag == "Block"){
-			Block tempBlock  = col.gameObject.GetComponent<Block>();
-
-			switch (tempBlock.blockType) {
-			case "Fire":
-				appliedFireDebuffs--;
-				if (appliedSlowDebuffs == 0) {
-					var fem = fireEffect.emission;
-					fem.enabled = false;
-				}
-				break;
-			case "Water":
-				break;
-			case "Bounce":
-				break;
-			case "Slow":
-				appliedSlowDebuffs--;
-				if (appliedSlowDebuffs == 0) {
-					var sem = slowEffect.emission;
-					sem.enabled = false;
-				}
-				break;
-
-			}
-		}
-	}
+//	void OnCollisionExit(Collision col){
+//		if(col.gameObject.tag == "Block"){
+//			Block tempBlock  = col.gameObject.GetComponent<Block>();
+//
+//			switch (tempBlock.blockType) {
+//			case "Fire":
+//				appliedFireDebuffs--;
+//				if (appliedSlowDebuffs == 0) {
+//					var fem = fireEffect.emission;
+//					fem.enabled = false;
+//				}
+//				break;
+//			case "Water":
+//				break;
+//			case "Bounce":
+//				break;
+//			case "Slow":
+//				appliedSlowDebuffs--;
+//				if (appliedSlowDebuffs == 0) {
+//					var sem = slowEffect.emission;
+//					sem.enabled = false;
+//				}
+//				break;
+//
+//			}
+//		}
+//	}
 
 
 	void applyHorizontalMovement(float inputMovementstrength){
