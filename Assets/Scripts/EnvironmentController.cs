@@ -9,6 +9,7 @@ public class EnvironmentController : MonoBehaviour {
 	public GameObject[] aBlocks;
 
 	public bool shouldRotate = true;
+	public float RotationFactor = 0.5f;
 
 	[Header("Timer")]
 	public float rotateTimer = 10f;
@@ -72,9 +73,9 @@ public class EnvironmentController : MonoBehaviour {
 	public void Rotate(Vector3 targetAngle) 	{
 		//public Vector3 targetAngle = new Vector3(0f, 0f, 90f);
 		currentAngle = new Vector3(
-		Mathf.LerpAngle(currentAngle.x, targetAngle.x, Time.deltaTime),
-		Mathf.LerpAngle(currentAngle.y, targetAngle.y, Time.deltaTime),
-		Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime));
+		Mathf.LerpAngle(currentAngle.x, targetAngle.x, Time.deltaTime * RotationFactor),
+			Mathf.LerpAngle(currentAngle.y, targetAngle.y, Time.deltaTime * RotationFactor),
+			Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime* RotationFactor));
 
 		transform.eulerAngles = currentAngle;
 	}

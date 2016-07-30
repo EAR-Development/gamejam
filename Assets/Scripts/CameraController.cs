@@ -5,12 +5,16 @@ public class CameraController : MonoBehaviour {
 
 	public GameObject[] allPlayer;
 
+	private static float MINIMUMDISTANCE = 18f;
+
 	private float xMin;
 	private float xMax;
 	private float yMin;
 	private float yMax;
 
-    public float fovFactor;
+    public float fovXFactor;
+	public float fovYFactor;
+
 
 	private float zPos = -25f;
 
@@ -18,7 +22,14 @@ public class CameraController : MonoBehaviour {
 	void Start () {
 		allPlayer = GameObject.FindGameObjectsWithTag("Player");
 		float fov = GetComponent<Camera> ().fieldOfView;
-		fovFactor = 1 / (2 * Mathf.Tan (fov / 2));
+		float aspect = GetComponent<Camera> ().aspect;
+
+		Debug.Log (aspect);
+
+
+
+		fovXFactor = 1 / (2 * Mathf.Tan (fov / 2));
+		fovYFactor = aspect * 1 / ( 2 *Mathf.Tan (fov / 2));
 	}
 	
 	// Update is called once per frame
@@ -27,9 +38,14 @@ public class CameraController : MonoBehaviour {
 
 		float d = Mathf.Max (xMax - xMin, yMax - yMin, 20);
 
+		float xDistance = (xMax - xMin) * fovXFactor;
+		float yDistance = (yMax - yMin) * fovYFactor;
+
+		d = Mathf.Max (xDistance, yDistance, MINIMUMDISTANCE);
+
 		Debug.Log (d);
 
-		transform.position = Vector3.Lerp (transform.position, new Vector3 ((xMin + xMax) / 2, (yMin + yMax) / 2, -d*fovFactor), Time.deltaTime / 2);
+		transform.position = Vector3.Lerp (transform.position, new Vector3 ((xMin + xMax) / 2, (yMin + yMax) / 2, -d), Time.deltaTime / 2);
 	}
 
 	void calculateContainingRectangle(){
