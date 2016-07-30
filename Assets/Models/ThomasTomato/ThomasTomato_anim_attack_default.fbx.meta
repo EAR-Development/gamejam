@@ -1,53 +1,51 @@
 fileFormatVersion: 2
-guid: a5b7eb338ec5d76439f659b15a4e598b
-timeCreated: 1469884962
+guid: 8a7184ae27ed1f448838abb7aadcea69
+timeCreated: 1469887866
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Finger_1
-    100002: Finger_1 1
-    100004: Finger_2
-    100006: Finger_2 1
-    100008: Finger_3
-    100010: Finger_3 1
-    100012: Hand_L
-    100014: Hand_R
-    100016: Head
-    100018: joint5
-    100020: joint5 1
-    100022: joint6
-    100024: joint6 1
-    100026: joint8
-    100028: joint8 1
+    100000: joint10
+    100002: joint2
+    100004: joint3
+    100006: joint4
+    100008: joint4 1
+    100010: joint5
+    100012: joint5 1
+    100014: joint6
+    100016: joint6 1
+    100018: joint7
+    100020: joint7 1
+    100022: joint8
+    100024: joint8 1
+    100026: joint9
+    100028: joint9 1
     100030: pSphere1
     100032: pSphere4
     100034: pSphere5
-    100036: Rig
-    100038: //RootNode
-    400000: Finger_1
-    400002: Finger_1 1
-    400004: Finger_2
-    400006: Finger_2 1
-    400008: Finger_3
-    400010: Finger_3 1
-    400012: Hand_L
-    400014: Hand_R
-    400016: Head
-    400018: joint5
-    400020: joint5 1
-    400022: joint6
-    400024: joint6 1
-    400026: joint8
-    400028: joint8 1
+    100036: //RootNode
+    400000: joint10
+    400002: joint2
+    400004: joint3
+    400006: joint4
+    400008: joint4 1
+    400010: joint5
+    400012: joint5 1
+    400014: joint6
+    400016: joint6 1
+    400018: joint7
+    400020: joint7 1
+    400022: joint8
+    400024: joint8 1
+    400026: joint9
+    400028: joint9 1
     400030: pSphere1
     400032: pSphere4
     400034: pSphere5
-    400036: Rig
-    400038: //RootNode
-    4300000: pSphere5
+    400036: //RootNode
+    4300000: pSphere1
     4300002: pSphere4
-    4300004: pSphere1
+    4300004: pSphere5
     7400000: Take 001
     9500000: //RootNode
     13700000: pSphere1

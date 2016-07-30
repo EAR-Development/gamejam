@@ -19,6 +19,15 @@ public class Block : MonoBehaviour {
 		rend = GetComponent<Renderer> ();
 		rend.enabled = true;
 
+		setRandomType ();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+	public void setRandomType(){
 		var rand = Random.Range (0f, 1f);
 		if (rand >= 0.8f) {
 			ChangeBlockType("Slow");
@@ -27,11 +36,6 @@ public class Block : MonoBehaviour {
 		}else{
 			ChangeBlockType("Normal");
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 	
 	void ChangeVisibility(int visibility){

@@ -1,58 +1,66 @@
 fileFormatVersion: 2
-guid: a5b7eb338ec5d76439f659b15a4e598b
-timeCreated: 1469884962
+guid: 25843987c96fcec47bea0191f7463e05
+timeCreated: 1469887703
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Finger_1
-    100002: Finger_1 1
-    100004: Finger_2
-    100006: Finger_2 1
-    100008: Finger_3
-    100010: Finger_3 1
-    100012: Hand_L
-    100014: Hand_R
-    100016: Head
-    100018: joint5
-    100020: joint5 1
-    100022: joint6
-    100024: joint6 1
-    100026: joint8
-    100028: joint8 1
-    100030: pSphere1
-    100032: pSphere4
-    100034: pSphere5
-    100036: Rig
-    100038: //RootNode
-    400000: Finger_1
-    400002: Finger_1 1
-    400004: Finger_2
-    400006: Finger_2 1
-    400008: Finger_3
-    400010: Finger_3 1
-    400012: Hand_L
-    400014: Hand_R
-    400016: Head
-    400018: joint5
-    400020: joint5 1
-    400022: joint6
-    400024: joint6 1
-    400026: joint8
-    400028: joint8 1
-    400030: pSphere1
-    400032: pSphere4
-    400034: pSphere5
-    400036: Rig
-    400038: //RootNode
-    4300000: pSphere5
-    4300002: pSphere4
-    4300004: pSphere1
+    100000: CATRigHub002
+    100002: CATRigHub003
+    100004: CATRigHub003Bone001
+    100006: CATRigHub003Bone001Bone001
+    100008: CATRigHub003Bone001Bone001Bone001
+    100010: CATRigHub003Bone001Bone001Bone001Bone001
+    100012: CATRigHub003Bone001Bone001Bone001Bone002
+    100014: CATRigHub003Bone001Bone001Bone002
+    100016: CATRigHub003Bone001Bone002
+    100018: CATRigHub003Bone002
+    100020: CATRigSpine1
+    100022: CATRigSpine2
+    100024: CATRigSpine3
+    100026: CATRigSpine4
+    100028: CATRigSpine5
+    100030: Character001
+    100032: LFinger
+    100034: LHAnd
+    100036: LHFlaeche
+    100038: Oberkorper
+    100040: Prism
+    100042: //RootNode
+    100044: RFinger
+    100046: RHand
+    100048: RHFlaeche
+    100050: "Unterk\xF6rper"
+    400000: CATRigHub002
+    400002: CATRigHub003
+    400004: CATRigHub003Bone001
+    400006: CATRigHub003Bone001Bone001
+    400008: CATRigHub003Bone001Bone001Bone001
+    400010: CATRigHub003Bone001Bone001Bone001Bone001
+    400012: CATRigHub003Bone001Bone001Bone001Bone002
+    400014: CATRigHub003Bone001Bone001Bone002
+    400016: CATRigHub003Bone001Bone002
+    400018: CATRigHub003Bone002
+    400020: CATRigSpine1
+    400022: CATRigSpine2
+    400024: CATRigSpine3
+    400026: CATRigSpine4
+    400028: CATRigSpine5
+    400030: Character001
+    400032: LFinger
+    400034: LHAnd
+    400036: LHFlaeche
+    400038: Oberkorper
+    400040: Prism
+    400042: //RootNode
+    400044: RFinger
+    400046: RHand
+    400048: RHFlaeche
+    400050: "Unterk\xF6rper"
+    4300000: Prism
     7400000: Take 001
     9500000: //RootNode
-    13700000: pSphere1
-    13700002: pSphere4
-    13700004: pSphere5
+    13700000: Prism
   materials:
     importMaterials: 1
     materialName: 0
@@ -77,7 +85,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 2.5
+    globalScale: 0.3
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
