@@ -87,6 +87,23 @@ public class BaseCharacter : MonoBehaviour {
 				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor));
 				animator.SetTrigger("jump");
 			} else {
+
+				if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") < 0) {
+					if (rb.velocity.x > 0) {
+						print ("rechts zu rechts");
+					} else {
+						print ("rechts zu links");
+					}
+				} else {
+					if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") > 0) {
+						if (rb.velocity.x > 0) {
+							print ("links zu rechts");
+						} else {
+							print ("links zu links");
+						}
+					}
+				} 
+
 				rb.velocity = new Vector2 (rb.velocity.x, 0); 
 				doubled = true;
 				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor * 0.9f));
@@ -244,6 +261,14 @@ public class BaseCharacter : MonoBehaviour {
 	
 	void die(){
 		animator.SetTrigger("isDead");
+	}
+
+
+	void reenableGrounded (){
+	
+	
+
+
 	}
 
 }
