@@ -1240,6 +1240,10 @@ MonoBehaviour:
   - {fileID: 829970343}
   - {fileID: 1883237227}
   playerPrefab: {fileID: 182984, guid: 2d94348087307e444aae85461be49d5a, type: 2}
+  playableCharacters:
+  - {fileID: 176396, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
+  - {fileID: 161140, guid: 09d85b92b81730e48a3519a0013ee1e0, type: 2}
+  - {fileID: 130510, guid: d8520561773495e4c961a781bb4a5913, type: 2}
 --- !u!1 &197734818
 GameObject:
   m_ObjectHideFlags: 0

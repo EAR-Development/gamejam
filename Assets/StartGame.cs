@@ -6,6 +6,8 @@ public class StartGame : MonoBehaviour {
 
 	public SelectorBox[] boxes;
 	public GameObject playerPrefab;
+	public GameObject[] playableCharacters;
+
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +29,7 @@ public class StartGame : MonoBehaviour {
 				p.nameHuman = boxes [i].nameInput.text;
 				playerCount++;
 				p.playerNumber = playerCount;
+				p.characterPrefab=playableCharacters[boxes[i].selection -1];
 			}
 			GameController.totalPlayers = playerCount;
 
