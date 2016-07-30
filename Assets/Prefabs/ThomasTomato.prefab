@@ -24,9 +24,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 467262}
-  - 135: {fileID: 13552266}
   - 114: {fileID: 11437318}
   - 54: {fileID: 5449714}
+  - 136: {fileID: 13688006}
   m_Layer: 12
   m_Name: Hand_L
   m_TagString: Untagged
@@ -305,9 +305,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 484318}
-  - 135: {fileID: 13512578}
   - 114: {fileID: 11447868}
   - 54: {fileID: 5445594}
+  - 136: {fileID: 13650184}
   m_Layer: 12
   m_Name: Hand_R
   m_TagString: Untagged
@@ -814,20 +814,8 @@ MonoBehaviour:
   sidedRight: 0
   sidedLeft: 0
   col_fists:
-  - {fileID: 13552266}
-  - {fileID: 13512578}
---- !u!135 &13512578
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192564}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.11
-  m_Center: {x: 0.01, y: -0.05, z: 0}
+  - {fileID: 13688006}
+  - {fileID: 13650184}
 --- !u!135 &13516044
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -852,8 +840,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.21
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &13552266
-SphereCollider:
+--- !u!136 &13650184
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.15
+  m_Height: 0.5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.1}
+--- !u!136 &13688006
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -861,9 +862,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.11
-  m_Center: {x: 0.01, y: -0.05, z: 0}
+  m_Radius: 0.15
+  m_Height: 0.5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.1}
 --- !u!137 &13759552
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
