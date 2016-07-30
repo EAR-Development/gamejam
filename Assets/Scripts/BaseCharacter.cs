@@ -24,6 +24,7 @@ public class BaseCharacter : MonoBehaviour {
 	public int assignedPlayer = 1;
 
 	public float debuffTime = 1f;
+	public float fireDPS;
 
 	public float jumpCooldown;
 
@@ -229,10 +230,16 @@ public class BaseCharacter : MonoBehaviour {
 
 		if(fireCounter > 0f){
 			fireCounter -= Time.deltaTime;
+			currentHp -= fireDPS * Time.deltaTime;
 			if(fireCounter <= 0f){
 				var fem = fireEffect.emission;
 				fem.enabled = false;
 			}
+		}
+
+		if (currentHp <= 0) {
+			die ();
+			spawn ();
 		}
 	}
 		
@@ -319,6 +326,15 @@ public class BaseCharacter : MonoBehaviour {
 
 	void spawn(){
 		currentHp = maxHp;
+
+		slowCounter = 0f;
+		fireCounter = 0f;
+
+		var sem = slowEffect.emission;
+		var fem = fireEffect.emission;
+		sem.enabled = false;
+		fem.enabled = false;
+
 		var gObj = GameObject.Find("Player" + assignedPlayer + "_spawn");
 
 		rb.velocity = Vector3.zero;
@@ -341,4 +357,3 @@ public class BaseCharacter : MonoBehaviour {
 
 
 }
-	
