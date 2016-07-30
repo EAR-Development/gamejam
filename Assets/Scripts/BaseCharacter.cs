@@ -22,7 +22,8 @@ public class BaseCharacter : MonoBehaviour {
 	public int assignedPlayer = 1;
 
 	[Header("Partikel")]
-	public ParticleSystem slowEffekt;
+	public ParticleSystem slowEffect;
+	public ParticleSystem fireEffect;
 
 
 	[Header("Status")]
@@ -40,6 +41,7 @@ public class BaseCharacter : MonoBehaviour {
 	public bool jumpDisabled;
 
 	void Start () {
+
 		jumpDisabled = true;
 		//rb = GetComponent<Rigidbody>();
 		spawn ();
@@ -178,6 +180,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	// DEBUFF SECTION
 	int appliedSlowDebuffs = 0;
+	int appliedFireDebuffs = 0;
 
 	void calculateDebuffFactors(){
 		speedFactor = 1f;
@@ -194,6 +197,9 @@ public class BaseCharacter : MonoBehaviour {
 
 			switch (tempBlock.blockType) {
 			case "Fire":
+				appliedFireDebuffs++;
+				var fem = fireEffect.emission;
+				fem.enabled = true;
 				break;
 			case "Water":
 				break;
@@ -201,8 +207,8 @@ public class BaseCharacter : MonoBehaviour {
 				break;
 			case "Slow":
 				appliedSlowDebuffs++;
-				var em = slowEffekt.emission;
-				em.enabled = true;
+				var sem = slowEffect.emission;
+				sem.enabled = true;
 				break;
 
 			}
@@ -215,6 +221,11 @@ public class BaseCharacter : MonoBehaviour {
 
 			switch (tempBlock.blockType) {
 			case "Fire":
+				appliedFireDebuffs--;
+				if (appliedSlowDebuffs == 0) {
+					var fem = fireEffect.emission;
+					fem.enabled = false;
+				}
 				break;
 			case "Water":
 				break;
@@ -223,8 +234,8 @@ public class BaseCharacter : MonoBehaviour {
 			case "Slow":
 				appliedSlowDebuffs--;
 				if (appliedSlowDebuffs == 0) {
-					var em = slowEffekt.emission;
-					em.enabled = false;
+					var sem = slowEffect.emission;
+					sem.enabled = false;
 				}
 				break;
 
