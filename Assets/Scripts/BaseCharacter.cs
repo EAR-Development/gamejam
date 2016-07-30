@@ -45,6 +45,15 @@ public class BaseCharacter : MonoBehaviour {
 	public float jumpCooldown;
 	public bool groundCheckPause;
 
+	public bool jumpingMidAir;
+	public bool sidedRight;
+	public bool sidedLeft;
+
+	public bool isFlying;
+
+	public float maxAirVelocity;
+
+
 	void Start () {
 
 		//jumpDisabled = true;
@@ -71,6 +80,14 @@ public class BaseCharacter : MonoBehaviour {
 	}
 		
 	void Update(){
+
+		if(jumpingMidAir){
+			if(rb.velocity.magnitude>maxAirVelocity){
+				rb.velocity *= 0.9f;
+
+			}
+		}
+
 		if(animator){
 			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
 			if(isGrounded){
@@ -110,18 +127,26 @@ public class BaseCharacter : MonoBehaviour {
 			} else {
 
 				if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") < 0) {
+					Vector3 tempVel=rb.velocity;
 					if (rb.velocity.x > 0) {
 						//print ("rechts zu links");
+
+						tempVel.x = tempVel.x * -1;
+						rb.velocity = tempVel;
+
 
 					} else {
 					//	print ("rechts zu rechts");
 					}
 				} else {
+					Vector3 tempVel=rb.velocity;
 					if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") > 0) {
 						if (rb.velocity.x > 0) {
 							
 							//print ("links zu links");
 						} else {
+							tempVel.x = tempVel.x * -1;
+							rb.velocity = tempVel;
 							//print ("links zu rechts");
 						}
 					}
@@ -205,7 +230,7 @@ public class BaseCharacter : MonoBehaviour {
 	void OnTriggerEnter(Collider col)
 	{
 		if(col.gameObject.tag == "Border"){
-			Debug.Log("character hit border");
+			
 			currentHp = 0;
 			die();
 			spawn ();
@@ -270,6 +295,14 @@ public class BaseCharacter : MonoBehaviour {
 
 		
 	}
+
+	void checkSidedStatus(){
+
+		isGrounded =  Physics.OverlapSphere (groundCheck.position, groundRadius, whatIsGround).Length!=0;
+
+
+	}
+
 
 	void spawn(){
 		currentHp = maxHp;

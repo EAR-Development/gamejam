@@ -140,6 +140,14 @@ Prefab:
       propertyPath: animator
       value: 
       objectReference: {fileID: 244450291}
+    - target: {fileID: 11467006, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
+      propertyPath: maxAirVelocity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467006, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
+      propertyPath: jumpingMidAir
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
   m_IsPrefabParent: 0
@@ -3913,7 +3921,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 51
 --- !u!1001 &1872267408
 Prefab:
   m_ObjectHideFlags: 0
