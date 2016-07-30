@@ -8,6 +8,13 @@ public class ThomasTomato : BaseCharacter {
 	//public Collider[] col_fists;
 		
 	void Update(){
+		if(jumpingMidAir){
+			if(rb.velocity.magnitude>maxAirVelocity){
+				rb.velocity *= 0.9f;
+
+			}
+		}
+	
 		if(animator){
 			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
 			if(isGrounded){
