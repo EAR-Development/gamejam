@@ -24,7 +24,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 467262}
-  m_Layer: 0
+  - 135: {fileID: 13552266}
+  m_Layer: 11
   m_Name: Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +88,7 @@ GameObject:
   - 4: {fileID: 423138}
   - 95: {fileID: 9582490}
   - 54: {fileID: 5443632}
-  - 114: {fileID: 11429226}
+  - 114: {fileID: 11481700}
   m_Layer: 9
   m_Name: ThomasTomato
   m_TagString: Untagged
@@ -301,7 +302,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 484318}
-  m_Layer: 0
+  - 135: {fileID: 13512578}
+  m_Layer: 11
   m_Name: Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +349,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 481630}
   - 135: {fileID: 13523170}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: PlayerCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -712,7 +714,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11429226
+--- !u!114 &11481700
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -720,27 +722,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 130510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b0351d642696bb4281bc05100b4bb9b, type: 3}
+  m_Script: {fileID: 11500000, guid: c216f0587c71cfe43af32d036ded5a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
+  facingRight: 1
   maxHp: 100
   maxspeed: 20
   jumpForce: 260
   meleeAttackCooldown: 1
+  doubled: 0
   groundCheck: {fileID: 475162}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 768
   assignedPlayer: 2
-  slowEffect: {fileID: 0}
+  debuffTime: 1
+  slowEffect: {fileID: 19835460}
   fireEffect: {fileID: 0}
-  currentHp: 100
-  meleeAttackCounter: 1
+  currentHp: 0
+  meleeAttackCounter: 0
   speedFactor: 1
   jumpFactor: 1
+  slowCounter: 0
+  fireCounter: 0
   rb: {fileID: 5443632}
   animator: {fileID: 9582490}
+  jumpkeyWasUsed: 0
+  jumpCooldown: 0
+  groundCheckPause: 0
+--- !u!135 &13512578
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.11
+  m_Center: {x: 0.01, y: -0.05, z: 0}
 --- !u!135 &13523170
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -753,6 +775,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.21
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &13552266
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.11
+  m_Center: {x: 0.01, y: -0.05, z: 0}
 --- !u!137 &13759552
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
