@@ -287,6 +287,10 @@ Prefab:
       propertyPath: m_Name
       value: Character_1
       objectReference: {fileID: 0}
+    - target: {fileID: 11408504, guid: 928ac380e4fe80543b1b06cc76f95190, type: 2}
+      propertyPath: meleeAttackCooldown
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 928ac380e4fe80543b1b06cc76f95190, type: 2}
   m_IsPrefabParent: 0
@@ -919,6 +923,10 @@ Prefab:
     - target: {fileID: 11408504, guid: 928ac380e4fe80543b1b06cc76f95190, type: 2}
       propertyPath: assignedPlayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408504, guid: 928ac380e4fe80543b1b06cc76f95190, type: 2}
+      propertyPath: meleeAttackCooldown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 928ac380e4fe80543b1b06cc76f95190, type: 2}

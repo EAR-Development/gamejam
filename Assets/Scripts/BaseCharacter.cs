@@ -10,6 +10,11 @@ public class BaseCharacter : MonoBehaviour {
 	public float maxHp;
 	public float maxspeed = 10f;
 	public float jumpForce = 400f;
+	
+	public float meleeAttackCounter;
+	public float meleeAttackCooldown;
+	
+	public Rigidbody2D rb;
 
 	bool doubled = false;
 
@@ -22,6 +27,7 @@ public class BaseCharacter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spawn ();
+		rb = GetComponent<Rigidbody2D>();
 	}
 
 	void FixedUpdate(){
@@ -29,7 +35,7 @@ public class BaseCharacter : MonoBehaviour {
 
 		float move = Input.GetAxis ("Player" + assignedPlayer + "_x");
 
-		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+		
 		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
 			rb.AddForce (new Vector2 (move * maxspeed, 0));
 		}
@@ -65,6 +71,18 @@ public class BaseCharacter : MonoBehaviour {
 				rb.AddForce (new Vector2 (0, jumpForce * 0.9f));
 			}
 		}
+		
+		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") ){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				//initiate attack
+				meleeAttackCounter = 0;
+			} 
+		}
+		
+		if( meleeAttackCounter < meleeAttackCooldown ){
+			meleeAttackCounter += Time.deltaTime;
+		}
+		
 	}
 		
 
@@ -93,6 +111,7 @@ public class BaseCharacter : MonoBehaviour {
 			}
 			else if(tempBlock.blockType == "Slow"){
 				Debug.Log("slow effect");
+				rb.velocity = new Vector2 ((rb.velocity.x/2), (rb.velocity.y/2)); 
 				jumpForce = jumpForce / 2;
 				maxspeed = maxspeed / 2;
 			}
@@ -113,7 +132,7 @@ public class BaseCharacter : MonoBehaviour {
 				
 			}
 			else if(tempBlock.blockType == "Slow"){
-				Debug.Log("slow effect");
+				Debug.Log("slow effect");				
 				jumpForce = jumpForce * 2;
 				maxspeed = maxspeed * 2;
 			}
