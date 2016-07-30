@@ -246,35 +246,6 @@ public class BaseCharacter : MonoBehaviour {
 		}
 	}
 
-//	void OnCollisionExit(Collision col){
-//		if(col.gameObject.tag == "Block"){
-//			Block tempBlock  = col.gameObject.GetComponent<Block>();
-//
-//			switch (tempBlock.blockType) {
-//			case "Fire":
-//				appliedFireDebuffs--;
-//				if (appliedSlowDebuffs == 0) {
-//					var fem = fireEffect.emission;
-//					fem.enabled = false;
-//				}
-//				break;
-//			case "Water":
-//				break;
-//			case "Bounce":
-//				break;
-//			case "Slow":
-//				appliedSlowDebuffs--;
-//				if (appliedSlowDebuffs == 0) {
-//					var sem = slowEffect.emission;
-//					sem.enabled = false;
-//				}
-//				break;
-//
-//			}
-//		}
-//	}
-
-
 	void applyHorizontalMovement(float inputMovementstrength){
 		
 
