@@ -13,7 +13,7 @@ public class EnvironmentController : MonoBehaviour {
 
 	[Header("Timer")]
 	public float rotateTimer = 10f;
-	public float blockTimer = 5f;
+	public float blockTimer = 3f;
 
 	[Header("Status")]
 	public float rotateCounter = 0f;

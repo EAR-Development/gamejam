@@ -27,11 +27,6 @@ public class BaseCharacter : MonoBehaviour {
 
 	public float jumpCooldown;
 
-
-
-
-
-
 	public float maxAirVelocity;
 
 	[Header("Partikel")]
