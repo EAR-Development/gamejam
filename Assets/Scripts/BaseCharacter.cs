@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BaseCharacter : MonoBehaviour {
 
-	bool isGrounded = false;
+	public bool isGrounded = false;
 	bool facingRight = true;
 
 	[Header("Settings")]
@@ -56,6 +56,13 @@ public class BaseCharacter : MonoBehaviour {
 
 		if(animator){
 			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
+			if(isGrounded){
+				animator.SetBool("isGrounded", true);
+			}
+			else {
+				animator.SetBool("isGrounded", false);
+			}
+			
 		}
 		bool jumpKeyDown = false;
 
@@ -87,31 +94,42 @@ public class BaseCharacter : MonoBehaviour {
 		}
 
 		//ATTACK
-		
+		//Attack while standing still
 		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0)){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
-				//initiate attack
+				
 				animator.SetBool("atkDefault",true);
 				meleeAttackCounter = 0;
 			} 
-		}		
+		}			
+		//attack while moving on X		
 		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") != 0)){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
-				//initiate attack
+				
 				animator.SetBool("atkForward",true);
 				meleeAttackCounter = 0;
 			} 
 		}
+		//Attack up
+		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				
+				animator.SetBool("atkUp",true);
+				meleeAttackCounter = 0;
+			} 
+		}
+		//attack while moving down
 		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") < 0)){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
-				//initiate attack
+				
 				animator.SetBool("atkDown",true);
 				meleeAttackCounter = 0;
 			} 
 		}
+		//attack while moving up
 		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
-				//initiate attack
+				
 				animator.SetBool("atkForward",true);
 				meleeAttackCounter = 0;
 			} 
