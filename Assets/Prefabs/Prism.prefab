@@ -24,6 +24,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 404810}
   - 65: {fileID: 6588452}
+  - 65: {fileID: 6582414}
   m_Layer: 9
   m_Name: PlayerCollider
   m_TagString: Player
@@ -358,7 +359,7 @@ GameObject:
   - 4: {fileID: 424294}
   - 95: {fileID: 9585280}
   - 114: {fileID: 11467006}
-  - 54: {fileID: 5496920}
+  - 54: {fileID: 5428130}
   m_Layer: 9
   m_Name: Prism
   m_TagString: Untagged
@@ -848,7 +849,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 435156}
   m_RootOrder: 0
---- !u!54 &5496920
+--- !u!54 &5428130
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -863,6 +864,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!65 &6582414
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105082}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.319896, y: 0.67, z: 0.0611796}
+  m_Center: {x: 0.0040991297, y: -0.000000004016555, z: -0.027667198}
 --- !u!65 &6588452
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -913,12 +926,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   assignedPlayer: 1
-  slowEffekt: {fileID: 19867376}
+  fireEffect: {fileID: 0}
   currentHp: 100
   meleeAttackCounter: 1
   speedFactor: 1
   jumpFactor: 1
-  rb: {fileID: 5496920}
+  rb: {fileID: 5428130}
   animator: {fileID: 0}
 --- !u!137 &13747036
 SkinnedMeshRenderer:
