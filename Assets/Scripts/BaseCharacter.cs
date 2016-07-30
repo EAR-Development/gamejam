@@ -36,7 +36,7 @@ public class BaseCharacter : MonoBehaviour {
 		if(GetComponent<Animator>()){
 			animator = GetComponent<Animator>();
 		}
-		
+		//die();
 		rb = GetComponent<Rigidbody2D>();
 	}
 		
@@ -52,7 +52,9 @@ public class BaseCharacter : MonoBehaviour {
 	}
 		
 	void Update(){
-		animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
+		if(animator){
+			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
+		}
 		bool jumpKeyDown = false;
 
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") != 0){
@@ -100,7 +102,7 @@ public class BaseCharacter : MonoBehaviour {
 		if(col.gameObject.tag == "Border"){
 			Debug.Log("character hit border");
 			currentHp = 0;
-
+			die();
 			spawn ();
 		}
 	}
@@ -177,6 +179,10 @@ public class BaseCharacter : MonoBehaviour {
 		if (gObj){
 			transform.position = gObj.transform.position;
 		}
+	}
+	
+	void die(){
+		animator.SetTrigger("isDead");
 	}
 
 }
