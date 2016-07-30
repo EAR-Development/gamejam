@@ -14,7 +14,7 @@ public class BaseCharacter : MonoBehaviour {
 	public float meleeAttackCounter;
 	public float meleeAttackCooldown;
 	
-	public Rigidbody2D rb;
+	public Rigidbody rb;
 	public Animator animator;
 
 	bool doubled = false;
@@ -32,12 +32,13 @@ public class BaseCharacter : MonoBehaviour {
 
 
 	void Start () {
+		//rb = GetComponent<Rigidbody>();
 		spawn ();
 		if(GetComponent<Animator>()){
 			animator = GetComponent<Animator>();
 		}
 		//die();
-		rb = GetComponent<Rigidbody2D>();
+
 	}
 		
 	void FixedUpdate(){
@@ -48,6 +49,9 @@ public class BaseCharacter : MonoBehaviour {
 	}
 		
 	void Update(){
+
+
+
 		if(animator){
 			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
 		}
@@ -117,7 +121,7 @@ public class BaseCharacter : MonoBehaviour {
 		
 	}
 		
-	void OnTriggerEnter2D(Collider2D col)
+	void OnTriggerEnter(Collider col)
 	{
 		if(col.gameObject.tag == "Border"){
 			Debug.Log("character hit border");
@@ -127,7 +131,7 @@ public class BaseCharacter : MonoBehaviour {
 		}
 	}
 	
-	void OnCollisionEnter2D(Collision2D col){
+	void OnCollisionEnter(Collision col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
 
@@ -146,7 +150,7 @@ public class BaseCharacter : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionExit2D(Collision2D col){
+	void OnCollisionExit(Collision col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
 
@@ -179,7 +183,7 @@ public class BaseCharacter : MonoBehaviour {
 	}
 
 	void applyHorizontalMovement(float inputMovementstrength){
-		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+		
 
 		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
 			rb.AddForce (new Vector2 (inputMovementstrength * maxspeed, 0));
@@ -197,13 +201,14 @@ public class BaseCharacter : MonoBehaviour {
 	}
 
 	void checkGroundStatus(){
-		isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
+		isGrounded =  Physics.OverlapSphere (groundCheck.position, groundRadius, whatIsGround).Length!=0;
+
 	}
 
 	void spawn(){
 		currentHp = maxHp;
 		var gObj = GameObject.Find("Player" + assignedPlayer + "_spawn");
-		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
 		rb.velocity = Vector3.zero;
 		if (gObj){
 			transform.position = gObj.transform.position;

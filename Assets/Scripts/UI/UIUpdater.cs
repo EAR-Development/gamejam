@@ -61,7 +61,7 @@ public class UIUpdater : MonoBehaviour {
 
 	public void repaint(){
 		refresh = true;
-		aimhp=(float)character.currentHp/(float)character.maxHp ;
+		aimhp=character.currentHp/character.maxHp ;
 	}
 
 
