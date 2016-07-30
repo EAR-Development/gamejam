@@ -43,8 +43,6 @@ public class CameraController : MonoBehaviour {
 
 		d = Mathf.Max (xDistance, yDistance, MINIMUMDISTANCE);
 
-		Debug.Log (d);
-
 		transform.position = Vector3.Lerp (transform.position, new Vector3 ((xMin + xMax) / 2, (yMin + yMax) / 2, -d), Time.deltaTime / 1.8f);
 	}
 

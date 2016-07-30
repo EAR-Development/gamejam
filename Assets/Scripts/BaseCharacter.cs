@@ -16,6 +16,8 @@ public class BaseCharacter : MonoBehaviour {
 	public bool doubled = false;
 
 	public Transform groundCheck;
+	public Transform frontCheck;
+	public Transform backCheck;
 	float groundRadius = 0.1f;
 	public LayerMask whatIsGround;
 
@@ -54,8 +56,7 @@ public class BaseCharacter : MonoBehaviour {
 	public bool groundCheckPause;
 	public bool isFlying;
 	public bool jumpingMidAir;
-	public bool sidedRight;
-	public bool sidedLeft;
+	public bool isSided;
 	
 	public Collider[] col_fists;
 
@@ -76,6 +77,7 @@ public class BaseCharacter : MonoBehaviour {
 		if(!groundCheckPause){
 
 			checkGroundStatus ();
+			checkSideStatus ();
 		}
 
 		calculateDebuffFactors ();
@@ -120,7 +122,7 @@ public class BaseCharacter : MonoBehaviour {
 			jumpkeyWasUsed = false;
 		}  
 			
-		if ((isGrounded || !doubled) && jumpKeyDown) {
+		if ((isGrounded || !doubled || isSided) && jumpKeyDown) {
 			if (isGrounded) {
 				doubled = false;
 				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor));
@@ -301,11 +303,11 @@ public class BaseCharacter : MonoBehaviour {
 		
 	}
 
-	void checkSidedStatus(){
+	void checkSideStatus(){
+		bool isfrontSided = Physics.OverlapSphere (frontCheck.position, groundRadius, whatIsGround).Length!=0;
+		bool isbackSided = Physics.OverlapSphere (backCheck.position, groundRadius, whatIsGround).Length!=0;
 
-		isGrounded =  Physics.OverlapSphere (groundCheck.position, groundRadius, whatIsGround).Length!=0;
-
-
+		isSided = isfrontSided || isbackSided;
 	}
 
 
