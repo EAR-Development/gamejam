@@ -17,6 +17,15 @@ public class Fists : MonoBehaviour {
 		if(col.gameObject.tag == "Player"){
 			Debug.Log("player hit");
 			col.rigidbody.AddForce(transform.forward * 500);
+			//col.rigidbody.AddForce(col.transform.root.transform.forward * 500);
+		}
+	}
+	
+	void OnTriggerEnter(Collider col ){
+		if(col.gameObject.tag == "Player"){
+			Debug.Log("player hit");
+			col.attachedRigidbody.AddForce(transform.forward * 500);
+			//col.GetComponent<Rigidbody>().AddForce(col.transform.root.transform.forward * 500);
 		}
 	}
 }
