@@ -14,8 +14,8 @@ public class Fists : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter(Collision col ){
-		if(col.gameObject.tag == "Player"){
+		//if(col.gameObject.tag == "Player"){
 			Debug.Log("player hit");
-		}
+		//}
 	}
 }

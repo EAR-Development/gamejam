@@ -26,13 +26,13 @@ GameObject:
   - 65: {fileID: 6588452}
   - 65: {fileID: 6582414}
   - 65: {fileID: 6551688}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: PlayerCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &105306
 GameObject:
   m_ObjectHideFlags: 1
@@ -378,9 +378,10 @@ GameObject:
   - 95: {fileID: 9585280}
   - 114: {fileID: 11467006}
   - 54: {fileID: 5452996}
-  m_Layer: 9
+  - 65: {fileID: 6517896}
+  m_Layer: 8
   m_Name: Prism
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -895,6 +896,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!65 &6517896
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.319896, y: 0.67, z: 0.0611796}
+  m_Center: {x: 0.0040991297, y: 0.37, z: -0.027667198}
 --- !u!65 &6551688
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -960,16 +973,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
+  facingRight: 1
   maxHp: 100
   maxspeed: 20
   jumpForce: 300
   meleeAttackCooldown: 1
+  doubled: 0
   groundCheck: {fileID: 450964}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 768
   assignedPlayer: 1
   debuffTime: 1
+  jumpCooldown: 0.5
+  maxAirVelocity: 5
   slowEffect: {fileID: 19803856}
   fireEffect: {fileID: 19867376}
   currentHp: 100
@@ -980,13 +997,12 @@ MonoBehaviour:
   fireCounter: 0
   rb: {fileID: 5452996}
   animator: {fileID: 9585280}
-  jumpCooldown: 0.5
+  jumpkeyWasUsed: 0
   groundCheckPause: 0
+  isFlying: 0
   jumpingMidAir: 1
   sidedRight: 0
   sidedLeft: 0
-  isFlying: 0
-  maxAirVelocity: 5
 --- !u!137 &13747036
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
