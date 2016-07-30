@@ -11,7 +11,10 @@ public class HumanPlayer : MonoBehaviour {
 	public int playerNumber;
 	UIUpdater uiUpdater;
 	bool instantiateUI=false;
+	BaseCharacter character;
 	public GameObject characterPrefab;
+	public int teamNumber;
+
 	//character char
 	// Use this for initialization
 
@@ -37,7 +40,7 @@ public class HumanPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(instantiateUI){
-			Instantiate (characterPrefab);//TODO spawnpunkte?
+			character=	Instantiate (characterPrefab).GetComponent<BaseCharacter>();//TODO spawnpunkte?
 
 		kills = 0;
 		deaths = 0;
@@ -45,6 +48,7 @@ public class HumanPlayer : MonoBehaviour {
 		g.transform.parent = GameObject.Find ("Canvas").transform;
 		g.GetComponent<RectTransform> ().position = new Vector3 ((Screen.width / 2) / GameController.totalPlayers * playerNumber,200,0);
 		uiUpdater = g.GetComponent<UIUpdater> ();
+			uiUpdater.character = character;
 		uiUpdater.player = this;
 			instantiateUI = false;
 			uiUpdater.repaint();

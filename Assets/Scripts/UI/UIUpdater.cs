@@ -20,9 +20,7 @@ public class UIUpdater : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-	
-	
-			
+
 	}
 	
 	// Update is called once per frame
@@ -38,7 +36,7 @@ public class UIUpdater : MonoBehaviour {
 			playerName.text = player.nameHuman;
 			killCounter.text = "" + player.kills;
 			deathCounter.text ="" +  player.deaths;
-			aimhp = 0;
+
 
 			killCounter.text = "" + player.kills;
 			deathCounter.text ="" +  player.deaths;
