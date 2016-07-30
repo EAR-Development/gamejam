@@ -396,7 +396,7 @@ GameObject:
   - 95: {fileID: 9585280}
   - 114: {fileID: 11467006}
   - 54: {fileID: 5452996}
-  - 136: {fileID: 13686056}
+  - 136: {fileID: 13682452}
   m_Layer: 15
   m_Name: Prism
   m_TagString: Player
@@ -595,7 +595,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6453562, y: -4.138715, z: 0}
+  m_LocalPosition: {x: 6.8690476, y: -7.146702, z: -1.7031912}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 489870}
@@ -677,7 +677,7 @@ Transform:
   m_LocalScale: {x: 0.5425611, y: 0.8191521, z: 1}
   m_Children: []
   m_Father: {fileID: 489870}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!4 &443906
 Transform:
   m_ObjectHideFlags: 1
@@ -864,7 +864,7 @@ Transform:
   m_LocalScale: {x: 0.5425611, y: 0.8191521, z: 1}
   m_Children: []
   m_Father: {fileID: 489870}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!4 &472552
 Transform:
   m_ObjectHideFlags: 1
@@ -927,8 +927,8 @@ Transform:
   - {fileID: 455380}
   - {fileID: 404810}
   - {fileID: 450964}
-  - {fileID: 472146}
   - {fileID: 440802}
+  - {fileID: 472146}
   m_Father: {fileID: 424294}
   m_RootOrder: 0
 --- !u!4 &498962
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   backCheck: {fileID: 472146}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 492288
   assignedPlayer: 1
   debuffTime: 1
   fireDPS: 100
@@ -1124,6 +1124,8 @@ MonoBehaviour:
   jumpFactor: 1
   slowCounter: 0
   fireCounter: 0
+  audioSource: {fileID: 0}
+  audioClips: []
   rb: {fileID: 5452996}
   animator: {fileID: 9585280}
   jumpkeyWasUsed: 0
@@ -1135,7 +1137,7 @@ MonoBehaviour:
   col_fists:
   - {fileID: 6509920}
   - {fileID: 6566400}
---- !u!136 &13686056
+--- !u!136 &13682452
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1144,10 +1146,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.13870978
-  m_Height: 0.76
+  m_Radius: 0.20399761
+  m_Height: 0.7008138
   m_Direction: 1
-  m_Center: {x: 0, y: 0.37, z: 0}
+  m_Center: {x: 0, y: 0.38, z: 0}
 --- !u!137 &13747036
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -4290,6 +4292,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_CollisionDetection
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: whatIsGround.m_Bits
+      value: 492288
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

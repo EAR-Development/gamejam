@@ -850,7 +850,7 @@ MonoBehaviour:
   backCheck: {fileID: 448706}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 492288
   assignedPlayer: 2
   debuffTime: 1
   fireDPS: 0
@@ -864,6 +864,12 @@ MonoBehaviour:
   jumpFactor: 1
   slowCounter: 0
   fireCounter: 0
+  audioSource: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 26e5a19675b61ea41a2f3d4ff64923b1, type: 3}
+  - {fileID: 8300000, guid: edcbf6a8e3c527b4b9ac4c2361fba6ea, type: 3}
+  - {fileID: 8300000, guid: 27e50579dcafe3f418c1bea5c82450d1, type: 3}
+  - {fileID: 8300000, guid: 3cc0fbf0c03184a4e8687ef1a24329d0, type: 3}
   rb: {fileID: 5443632}
   animator: {fileID: 9582490}
   jumpkeyWasUsed: 0
@@ -2601,6 +2607,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: maxspeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: whatIsGround.m_Bits
+      value: 492288
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
