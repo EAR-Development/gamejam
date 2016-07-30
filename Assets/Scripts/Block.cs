@@ -6,6 +6,8 @@ public class Block : MonoBehaviour {
 	public string blockType;
 	public bool isVisible;
 
+	[Header("Materials")]
+
 	public Material normalMaterial;
 	public Material slowMaterial;
 

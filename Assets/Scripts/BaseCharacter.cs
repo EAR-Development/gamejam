@@ -6,16 +6,12 @@ public class BaseCharacter : MonoBehaviour {
 	bool isGrounded = false;
 	bool facingRight = true;
 
-	public float currentHp;
+	[Header("Settings")]
 	public float maxHp;
-	public float maxspeed = 10f;
+	public float maxspeed = 20f;
 	public float jumpForce = 400f;
-	
-	public float meleeAttackCounter;
+
 	public float meleeAttackCooldown;
-	
-	public Rigidbody rb;
-	public Animator animator;
 
 	bool doubled = false;
 
@@ -25,11 +21,17 @@ public class BaseCharacter : MonoBehaviour {
 
 	public int assignedPlayer = 1;
 
+	[Header("Partikel")]
 	public ParticleSystem slowEffekt;
 
 
-	private bool jumpkeyWasUsed = false;
+	[Header("Status")]
+	public float currentHp;
+	public float meleeAttackCounter;
 
+	public Rigidbody rb;
+	public Animator animator;
+	private bool jumpkeyWasUsed = false;
 
 	void Start () {
 		//rb = GetComponent<Rigidbody>();
