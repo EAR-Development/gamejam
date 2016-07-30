@@ -19,6 +19,8 @@ public class BaseCharacter : MonoBehaviour {
 
 	public int assignedPlayer = 1;
 
+	public ParticleSystem slowEffekt;
+
 	private bool jumpkeyWasUsed = false;
 
 	void Start () {
@@ -108,11 +110,14 @@ public class BaseCharacter : MonoBehaviour {
 		Debug.Log("slow effect");
 		jumpForce = jumpForce / 2;
 		maxspeed = maxspeed / 2;
+		slowEffekt.Play ();
 	}
 	void removeSlowDebuff(){
 		Debug.Log("slow effect removed");
 		jumpForce = jumpForce * 2;
 		maxspeed = maxspeed * 2;
+		slowEffekt.Stop ();
+		slowEffekt.Clear ();
 	}
 
 	void applyHorizontalMovement(float inputMovementstrength){
