@@ -4,13 +4,13 @@ public class Tomato_DownAtk : StateMachineBehaviour
 {
 	public Rigidbody rb;
 	public Collider[] colliders;
-	public ThomasTomato characterScript;
+	public BaseCharacter characterScript;
 	
     // This will be called when the animator first transitions to this state.
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 		rb = animator.GetComponent<Rigidbody>();
-		characterScript = animator.GetComponent<ThomasTomato>();
+		characterScript = animator.GetComponent<BaseCharacter>();
 		colliders = characterScript.col_fists;
 		
 		colliders[0].enabled = true;

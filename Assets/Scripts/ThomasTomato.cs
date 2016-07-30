@@ -5,7 +5,7 @@ public class ThomasTomato : BaseCharacter {
 
 	// Use this for initialization
 		
-	public Collider[] col_fists;
+	//public Collider[] col_fists;
 		
 	void Update(){
 		if(animator){

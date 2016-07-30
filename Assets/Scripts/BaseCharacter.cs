@@ -56,6 +56,8 @@ public class BaseCharacter : MonoBehaviour {
 	public bool jumpingMidAir;
 	public bool sidedRight;
 	public bool sidedLeft;
+	
+	public Collider[] col_fists;
 
 	void Start () {
 
