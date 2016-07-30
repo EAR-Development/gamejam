@@ -15,6 +15,7 @@ public class BaseCharacter : MonoBehaviour {
 	public float meleeAttackCooldown;
 	
 	public Rigidbody2D rb;
+	public Animator animator;
 
 	bool doubled = false;
 
@@ -32,6 +33,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	void Start () {
 		spawn ();
+		animator = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
 	}
 		
@@ -40,10 +42,14 @@ public class BaseCharacter : MonoBehaviour {
 
 		float inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
 		applyHorizontalMovement (inputMovementstrength);
+		
+		
+		
+		
 	}
 		
 	void Update(){
-		
+		animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
 		bool jumpKeyDown = false;
 
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") != 0){
@@ -73,6 +79,7 @@ public class BaseCharacter : MonoBehaviour {
 		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") ){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
 				//initiate attack
+				animator.SetBool("meleeAttack",true);
 				meleeAttackCounter = 0;
 			} 
 		}
