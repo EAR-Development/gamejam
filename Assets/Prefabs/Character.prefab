@@ -160,7 +160,7 @@ MonoBehaviour:
   groundCheck: {fileID: 474954}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   assignedPlayer: 1
 --- !u!1001 &100100000
 Prefab:
@@ -188,6 +188,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: meleeAttackCounter
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: whatIsGround.m_Bits
+      value: 768
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
