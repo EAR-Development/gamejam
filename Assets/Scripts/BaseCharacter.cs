@@ -33,7 +33,10 @@ public class BaseCharacter : MonoBehaviour {
 
 	void Start () {
 		spawn ();
-		animator = GetComponent<Animator>();
+		if(GetComponent<Animator>()){
+			animator = GetComponent<Animator>();
+		}
+		
 		rb = GetComponent<Rigidbody2D>();
 	}
 		
