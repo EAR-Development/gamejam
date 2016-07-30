@@ -44,7 +44,7 @@ public class EnvironmentController : MonoBehaviour {
 		}		
 		
 		if(Input.GetButtonDown("RotateLeft")){				
-			rotateRight ();
+			rotateLeft ();
 		}
 		
 		if(Input.GetButtonDown("RotateRight")){				
