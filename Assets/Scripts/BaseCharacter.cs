@@ -10,6 +10,11 @@ public class BaseCharacter : MonoBehaviour {
 	public float maxHp;
 	public float maxspeed = 10f;
 	public float jumpForce = 400f;
+	
+	public float meleeAttackCounter;
+	public float meleeAttackCooldown;
+	
+	public Rigidbody2D rb;
 
 	bool doubled = false;
 
@@ -19,41 +24,38 @@ public class BaseCharacter : MonoBehaviour {
 
 	public int assignedPlayer = 1;
 
-	public HumanPlayer humanPlayer;
 
 	// Use this for initialization
+
+	private bool jumpkeyWasUsed = false;
+
+
 	void Start () {
 		spawn ();
+		rb = GetComponent<Rigidbody2D>();
 	}
-
+		
 	void FixedUpdate(){
-		isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
+		checkGroundStatus ();
 
-		float move = Input.GetAxis ("Player" + assignedPlayer + "_x");
-
-		Rigidbody2D rb = GetComponent<Rigidbody2D>();
-		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
-			rb.AddForce (new Vector2 (move * maxspeed, 0));
-		}
+		float inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
+		applyHorizontalMovement (inputMovementstrength);
 	}
-
-
-	private bool m_isAxisInUse = false;
-
+		
 	void Update(){
-		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+		
 		bool jumpKeyDown = false;
 
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") != 0){
 
-			if(m_isAxisInUse == false)
+			if(jumpkeyWasUsed == false)
 			{
 				jumpKeyDown = true;
-				m_isAxisInUse = true;
+				jumpkeyWasUsed = true;
 			}
 		}
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") == 0){
-			m_isAxisInUse = false;
+			jumpkeyWasUsed = false;
 		}  
 
 
@@ -67,61 +69,89 @@ public class BaseCharacter : MonoBehaviour {
 				rb.AddForce (new Vector2 (0, jumpForce * 0.9f));
 			}
 		}
+		
+		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") ){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				//initiate attack
+				meleeAttackCounter = 0;
+			} 
+		}
+		
+		if( meleeAttackCounter < meleeAttackCooldown ){
+			meleeAttackCounter += Time.deltaTime;
+		}
+		
 	}
 		
-
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if(col.gameObject.tag == "Border"){
 			Debug.Log("character hit border");
 			currentHp = 0;
-			humanPlayer.deaths = humanPlayer.deaths + 1;
-			humanPlayer.repaint ();
+
 			spawn ();
 		}
-		
-		
 	}
 	
 	void OnCollisionEnter2D(Collision2D col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
-			if(tempBlock.blockType == "Fire"){
-			
-			}
-			else if(tempBlock.blockType == "Water"){
-			
-			}
-			else if(tempBlock.blockType == "Bounce"){
-				
-			}
-			else if(tempBlock.blockType == "Slow"){
-				Debug.Log("slow effect");
-				jumpForce = jumpForce / 2;
-				maxspeed = maxspeed / 2;
+
+			switch (tempBlock.blockType) {
+			case "Fire":
+				break;
+			case "Water":
+				break;
+			case "Bounce":
+				break;
+			case "Slow":
+				addSlowDebuff ();
+				break;
+
 			}
 		}
 	}
-	
-	
+
 	void OnCollisionExit2D(Collision2D col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
-			if(tempBlock.blockType == "Fire"){
-			
-			}
-			else if(tempBlock.blockType == "Water"){
-			
-			}
-			else if(tempBlock.blockType == "Bounce"){
-				
-			}
-			else if(tempBlock.blockType == "Slow"){
-				Debug.Log("slow effect");
-				jumpForce = jumpForce * 2;
-				maxspeed = maxspeed * 2;
+
+			switch (tempBlock.blockType) {
+			case "Fire":
+				break;
+			case "Water":
+				break;
+			case "Bounce":
+				break;
+			case "Slow":
+				removeSlowDebuff ();
+				break;
+
 			}
 		}
+	}
+		
+	void addSlowDebuff(){
+		Debug.Log("slow effect");
+		jumpForce = jumpForce / 2;
+		maxspeed = maxspeed / 2;
+	}
+	void removeSlowDebuff(){
+		Debug.Log("slow effect removed");
+		jumpForce = jumpForce * 2;
+		maxspeed = maxspeed * 2;
+	}
+
+	void applyHorizontalMovement(float inputMovementstrength){
+		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
+			rb.AddForce (new Vector2 (inputMovementstrength * maxspeed, 0));
+		}
+	}
+
+	void checkGroundStatus(){
+		isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 	}
 
 	void spawn(){
@@ -135,5 +165,4 @@ public class BaseCharacter : MonoBehaviour {
 	}
 
 }
-
-
+	

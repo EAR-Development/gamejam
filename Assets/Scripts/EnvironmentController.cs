@@ -18,12 +18,12 @@ public class EnvironmentController : MonoBehaviour {
 			Rotate(targetAngle);
 		}		
 		
-		if(Input.GetMouseButtonUp(0)){				
+		if(Input.GetButtonDown("RotateLeft")){				
 			tempVec +=  new Vector3(0f, 0f, 90f);
 			SetTargetAngle(tempVec);
 		}
 		
-		if(Input.GetMouseButtonUp(1)){				
+		if(Input.GetButtonDown("RotateRight")){				
 			tempVec -=  new Vector3(0f, 0f, 90f);
 			SetTargetAngle(tempVec);
 		}
