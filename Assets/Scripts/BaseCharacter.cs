@@ -72,10 +72,12 @@ public class BaseCharacter : MonoBehaviour {
 			if (isGrounded) {
 				doubled = false;
 				rb.AddForce (new Vector2 (0, jumpForce));
+				animator.SetTrigger("jump");
 			} else {
 				rb.velocity = new Vector2 (rb.velocity.x, 0); 
 				doubled = true;
 				rb.AddForce (new Vector2 (0, jumpForce * 0.9f));
+				animator.SetTrigger("jump");
 			}
 		}
 		
