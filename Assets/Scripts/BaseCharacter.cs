@@ -23,6 +23,15 @@ public class BaseCharacter : MonoBehaviour {
 
 	public float debuffTime = 1f;
 
+	public float jumpCooldown;
+
+
+
+
+
+
+	public float maxAirVelocity;
+
 	[Header("Partikel")]
 	public ParticleSystem slowEffect;
 	public ParticleSystem fireEffect;
@@ -42,17 +51,11 @@ public class BaseCharacter : MonoBehaviour {
 	public Animator animator;
 	public bool jumpkeyWasUsed = false;
 
-	public float jumpCooldown;
 	public bool groundCheckPause;
-
+	public bool isFlying;
 	public bool jumpingMidAir;
 	public bool sidedRight;
 	public bool sidedLeft;
-
-	public bool isFlying;
-
-	public float maxAirVelocity;
-
 
 	void Start () {
 
