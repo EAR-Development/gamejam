@@ -10,126 +10,214 @@ public class BaseCharacter : MonoBehaviour {
 	public float maxHp;
 	public float maxspeed = 10f;
 	public float jumpForce = 400f;
+	
+	public float meleeAttackCounter;
+	public float meleeAttackCooldown;
+	
+	public Rigidbody rb;
+	public Animator animator;
 
 	bool doubled = false;
 
 	public Transform groundCheck;
-	float groundRadius = 0.2f;
+	float groundRadius = 0.1f;
 	public LayerMask whatIsGround;
 
 	public int assignedPlayer = 1;
 
-	// Use this for initialization
+	public ParticleSystem slowEffekt;
+
+
+	private bool jumpkeyWasUsed = false;
+
+
 	void Start () {
+		//rb = GetComponent<Rigidbody>();
 		spawn ();
-	}
-
-	void FixedUpdate(){
-		isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
-
-		float move = Input.GetAxis ("Player" + assignedPlayer + "_x");
-
-		Rigidbody2D rb = GetComponent<Rigidbody2D>();
-		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
-			rb.AddForce (new Vector2 (move * maxspeed, 0));
+		if(GetComponent<Animator>()){
+			animator = GetComponent<Animator>();
 		}
+		//die();
+
 	}
+		
+	void FixedUpdate(){
+		checkGroundStatus ();
 
-
-	private bool m_isAxisInUse = false;
-
+		float inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
+		applyHorizontalMovement (inputMovementstrength);
+	}
+		
 	void Update(){
-		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+
+
+		if(animator){
+			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
+		}
 		bool jumpKeyDown = false;
+
+		// JUMP
 
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") != 0){
 
-			if(m_isAxisInUse == false)
+			if(jumpkeyWasUsed == false)
 			{
 				jumpKeyDown = true;
-				m_isAxisInUse = true;
+				jumpkeyWasUsed = true;
 			}
 		}
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") == 0){
-			m_isAxisInUse = false;
+			jumpkeyWasUsed = false;
 		}  
-
-
+			
 		if ((isGrounded || !doubled) && jumpKeyDown) {
 			if (isGrounded) {
 				doubled = false;
 				rb.AddForce (new Vector2 (0, jumpForce));
+				animator.SetTrigger("jump");
 			} else {
 				rb.velocity = new Vector2 (rb.velocity.x, 0); 
 				doubled = true;
 				rb.AddForce (new Vector2 (0, jumpForce * 0.9f));
+				animator.SetTrigger("jump");
 			}
 		}
+
+		//ATTACK
+		
+		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				//initiate attack
+				animator.SetBool("atkDefault",true);
+				meleeAttackCounter = 0;
+			} 
+		}		
+		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") != 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				//initiate attack
+				animator.SetBool("atkForward",true);
+				meleeAttackCounter = 0;
+			} 
+		}
+		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") < 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				//initiate attack
+				animator.SetBool("atkDown",true);
+				meleeAttackCounter = 0;
+			} 
+		}
+		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				//initiate attack
+				animator.SetBool("atkForward",true);
+				meleeAttackCounter = 0;
+			} 
+		}
+		
+		if( meleeAttackCounter < meleeAttackCooldown ){
+			meleeAttackCounter += Time.deltaTime;
+		}
+		
 	}
 		
-
-	void OnTriggerEnter2D(Collider2D col)
+	void OnTriggerEnter(Collider col)
 	{
 		if(col.gameObject.tag == "Border"){
 			Debug.Log("character hit border");
 			currentHp = 0;
+			die();
 			spawn ();
 		}
-		
-		
 	}
 	
-	void OnCollisionEnter2D(Collision2D col){
+	void OnCollisionEnter(Collision col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
-			if(tempBlock.blockType == "Fire"){
-			
-			}
-			else if(tempBlock.blockType == "Water"){
-			
-			}
-			else if(tempBlock.blockType == "Bounce"){
-				
-			}
-			else if(tempBlock.blockType == "Slow"){
-				Debug.Log("slow effect");
-				jumpForce = jumpForce / 2;
-				maxspeed = maxspeed / 2;
+
+			switch (tempBlock.blockType) {
+			case "Fire":
+				break;
+			case "Water":
+				break;
+			case "Bounce":
+				break;
+			case "Slow":
+				addSlowDebuff ();
+				break;
+
 			}
 		}
 	}
-	
-	
-	void OnCollisionExit2D(Collision2D col){
+
+	void OnCollisionExit(Collision col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
-			if(tempBlock.blockType == "Fire"){
-			
-			}
-			else if(tempBlock.blockType == "Water"){
-			
-			}
-			else if(tempBlock.blockType == "Bounce"){
-				
-			}
-			else if(tempBlock.blockType == "Slow"){
-				Debug.Log("slow effect");
-				jumpForce = jumpForce * 2;
-				maxspeed = maxspeed * 2;
+
+			switch (tempBlock.blockType) {
+			case "Fire":
+				break;
+			case "Water":
+				break;
+			case "Bounce":
+				break;
+			case "Slow":
+				removeSlowDebuff ();
+				break;
+
 			}
 		}
+	}
+		
+	void addSlowDebuff(){
+		jumpForce = jumpForce / 2;
+		maxspeed = maxspeed / 2;
+		var em = slowEffekt.emission;
+		em.enabled = true;
+	}
+	void removeSlowDebuff(){
+		jumpForce = jumpForce * 2;
+		maxspeed = maxspeed * 2;
+		var em = slowEffekt.emission;
+		em.enabled = false;
+	}
+
+	void applyHorizontalMovement(float inputMovementstrength){
+		
+
+		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
+			rb.AddForce (new Vector2 (inputMovementstrength * maxspeed, 0));
+		}
+
+		if (inputMovementstrength < 0 && facingRight) {
+			facingRight = !facingRight;
+			transform.Rotate(new Vector3(0,180,0));
+		}
+		if (inputMovementstrength > 0 && !facingRight) {
+
+			facingRight = !facingRight;
+			transform.Rotate(new Vector3(0,180,0));
+		}
+	}
+
+	void checkGroundStatus(){
+		isGrounded =  Physics.OverlapSphere (groundCheck.position, groundRadius, whatIsGround).Length!=0;
+
 	}
 
 	void spawn(){
 		currentHp = maxHp;
 		var gObj = GameObject.Find("Player" + assignedPlayer + "_spawn");
-		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
 		rb.velocity = Vector3.zero;
 		if (gObj){
 			transform.position = gObj.transform.position;
 		}
 	}
+	
+	void die(){
+		animator.SetTrigger("isDead");
+	}
 
 }
-
-
+	

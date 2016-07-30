@@ -9,12 +9,33 @@ public class HumanPlayer : MonoBehaviour {
 	public int deaths;
 	public GameObject playerInfoUi;
 	public int playerNumber;
-	 UIUpdater uiUpdater;
-
+	UIUpdater uiUpdater;
+	bool instantiateUI=false;
 	//character char
 	// Use this for initialization
+
+	void Awake() {
+		DontDestroyOnLoad(this);
+	}
+
+	void OnLevelWasLoaded(){
+		
+		instantiateUI = true;
+
+	} 
+
+
+
 	void Start () {
-		GameController.totalPlayers = 1;
+		
+	
+
+
+	}
+
+	// Update is called once per frame
+	void Update () {
+		if(instantiateUI){
 		kills = 0;
 		deaths = 0;
 		GameObject g =Instantiate (playerInfoUi);
@@ -22,15 +43,15 @@ public class HumanPlayer : MonoBehaviour {
 		g.GetComponent<RectTransform> ().position = new Vector3 ((Screen.width / 2) / GameController.totalPlayers * playerNumber,200,0);
 		uiUpdater = g.GetComponent<UIUpdater> ();
 		uiUpdater.player = this;
-
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-
-
+			instantiateUI = false;
+			uiUpdater.repaint();
+		}
 
 	}
+
+	public void repaint(){
+		uiUpdater.repaint ();
+	}
+
+	//public void
 }
