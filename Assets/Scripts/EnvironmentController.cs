@@ -8,7 +8,7 @@ public class EnvironmentController : MonoBehaviour {
 	public Vector3 tempVec;
 	public GameObject[] aBlocks;
 
-	public bool rotate = true;
+	public bool shouldRotate = true;
 
 	[Header("Timer")]
 	public float rotateTimer = 10f;
@@ -40,7 +40,7 @@ public class EnvironmentController : MonoBehaviour {
 		rotateCounter += Time.deltaTime;
 		blockCounter += Time.deltaTime;
 
-		if(rotateCounter > rotateTimer){
+		if(rotateCounter > rotateTimer && shouldRotate){
 			if (Random.Range (0f, 1f) < 0.5f) {
 				rotateLeft ();
 			} else {

@@ -1141,7 +1141,7 @@ MonoBehaviour:
   tempVec: {x: 0, y: 0, z: 0}
   aBlocks:
   - {fileID: 0}
-  rotate: 1
+  shouldRotate: 0
   rotateTimer: 10
   blockTimer: 5
   rotateCounter: 0
@@ -6540,10 +6540,6 @@ Prefab:
     - target: {fileID: 424294, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 176396, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
@@ -18025,7 +18021,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 176396, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 176396, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
       propertyPath: m_Name
