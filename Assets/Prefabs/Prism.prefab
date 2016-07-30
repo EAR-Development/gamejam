@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 438166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigSpine4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,8 +23,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 404810}
-  - 61: {fileID: 6164470}
-  m_Layer: 8
+  - 65: {fileID: 6588452}
+  m_Layer: 9
   m_Name: PlayerCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 472552}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigSpine5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 467494}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 427650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LFinger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446918}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Oberkorper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 455380}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "Unterk\xF6rper"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458056}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigHub003Bone001Bone002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 445916}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LHAnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 418690}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigSpine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - 4: {fileID: 421578}
   - 198: {fileID: 19867376}
   - 199: {fileID: 19955990}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: slowEffekt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 438658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LHFlaeche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446514}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigHub003Bone001Bone001Bone002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 450964}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: groundChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 489870}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 487466}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigHub003Bone001Bone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 423568}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigSpine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 447808}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigHub003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 443906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RFinger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 487374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigSpine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 460132}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigHub003Bone002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 498962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigHub003Bone001Bone001Bone001Bone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 425708}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Character001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,9 +357,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 424294}
   - 95: {fileID: 9585280}
-  - 50: {fileID: 5061930}
   - 114: {fileID: 11467006}
-  m_Layer: 0
+  - 54: {fileID: 5496920}
+  m_Layer: 9
   m_Name: Prism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigHub003Bone001Bone001Bone001Bone002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 404322}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigHub003Bone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 408154}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RHFlaeche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 450136}
   - 137: {fileID: 13747036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Prism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 435156}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigHub003Bone001Bone001Bone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 464792}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CATRigHub002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.68, y: -4.13, z: 0}
+  m_LocalPosition: {x: -2.6453562, y: -4.138715, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 489870}
@@ -848,37 +848,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 435156}
   m_RootOrder: 0
---- !u!50 &5061930
-Rigidbody2D:
-  serializedVersion: 2
+--- !u!54 &5496920
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176396}
-  m_UseAutoMass: 0
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0
+  m_Drag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 120
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &6164470
-BoxCollider2D:
+--- !u!65 &6588452
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105082}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.7}
+  m_Size: {x: 0.319896, y: 0.67, z: 0.0611796}
+  m_Center: {x: 0.0040991297, y: -0.000000004016555, z: -0.027667198}
 --- !u!95 &9585280
 Animator:
   serializedVersion: 3
@@ -907,20 +903,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0351d642696bb4281bc05100b4bb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHp: 100
+  isGrounded: 0
   maxHp: 100
   maxspeed: 10
   jumpForce: 260
-  meleeAttackCounter: 1
   meleeAttackCooldown: 1
-  rb: {fileID: 0}
-  animator: {fileID: 0}
   groundCheck: {fileID: 450964}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 768
   assignedPlayer: 1
   slowEffekt: {fileID: 19867376}
+  currentHp: 100
+  meleeAttackCounter: 1
+  speedFactor: 1
+  jumpFactor: 1
+  rb: {fileID: 5496920}
+  animator: {fileID: 0}
 --- !u!137 &13747036
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
