@@ -869,10 +869,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11467006, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
-      propertyPath: slowEffect
-      value: 
-      objectReference: {fileID: 889690025}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
   m_IsPrefabParent: 0
@@ -1711,11 +1707,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 799ae0ef0e9696749a1804a206aff076, type: 3}
   m_IsPrefabParent: 0
---- !u!198 &889690025 stripped
-ParticleSystem:
-  m_PrefabParentObject: {fileID: 19867376, guid: c2b004396dd75ab43a24dc61626bf19e,
-    type: 2}
-  m_PrefabInternal: {fileID: 533850434}
 --- !u!1 &894041817 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 162730, guid: 9a525eca57cea80408cdc1a6180fea07, type: 2}
