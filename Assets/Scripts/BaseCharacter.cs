@@ -28,7 +28,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	[Header("Status")]
 	public float currentHp;
-	public float meleeAttackCounter;
+	public float meleeAttackCounter; 
 
 	public float speedFactor = 1f;
 	public float jumpFactor = 1f;
@@ -37,13 +37,14 @@ public class BaseCharacter : MonoBehaviour {
 	public Animator animator;
 	private bool jumpkeyWasUsed = false;
 
-	//public float jumpCooldown;
-	//public bool jumpDisabled;
+	public float jumpCooldown;
+	public bool groundCheckPause;
 
 	void Start () {
 
 		//jumpDisabled = true;
 		//rb = GetComponent<Rigidbody>();
+		groundCheckPause=false;
 		spawn ();
 		if(GetComponent<Animator>()){
 			animator = GetComponent<Animator>();
@@ -53,7 +54,11 @@ public class BaseCharacter : MonoBehaviour {
 	}
 		
 	void FixedUpdate(){
-		checkGroundStatus ();
+		if(!groundCheckPause){
+
+			checkGroundStatus ();
+		}
+
 		calculateDebuffFactors ();
 
 		float inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
@@ -75,6 +80,7 @@ public class BaseCharacter : MonoBehaviour {
 
 		// JUMP
 
+
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") != 0){
 
 			if(jumpkeyWasUsed == false)
@@ -92,22 +98,26 @@ public class BaseCharacter : MonoBehaviour {
 				doubled = false;
 				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor));
 				isGrounded = false;
+				groundCheckPause = true;
+				Invoke ("enableGroundCheck",jumpCooldown);
 
 				animator.SetTrigger("jump");
 			} else {
 
 				if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") < 0) {
 					if (rb.velocity.x > 0) {
-						print ("rechts zu rechts");
+						//print ("rechts zu links");
+
 					} else {
-						print ("rechts zu links");
+					//	print ("rechts zu rechts");
 					}
 				} else {
 					if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") > 0) {
 						if (rb.velocity.x > 0) {
-							print ("links zu rechts");
+							
+							//print ("links zu links");
 						} else {
-							print ("links zu links");
+							//print ("links zu rechts");
 						}
 					}
 				} 
@@ -116,6 +126,9 @@ public class BaseCharacter : MonoBehaviour {
 				doubled = true;
 				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor * 0.9f));
 				animator.SetTrigger("jump");
+				isGrounded = false;
+				groundCheckPause = true;
+				Invoke ("enableGroundCheck",jumpCooldown);
 
 			}
 		}
@@ -283,6 +296,12 @@ public class BaseCharacter : MonoBehaviour {
 		animator.SetTrigger("isDead");
 	}
 
+
+	public void enableGroundCheck(){
+
+		groundCheckPause = false;
+
+	}
 
 
 

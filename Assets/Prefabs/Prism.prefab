@@ -977,8 +977,8 @@ MonoBehaviour:
   jumpFactor: 1
   rb: {fileID: 5452996}
   animator: {fileID: 0}
-  jumpCooldown: 0
-  jumpDisabled: 0
+  jumpCooldown: 0.5
+  groundCheckPause: 0
 --- !u!137 &13747036
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
