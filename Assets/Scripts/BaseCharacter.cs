@@ -4,7 +4,7 @@ using System.Collections;
 public class BaseCharacter : MonoBehaviour {
 
 	public bool isGrounded = false;
-	bool facingRight = true;
+	public bool facingRight = true;
 
 	[Header("Settings")]
 	public float maxHp;
@@ -13,7 +13,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	public float meleeAttackCooldown;
 
-	bool doubled = false;
+	public bool doubled = false;
 
 	public Transform groundCheck;
 	float groundRadius = 0.1f;
@@ -40,7 +40,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	public Rigidbody rb;
 	public Animator animator;
-	private bool jumpkeyWasUsed = false;
+	public bool jumpkeyWasUsed = false;
 
 	public float jumpCooldown;
 	public bool groundCheckPause;
