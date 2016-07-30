@@ -926,6 +926,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   assignedPlayer: 1
+  slowEffect: {fileID: 19867376}
   fireEffect: {fileID: 0}
   currentHp: 100
   meleeAttackCounter: 1
