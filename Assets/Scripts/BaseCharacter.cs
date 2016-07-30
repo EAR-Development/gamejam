@@ -4,7 +4,7 @@ using System.Collections;
 public class BaseCharacter : MonoBehaviour {
 
 	public bool isGrounded = false;
-	bool facingRight = true;
+	public bool facingRight = true;
 
 	[Header("Settings")]
 	public float maxHp;
@@ -13,28 +13,56 @@ public class BaseCharacter : MonoBehaviour {
 
 	public float meleeAttackCooldown;
 
-	bool doubled = false;
+	public bool doubled = false;
 
 	public Transform groundCheck;
+	public Transform frontCheck;
+	public Transform backCheck;
 	float groundRadius = 0.1f;
 	public LayerMask whatIsGround;
 
 	public int assignedPlayer = 1;
 
+	public float debuffTime = 1f;
+	public float fireDPS;
+
+	public float jumpCooldown;
+
+	public float maxAirVelocity;
+
 	[Header("Partikel")]
-	public ParticleSystem slowEffekt;
+	public ParticleSystem slowEffect;
+	public ParticleSystem fireEffect;
 
 
 	[Header("Status")]
 	public float currentHp;
-	public float meleeAttackCounter;
+	public float meleeAttackCounter; 
+
+	public float speedFactor = 1f;
+	public float jumpFactor = 1f;
+
+	public float slowCounter = 0f;
+	public float fireCounter = 0f;
 
 	public Rigidbody rb;
 	public Animator animator;
-	private bool jumpkeyWasUsed = false;
+	public bool jumpkeyWasUsed = false;
+
+	public bool groundCheckPause;
+	public bool isFlying;
+	public bool jumpingMidAir;
+	public bool isSided;
+
+	public int walljumpCounter = 3;
+	
+	public Collider[] col_fists;
 
 	void Start () {
+
+		//jumpDisabled = true;
 		//rb = GetComponent<Rigidbody>();
+		groundCheckPause=false;
 		spawn ();
 		if(GetComponent<Animator>()){
 			animator = GetComponent<Animator>();
@@ -44,7 +72,13 @@ public class BaseCharacter : MonoBehaviour {
 	}
 		
 	void FixedUpdate(){
-		checkGroundStatus ();
+		if(!groundCheckPause){
+
+			checkGroundStatus ();
+			checkSideStatus ();
+		}
+
+		calculateDebuffFactors ();
 
 		float inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
 		applyHorizontalMovement (inputMovementstrength);
@@ -52,7 +86,12 @@ public class BaseCharacter : MonoBehaviour {
 		
 	void Update(){
 
+		if(jumpingMidAir){
+			if(rb.velocity.magnitude>maxAirVelocity){
+				rb.velocity *= 0.9f;
 
+			}
+		}
 
 		if(animator){
 			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
@@ -68,6 +107,7 @@ public class BaseCharacter : MonoBehaviour {
 
 		// JUMP
 
+
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") != 0){
 
 			if(jumpkeyWasUsed == false)
@@ -80,16 +120,56 @@ public class BaseCharacter : MonoBehaviour {
 			jumpkeyWasUsed = false;
 		}  
 			
-		if ((isGrounded || !doubled) && jumpKeyDown) {
+		if ((isGrounded || !doubled || (isSided && walljumpCounter > 0)) && jumpKeyDown) {
 			if (isGrounded) {
 				doubled = false;
-				rb.AddForce (new Vector2 (0, jumpForce));
+				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor));
+				isGrounded = false;
+				groundCheckPause = true;
+				Invoke ("enableGroundCheck",jumpCooldown);
+
 				animator.SetTrigger("jump");
 			} else {
-				rb.velocity = new Vector2 (rb.velocity.x, 0); 
-				doubled = true;
-				rb.AddForce (new Vector2 (0, jumpForce * 0.9f));
+
+				if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") < 0) {
+					Vector3 tempVel=rb.velocity;
+					if (rb.velocity.x > 0) {
+						//print ("rechts zu links");
+
+						tempVel.x = tempVel.x * -1;
+						rb.velocity = tempVel;
+
+
+					} else {
+					//	print ("rechts zu rechts");
+					}
+				} else {
+					Vector3 tempVel=rb.velocity;
+					if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") > 0) {
+						if (rb.velocity.x > 0) {
+							
+							//print ("links zu links");
+						} else {
+							tempVel.x = tempVel.x * -1;
+							rb.velocity = tempVel;
+							//print ("links zu rechts");
+						}
+					}
+				} 
+
+				rb.velocity = new Vector2 (rb.velocity.x, 0);
+
+				if (isSided && walljumpCounter > 0) {
+					walljumpCounter--;
+				} else {
+					doubled = true;
+				}
+				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor * 0.9f));
 				animator.SetTrigger("jump");
+				isGrounded = false;
+				groundCheckPause = true;
+				Invoke ("enableGroundCheck",jumpCooldown);
+
 			}
 		}
 
@@ -138,75 +218,74 @@ public class BaseCharacter : MonoBehaviour {
 		if( meleeAttackCounter < meleeAttackCooldown ){
 			meleeAttackCounter += Time.deltaTime;
 		}
-		
+
+		//Debuff
+		if(slowCounter > 0f){
+			slowCounter -= Time.deltaTime;
+			if(slowCounter <= 0f){
+				var sem = slowEffect.emission;
+				sem.enabled = false;
+			}
+		}
+
+		if(fireCounter > 0f){
+			fireCounter -= Time.deltaTime;
+			doDamage(fireDPS * Time.deltaTime);
+			if(fireCounter <= 0f){
+				var fem = fireEffect.emission;
+				fem.enabled = false;
+			}
+		}
 	}
 		
 	void OnTriggerEnter(Collider col)
 	{
 		if(col.gameObject.tag == "Border"){
-			Debug.Log("character hit border");
+			
 			currentHp = 0;
 			die();
-			spawn ();
 		}
 	}
-	
-	void OnCollisionEnter(Collision col){
+
+	// DEBUFF SECTION
+	void calculateDebuffFactors(){
+		speedFactor = 1f;
+		jumpFactor = 1f;
+		if (slowCounter > 0f) {
+			speedFactor *= 0.5f;
+			jumpFactor *= 0.5f;
+		}
+	}
+
+	void OnCollisionStay(Collision col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
 
 			switch (tempBlock.blockType) {
 			case "Fire":
+				fireCounter = debuffTime;
+				var fem = fireEffect.emission;
+				fem.enabled = true;
 				break;
 			case "Water":
 				break;
 			case "Bounce":
 				break;
 			case "Slow":
-				addSlowDebuff ();
+				slowCounter = debuffTime;
+				var sem = slowEffect.emission;
+				sem.enabled = true;
 				break;
 
 			}
 		}
-	}
-
-	void OnCollisionExit(Collision col){
-		if(col.gameObject.tag == "Block"){
-			Block tempBlock  = col.gameObject.GetComponent<Block>();
-
-			switch (tempBlock.blockType) {
-			case "Fire":
-				break;
-			case "Water":
-				break;
-			case "Bounce":
-				break;
-			case "Slow":
-				removeSlowDebuff ();
-				break;
-
-			}
-		}
-	}
-		
-	void addSlowDebuff(){
-		jumpForce = jumpForce / 2;
-		maxspeed = maxspeed / 2;
-		var em = slowEffekt.emission;
-		em.enabled = true;
-	}
-	void removeSlowDebuff(){
-		jumpForce = jumpForce * 2;
-		maxspeed = maxspeed * 2;
-		var em = slowEffekt.emission;
-		em.enabled = false;
 	}
 
 	void applyHorizontalMovement(float inputMovementstrength){
 		
 
 		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
-			rb.AddForce (new Vector2 (inputMovementstrength * maxspeed, 0));
+			rb.AddForce (new Vector2 (inputMovementstrength * maxspeed * speedFactor, 0));
 		}
 
 		if (inputMovementstrength < 0 && facingRight) {
@@ -222,22 +301,61 @@ public class BaseCharacter : MonoBehaviour {
 
 	void checkGroundStatus(){
 		isGrounded =  Physics.OverlapSphere (groundCheck.position, groundRadius, whatIsGround).Length!=0;
-
 	}
 
+	void checkSideStatus(){
+		bool isfrontSided = Physics.OverlapSphere (frontCheck.position, groundRadius, whatIsGround).Length!=0;
+		bool isbackSided = Physics.OverlapSphere (backCheck.position, groundRadius, whatIsGround).Length!=0;
+
+		isSided = isfrontSided || isbackSided;
+
+		if (!isSided) {
+			walljumpCounter = 3;
+		}
+	}
+
+
 	void spawn(){
+		gameObject.SetActive (true);
 		currentHp = maxHp;
+
+		slowCounter = 0f;
+		fireCounter = 0f;
+
+		var sem = slowEffect.emission;
+		var fem = fireEffect.emission;
+		sem.enabled = false;
+		fem.enabled = false;
+
 		var gObj = GameObject.Find("Player" + assignedPlayer + "_spawn");
 
 		rb.velocity = Vector3.zero;
 		if (gObj){
 			transform.position = gObj.transform.position;
+			rb.velocity = Vector3.zero;
 		}
 	}
 	
 	void die(){
+		rb.velocity = Vector3.zero;
 		animator.SetTrigger("isDead");
+		Invoke("spawn", 3);
+		gameObject.SetActive (false);
 	}
 
-}
+
+	public void enableGroundCheck(){
+		groundCheckPause = false;
+	}
+
+	public void doDamage(float dmg){
+		currentHp -= dmg;
 	
+		if (currentHp <= 0) {
+			die ();
+		}
+	}
+
+
+
+}

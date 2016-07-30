@@ -22,14 +22,14 @@ TagManager:
   - Collision
   - Ground
   - Border
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Team1Attack
+  - Team2Attack
+  - Team3Attack
+  - Team4Attack
+  - Team1Body
+  - Team2Body
+  - Team3Body
+  - Team4Body
   - 
   - 
   - 

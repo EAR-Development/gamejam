@@ -11,6 +11,7 @@ public class HumanPlayer : MonoBehaviour {
 	public int playerNumber;
 	UIUpdater uiUpdater;
 	bool instantiateUI=false;
+	public GameObject characterPrefab;
 	//character char
 	// Use this for initialization
 
@@ -36,6 +37,8 @@ public class HumanPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(instantiateUI){
+			Instantiate (characterPrefab);//TODO spawnpunkte?
+
 		kills = 0;
 		deaths = 0;
 		GameObject g =Instantiate (playerInfoUi);
