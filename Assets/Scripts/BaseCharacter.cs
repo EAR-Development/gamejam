@@ -37,7 +37,7 @@ public class BaseCharacter : MonoBehaviour {
 	private bool jumpkeyWasUsed = false;
 
 	void Start () {
-		//rb = GetComponent<Rigidbody>();
+		rb = GetComponent<Rigidbody>();
 		spawn ();
 		if(GetComponent<Animator>()){
 			animator = GetComponent<Animator>();
