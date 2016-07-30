@@ -384,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &181006
 GameObject:
   m_ObjectHideFlags: 1
@@ -969,14 +969,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   assignedPlayer: 1
+  debuffTime: 1
   slowEffect: {fileID: 19803856}
   fireEffect: {fileID: 19867376}
   currentHp: 100
   meleeAttackCounter: 1
   speedFactor: 1
   jumpFactor: 1
+  slowCounter: 0
+  fireCounter: 0
   rb: {fileID: 5452996}
-
   animator: {fileID: 9585280}
   jumpCooldown: 0.5
   groundCheckPause: 0
