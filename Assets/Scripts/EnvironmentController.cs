@@ -8,6 +8,8 @@ public class EnvironmentController : MonoBehaviour {
 	public Vector3 tempVec;
 	public GameObject[] aBlocks;
 
+	public bool rotate = true;
+
 	[Header("Timer")]
 	public float rotateTimer = 10f;
 	public float blockTimer = 5f;
