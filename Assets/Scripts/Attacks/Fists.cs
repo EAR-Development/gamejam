@@ -31,6 +31,9 @@ public class Fists : MonoBehaviour {
 				col.attachedRigidbody.AddForce(transform.forward * 500);
 			}
 			//col.GetComponent<Rigidbody>().AddForce(col.transform.root.transform.forward * 500);
+			BaseCharacter baseCharacter = col.gameObject.GetComponent<BaseCharacter>();
+
+			baseCharacter.doDamage (10);	
 		}
 	}
 }
