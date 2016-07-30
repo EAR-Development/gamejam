@@ -147,14 +147,12 @@ public class BaseCharacter : MonoBehaviour {
 	}
 		
 	void addSlowDebuff(){
-		Debug.Log("slow effect");
 		jumpForce = jumpForce / 2;
 		maxspeed = maxspeed / 2;
 		var em = slowEffekt.emission;
 		em.enabled = true;
 	}
 	void removeSlowDebuff(){
-		Debug.Log("slow effect removed");
 		jumpForce = jumpForce * 2;
 		maxspeed = maxspeed * 2;
 		var em = slowEffekt.emission;
@@ -169,12 +167,11 @@ public class BaseCharacter : MonoBehaviour {
 		}
 
 		if (inputMovementstrength < 0 && facingRight) {
-			print ("turn left");
 			facingRight = !facingRight;
 			transform.Rotate(new Vector3(0,180,0));
 		}
 		if (inputMovementstrength > 0 && !facingRight) {
-			print ("turn right");
+
 			facingRight = !facingRight;
 			transform.Rotate(new Vector3(0,180,0));
 		}
