@@ -45,10 +45,6 @@ public class BaseCharacter : MonoBehaviour {
 
 		float inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
 		applyHorizontalMovement (inputMovementstrength);
-		
-		
-		
-		
 	}
 		
 	void Update(){
@@ -56,6 +52,10 @@ public class BaseCharacter : MonoBehaviour {
 			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
 		}
 		bool jumpKeyDown = false;
+
+
+
+		// JUMP
 
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") != 0){
 
@@ -68,8 +68,7 @@ public class BaseCharacter : MonoBehaviour {
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") == 0){
 			jumpkeyWasUsed = false;
 		}  
-
-
+			
 		if ((isGrounded || !doubled) && jumpKeyDown) {
 			if (isGrounded) {
 				doubled = false;
@@ -82,6 +81,8 @@ public class BaseCharacter : MonoBehaviour {
 				animator.SetTrigger("jump");
 			}
 		}
+
+		//ATTACK
 		
 		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") ){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
@@ -149,14 +150,15 @@ public class BaseCharacter : MonoBehaviour {
 		Debug.Log("slow effect");
 		jumpForce = jumpForce / 2;
 		maxspeed = maxspeed / 2;
-		slowEffekt.Play ();
+		var em = slowEffekt.emission;
+		em.enabled = true;
 	}
 	void removeSlowDebuff(){
 		Debug.Log("slow effect removed");
 		jumpForce = jumpForce * 2;
 		maxspeed = maxspeed * 2;
-		slowEffekt.Stop ();
-		slowEffekt.Clear ();
+		var em = slowEffekt.emission;
+		em.enabled = false;
 	}
 
 	void applyHorizontalMovement(float inputMovementstrength){
@@ -164,6 +166,17 @@ public class BaseCharacter : MonoBehaviour {
 
 		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
 			rb.AddForce (new Vector2 (inputMovementstrength * maxspeed, 0));
+		}
+
+		if (inputMovementstrength < 0 && facingRight) {
+			print ("turn left");
+			facingRight = !facingRight;
+			transform.Rotate(new Vector3(0,180,0));
+		}
+		if (inputMovementstrength > 0 && !facingRight) {
+			print ("turn right");
+			facingRight = !facingRight;
+			transform.Rotate(new Vector3(0,180,0));
 		}
 	}
 
