@@ -247,8 +247,8 @@ GameObject:
   - 114: {fileID: 11484628}
   - 54: {fileID: 5449748}
   - 65: {fileID: 6598792}
-  m_Layer: 8
-  m_Name: Face_Idle
+  m_Layer: 17
+  m_Name: 3FacePlus1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -706,7 +706,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161140}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: -0.997, y: 0, z: 0}
+  m_LocalPosition: {x: -7.4720597, y: -8.515182, z: 6.439757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 492296}
@@ -895,16 +895,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
+  facingRight: 1
   maxHp: 100
   maxspeed: 20
   jumpForce: 260
   meleeAttackCooldown: 1
+  doubled: 0
   groundCheck: {fileID: 480044}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 768
   assignedPlayer: 1
   debuffTime: 1
+  jumpCooldown: 0.5
+  maxAirVelocity: 0
   slowEffect: {fileID: 19824510}
   fireEffect: {fileID: 19827498}
   currentHp: 100
@@ -915,8 +919,13 @@ MonoBehaviour:
   fireCounter: 0
   rb: {fileID: 5449748}
   animator: {fileID: 9584136}
-  jumpCooldown: 0.5
+  jumpkeyWasUsed: 0
   groundCheckPause: 0
+  isFlying: 0
+  jumpingMidAir: 0
+  sidedRight: 0
+  sidedLeft: 0
+  col_fists: []
 --- !u!137 &13704908
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

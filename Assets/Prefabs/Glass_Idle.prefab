@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11405352}
   - 54: {fileID: 5463060}
   - 65: {fileID: 6528354}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: Glass_Idle
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -719,16 +719,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
+  facingRight: 1
   maxHp: 100
   maxspeed: 20
   jumpForce: 260
   meleeAttackCooldown: 1
+  doubled: 0
   groundCheck: {fileID: 445258}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 768
   assignedPlayer: 1
   debuffTime: 1
+  jumpCooldown: 0.5
+  maxAirVelocity: 0
   slowEffect: {fileID: 19817540}
   fireEffect: {fileID: 19857272}
   currentHp: 100
@@ -739,8 +743,13 @@ MonoBehaviour:
   fireCounter: 0
   rb: {fileID: 5463060}
   animator: {fileID: 9566872}
-  jumpCooldown: 0.5
+  jumpkeyWasUsed: 0
   groundCheckPause: 0
+  isFlying: 0
+  jumpingMidAir: 0
+  sidedRight: 0
+  sidedLeft: 0
+  col_fists: []
 --- !u!137 &13730722
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -3871,7 +3880,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 106166}
