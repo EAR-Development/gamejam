@@ -57,6 +57,8 @@ public class BaseCharacter : MonoBehaviour {
 	public bool isFlying;
 	public bool jumpingMidAir;
 	public bool isSided;
+
+	public int walljumpCounter = 3;
 	
 	public Collider[] col_fists;
 
@@ -122,7 +124,7 @@ public class BaseCharacter : MonoBehaviour {
 			jumpkeyWasUsed = false;
 		}  
 			
-		if ((isGrounded || !doubled || isSided) && jumpKeyDown) {
+		if ((isGrounded || !doubled || (isSided && walljumpCounter > 0)) && jumpKeyDown) {
 			if (isGrounded) {
 				doubled = false;
 				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor));
@@ -159,8 +161,13 @@ public class BaseCharacter : MonoBehaviour {
 					}
 				} 
 
-				rb.velocity = new Vector2 (rb.velocity.x, 0); 
-				doubled = true;
+				rb.velocity = new Vector2 (rb.velocity.x, 0);
+
+				if (isSided && walljumpCounter > 0) {
+					walljumpCounter--;
+				} else {
+					doubled = true;
+				}
 				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor * 0.9f));
 				animator.SetTrigger("jump");
 				isGrounded = false;
@@ -308,6 +315,10 @@ public class BaseCharacter : MonoBehaviour {
 		bool isbackSided = Physics.OverlapSphere (backCheck.position, groundRadius, whatIsGround).Length!=0;
 
 		isSided = isfrontSided || isbackSided;
+
+		if (!isSided) {
+			walljumpCounter = 3;
+		}
 	}
 
 
