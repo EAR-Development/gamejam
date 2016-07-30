@@ -24,40 +24,34 @@ public class BaseCharacter : MonoBehaviour {
 
 	public int assignedPlayer = 1;
 
-	// Use this for initialization
+	private bool jumpkeyWasUsed = false;
+
 	void Start () {
 		spawn ();
 		rb = GetComponent<Rigidbody2D>();
 	}
-
-	void FixedUpdate(){
-		isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
-
-		float move = Input.GetAxis ("Player" + assignedPlayer + "_x");
-
 		
-		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
-			rb.AddForce (new Vector2 (move * maxspeed, 0));
-		}
+	void FixedUpdate(){
+		checkGroundStatus ();
+
+		float inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
+		applyHorizontalMovement (inputMovementstrength);
 	}
-
-
-	private bool m_isAxisInUse = false;
-
+		
 	void Update(){
-		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+		
 		bool jumpKeyDown = false;
 
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") != 0){
 
-			if(m_isAxisInUse == false)
+			if(jumpkeyWasUsed == false)
 			{
 				jumpKeyDown = true;
-				m_isAxisInUse = true;
+				jumpkeyWasUsed = true;
 			}
 		}
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") == 0){
-			m_isAxisInUse = false;
+			jumpkeyWasUsed = false;
 		}  
 
 
@@ -85,7 +79,6 @@ public class BaseCharacter : MonoBehaviour {
 		
 	}
 		
-
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if(col.gameObject.tag == "Border"){
@@ -93,50 +86,67 @@ public class BaseCharacter : MonoBehaviour {
 			currentHp = 0;
 			spawn ();
 		}
-		
-		
 	}
 	
 	void OnCollisionEnter2D(Collision2D col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
-			if(tempBlock.blockType == "Fire"){
-			
-			}
-			else if(tempBlock.blockType == "Water"){
-			
-			}
-			else if(tempBlock.blockType == "Bounce"){
-				
-			}
-			else if(tempBlock.blockType == "Slow"){
-				Debug.Log("slow effect");
-				rb.velocity = new Vector2 ((rb.velocity.x/2), (rb.velocity.y/2)); 
-				jumpForce = jumpForce / 2;
-				maxspeed = maxspeed / 2;
+
+			switch (tempBlock.blockType) {
+			case "Fire":
+				break;
+			case "Water":
+				break;
+			case "Bounce":
+				break;
+			case "Slow":
+				addSlowDebuff ();
+				break;
+
 			}
 		}
 	}
-	
-	
+
 	void OnCollisionExit2D(Collision2D col){
 		if(col.gameObject.tag == "Block"){
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
-			if(tempBlock.blockType == "Fire"){
-			
-			}
-			else if(tempBlock.blockType == "Water"){
-			
-			}
-			else if(tempBlock.blockType == "Bounce"){
-				
-			}
-			else if(tempBlock.blockType == "Slow"){
-				Debug.Log("slow effect");				
-				jumpForce = jumpForce * 2;
-				maxspeed = maxspeed * 2;
+
+			switch (tempBlock.blockType) {
+			case "Fire":
+				break;
+			case "Water":
+				break;
+			case "Bounce":
+				break;
+			case "Slow":
+				removeSlowDebuff ();
+				break;
+
 			}
 		}
+	}
+		
+	void addSlowDebuff(){
+		Debug.Log("slow effect");
+		jumpForce = jumpForce / 2;
+		maxspeed = maxspeed / 2;
+	}
+	void removeSlowDebuff(){
+		Debug.Log("slow effect removed");
+		jumpForce = jumpForce * 2;
+		maxspeed = maxspeed * 2;
+	}
+
+	void applyHorizontalMovement(float inputMovementstrength){
+		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+		if (Mathf.Abs(rb.velocity.x) < maxspeed) {
+			rb.AddForce (new Vector2 (inputMovementstrength * maxspeed, 0));
+		}
+	}
+
+	void checkGroundStatus(){
+		isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 	}
 
 	void spawn(){
@@ -150,5 +160,4 @@ public class BaseCharacter : MonoBehaviour {
 	}
 
 }
-
-
+	
