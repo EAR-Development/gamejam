@@ -38,6 +38,7 @@ public class BaseCharacter : MonoBehaviour {
 	[Header("Status")]
 	public float currentHp;
 	public float meleeAttackCounter; 
+	private bool isDead;
 
 	public float speedFactor = 1f;
 	public float jumpFactor = 1f;
@@ -316,8 +317,8 @@ public class BaseCharacter : MonoBehaviour {
 
 
 	void spawn(){
-		gameObject.SetActive (true);
 		currentHp = maxHp;
+		animator.SetLayerWeight (2, 0);
 
 		slowCounter = 0f;
 		fireCounter = 0f;
@@ -334,13 +335,20 @@ public class BaseCharacter : MonoBehaviour {
 			transform.position = gObj.transform.position;
 			rb.velocity = Vector3.zero;
 		}
+		rb.isKinematic = false;
+		isDead = false;
 	}
 	
 	void die(){
+		if (isDead) {
+			return;
+		}
 		rb.velocity = Vector3.zero;
+		animator.SetLayerWeight (2, 1);
 		animator.SetTrigger("isDead");
 		Invoke("spawn", 3);
-		gameObject.SetActive (false);
+		isDead = true;
+		rb.isKinematic = true;
 	}
 
 
