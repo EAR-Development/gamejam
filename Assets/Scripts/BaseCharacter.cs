@@ -37,12 +37,12 @@ public class BaseCharacter : MonoBehaviour {
 	public Animator animator;
 	private bool jumpkeyWasUsed = false;
 
-	public float jumpCooldown;
-	public bool jumpDisabled;
+	//public float jumpCooldown;
+	//public bool jumpDisabled;
 
 	void Start () {
 
-		jumpDisabled = true;
+		//jumpDisabled = true;
 		//rb = GetComponent<Rigidbody>();
 		spawn ();
 		if(GetComponent<Animator>()){
@@ -92,7 +92,7 @@ public class BaseCharacter : MonoBehaviour {
 				doubled = false;
 				rb.AddForce (new Vector2 (0, jumpForce * jumpFactor));
 				isGrounded = false;
-				Invoke ("reenableGrounded",0.3f);
+
 				animator.SetTrigger("jump");
 			} else {
 
@@ -263,10 +263,10 @@ public class BaseCharacter : MonoBehaviour {
 	}
 
 	void checkGroundStatus(){
-		if(!jumpDisabled){
+
 		isGrounded =  Physics.OverlapSphere (groundCheck.position, groundRadius, whatIsGround).Length!=0;
 
-		}
+		
 	}
 
 	void spawn(){
@@ -284,12 +284,7 @@ public class BaseCharacter : MonoBehaviour {
 	}
 
 
-	void reenableGrounded (){
-	
-		jumpDisabled = false;
 
-
-	}
 
 }
 	
