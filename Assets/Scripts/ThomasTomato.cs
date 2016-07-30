@@ -5,6 +5,8 @@ public class ThomasTomato : BaseCharacter {
 
 	// Use this for initialization
 		
+	public Collider[] col_fists;
+		
 	void Update(){
 		if(animator){
 			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
@@ -109,6 +111,23 @@ public class ThomasTomato : BaseCharacter {
 		
 		if( meleeAttackCounter < meleeAttackCooldown ){
 			meleeAttackCounter += Time.deltaTime;
+		}
+		
+		//Debuff
+		if(slowCounter > 0f){
+			slowCounter -= Time.deltaTime;
+			if(slowCounter <= 0f){
+				var sem = slowEffect.emission;
+				sem.enabled = false;
+			}
+		}
+
+		if(fireCounter > 0f){
+			fireCounter -= Time.deltaTime;
+			if(fireCounter <= 0f){
+				var fem = fireEffect.emission;
+				fem.enabled = false;
+			}
 		}
 		
 	}
