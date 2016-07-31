@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 public class StartGame : MonoBehaviour {
@@ -7,6 +8,7 @@ public class StartGame : MonoBehaviour {
 	public SelectorBox[] boxes;
 	public GameObject playerPrefab;
 	public GameObject[] playableCharacters;
+	public Slider slider;
 
 
 	// Use this for initialization
@@ -29,7 +31,7 @@ public class StartGame : MonoBehaviour {
 			if(boxes[i].selection!=0){
 				HumanPlayer p = Instantiate (playerPrefab).GetComponent<HumanPlayer>();
 				p.teamNumber = boxes [i].teamNumber;
-
+				p.lifesLeft = (int)slider.value;
 				GameController.playerList.Add (p);
 				p.nameHuman = boxes [i].nameInput.text;
 				playerCount++;

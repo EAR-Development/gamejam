@@ -14,6 +14,7 @@ public class HumanPlayer : MonoBehaviour {
 	public BaseCharacter character;
 	public GameObject characterPrefab;
 	public int teamNumber;
+	public int lifesLeft;
 
 	//character char
 	// Use this for initialization
