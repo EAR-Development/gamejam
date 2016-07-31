@@ -31,7 +31,7 @@ public class Block : MonoBehaviour {
 	public void setRandomType(){
 		if (blockType == "Normal") {
 			var rand = Random.Range (0f, 1f);
-			if (rand >= 0.98f) {
+			if (rand >= 0.99f) {
 				ChangeBlockType ("Invis");
 			} else if (rand >= 0.95f) {
 				ChangeBlockType ("Slow");
