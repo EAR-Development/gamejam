@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour {
 	public static int playersLeft{get; set;}
 	public static int TeamsLeft{get; set;}
 	public static int teams{get; set;}
+	public static AudioSource sceneSound{get; set;}
 
 
 

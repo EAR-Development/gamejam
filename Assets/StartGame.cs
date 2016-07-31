@@ -10,7 +10,7 @@ public class StartGame : MonoBehaviour {
 	public GameObject[] playableCharacters;
 	public Slider slider;
 
-
+	public AudioClip clip;
 	// Use this for initialization
 	void Start () {
 	
@@ -24,7 +24,8 @@ public class StartGame : MonoBehaviour {
 	}
 
 	public void changeScene(int scene){
-
+		GameController.sceneSound.clip = clip;
+		GameController.sceneSound.Play();
 		int playerCount=0;
 		for(int i=0;i<boxes.Length;i++){
 
