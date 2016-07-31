@@ -21,7 +21,9 @@ public class SelectorBox : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		arrowLeft.sprite=arrows[teamNumber-1];
+		arrowRight.sprite=arrows[teamNumber-1];
+		teamBar.sprite=teamBarSprites[teamNumber-1];
 
 	}
 	
