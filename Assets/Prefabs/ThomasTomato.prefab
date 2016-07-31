@@ -518,7 +518,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.122, y: 0, z: 0}
+  m_LocalPosition: {x: 3.2122831, y: -2.3893948, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 474872}
@@ -958,6 +958,9 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 492288
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 512
   assignedPlayer: 2
   debuffTime: 1
   fireDPS: 12
@@ -991,6 +994,7 @@ MonoBehaviour:
   col_fists:
   - {fileID: 13688006}
   - {fileID: 13650184}
+  player: {fileID: 0}
 --- !u!135 &13516044
 SphereCollider:
   m_ObjectHideFlags: 1
