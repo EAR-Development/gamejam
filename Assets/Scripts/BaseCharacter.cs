@@ -305,7 +305,7 @@ public class BaseCharacter : MonoBehaviour {
 			case "Bounce":
 				break;
 			case "Invis":
-				invisCounter = debuffTime * 2;
+				invisCounter = debuffTime * 3;
 				break;
 			case "Slow":
 				slowCounter = debuffTime;
