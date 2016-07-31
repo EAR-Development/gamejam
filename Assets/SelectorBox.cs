@@ -52,6 +52,7 @@ public class SelectorBox : MonoBehaviour {
 		if(selection<max){
 			selection++;
 			SelectionImage.sprite=sprites[selection];
+			GameController.sceneSound.Play();
 		}
 	}
 
@@ -59,6 +60,7 @@ public class SelectorBox : MonoBehaviour {
 		if(selection>min){
 			selection--;
 			SelectionImage.sprite=sprites[selection];
+			GameController.sceneSound.Play();
 		}
 	
 
