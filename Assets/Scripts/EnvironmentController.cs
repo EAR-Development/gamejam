@@ -23,6 +23,7 @@ public class EnvironmentController : MonoBehaviour {
 		PRELEFT, LEFT, PRERIGHT, RIGHT, NOROTATION 
 	}
 	public float preRotationCounter = 0f;
+	public float rotationStartDelay = 3.0f;
 
 	public Animator animator;
 
@@ -81,13 +82,13 @@ public class EnvironmentController : MonoBehaviour {
 		}
 
 
-		if(rotateCounter > rotateTimer && shouldRotate){
+		if(rotateCounter > (rotateTimer + rotationStartDelay) && shouldRotate){
 			if (Random.Range (0f, 1f) < 0.5f) {
 				rotateLeft ();
 			} else {
 				rotateRight ();
 			}
-
+			rotationStartDelay = 0;
 			rotateCounter = 0f;
 		}
 			
