@@ -1174,6 +1174,7 @@ MonoBehaviour:
   maxAirVelocity: 0
   slowEffect: {fileID: 19881784}
   fireEffect: {fileID: 19810212}
+  SpawnEffect: {fileID: 178584, guid: 2d60fcde3ef4aa54d922e8e0027b2cad, type: 2}
   borderDeathEffect: {fileID: 0}
   currentHp: 100
   meleeAttackCounter: 0
@@ -4444,6 +4445,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SpawnEffect
+      value: 
+      objectReference: {fileID: 178584, guid: 2d60fcde3ef4aa54d922e8e0027b2cad, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131966}
