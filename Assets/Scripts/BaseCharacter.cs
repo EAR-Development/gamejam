@@ -356,10 +356,10 @@ public class BaseCharacter : MonoBehaviour {
 	void spawn(){
 
 	
-		if(player.lifesLeft>0){
+		if (player.lifesLeft > 0) {
 
 			if (GameController.center.activeRotation != EnvironmentController.Rotations.NOROTATION) {
-				Invoke("spawn", 0.5f);	
+				Invoke ("spawn", 0.5f);	
 				return;
 			}
 			player.resetHealthBar ();
@@ -378,10 +378,10 @@ public class BaseCharacter : MonoBehaviour {
 			sem.enabled = false;
 			fem.enabled = false;
 
-			var gObj = GameObject.Find("Player" + assignedPlayer + "_spawn");
+			var gObj = GameObject.Find ("Player" + assignedPlayer + "_spawn");
 
 			rb.velocity = Vector3.zero;
-			if (gObj){
+			if (gObj) {
 				transform.position = gObj.transform.position;
 				rb.velocity = Vector3.zero;
 			}
@@ -390,7 +390,7 @@ public class BaseCharacter : MonoBehaviour {
 
 
 
-		}
+		} 
 
 	}
 	
@@ -404,8 +404,14 @@ public class BaseCharacter : MonoBehaviour {
 		rb.velocity = Vector3.zero;
 		animator.SetLayerWeight (2, 1);
 		animator.SetTrigger("isDead");		
+
+		if (player.lifesLeft > 0) {
+			
 		
-		Invoke("spawn", 4.0f);
+			Invoke ("spawn", 4.0f);
+		} else {
+			GameController.reportLost ();
+		}
 		isDead = true;
 		rb.isKinematic = true;
 	}

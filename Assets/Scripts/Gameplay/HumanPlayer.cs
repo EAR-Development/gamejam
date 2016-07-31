@@ -63,6 +63,7 @@ public class HumanPlayer : MonoBehaviour {
 		}
 
 	}
+		
 
 	public void repaint(){
 		uiUpdater.repaint ();
