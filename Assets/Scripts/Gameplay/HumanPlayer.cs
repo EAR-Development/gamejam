@@ -66,6 +66,7 @@ public class HumanPlayer : MonoBehaviour {
 		uiUpdater.repaint ();
 	}
 	public void resetHealthBar(){
+
 		uiUpdater.resetHealthbar ();
 	}
 

@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour {
 		float fov = GetComponent<Camera> ().fieldOfView;
 		float aspect = GetComponent<Camera> ().aspect;
 
-		Debug.Log (aspect);
+
 
 
 
