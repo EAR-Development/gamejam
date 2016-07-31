@@ -93,8 +93,6 @@ public class Block : MonoBehaviour {
 
 	void setBlockColor(Color color){
 		foreach (Transform child in transform) {
-			print (child);
-
 			if (child.name.StartsWith ("Cube")) {
 				GameObject childObject = child.gameObject;
 
