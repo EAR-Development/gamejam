@@ -42,12 +42,7 @@ public class CameraController : MonoBehaviour {
 		float xDistance = (xMax - xMin) * fovXFactor;
 		float yDistance = (yMax - yMin) * fovYFactor;
 
-
-		if (GameController.center.activeRotation != EnvironmentController.Rotations.NOROTATION) {
-			d = Mathf.Max (xDistance, yDistance, MINIMUMDISTANCE + 5);
-		} else {
-			d = Mathf.Max (xDistance, yDistance, MINIMUMDISTANCE);
-		}
+		d = Mathf.Max (xDistance, yDistance, MINIMUMDISTANCE);
 
 		float speedFactor = 1.8f;
 
@@ -58,8 +53,12 @@ public class CameraController : MonoBehaviour {
 
 		print (distance.magnitude);
 
+		//ZOOM
+		Vector3 zoomVector = Vector3.Lerp (new Vector3(0,0,transform.position.z), new Vector3 (0,0, -d), Time.deltaTime * 2);
+		//PAN
+		Vector3 panVector = Vector3.Lerp (new Vector3(transform.position.x, transform.position.y,0), new Vector3 ((xMin + xMax) / 2, (yMin + yMax) / 2,0), Time.deltaTime / speedFactor);
 
-		transform.position = Vector3.Lerp (transform.position, new Vector3 ((xMin + xMax) / 2, (yMin + yMax) / 2, -d), Time.deltaTime / speedFactor);
+		transform.position = panVector + zoomVector;
 	}
 
 	void calculateContainingRectangle(){
@@ -70,13 +69,13 @@ public class CameraController : MonoBehaviour {
 		foreach (HumanPlayer player in GameController.playerList) {
 			float x = player.character.transform.position.x;
 
-			xMin = Mathf.Min (x, xMin);
-			xMax = Mathf.Max (x, xMax);
+			xMin = Mathf.Min (x-2,xMin);
+			xMax = Mathf.Max (x+2, xMax);
 
 			float y = player.character.transform.position.y;
 
-			yMin = Mathf.Min (y, yMin);
-			yMax = Mathf.Max (y, yMax);
+			yMin = Mathf.Min (y-2, yMin);
+			yMax = Mathf.Max (y+2, yMax);
 		}
 	}
 }
