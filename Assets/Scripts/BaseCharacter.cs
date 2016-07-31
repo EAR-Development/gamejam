@@ -35,6 +35,7 @@ public class BaseCharacter : MonoBehaviour {
 	[Header("Partikel")]
 	public ParticleSystem slowEffect;
 	public ParticleSystem fireEffect;
+	public GameObject SpawnEffect;
 	public ParticleSystem borderDeathEffect;
 
 
@@ -385,13 +386,13 @@ public class BaseCharacter : MonoBehaviour {
 				transform.position = gObj.transform.position;
 				rb.velocity = Vector3.zero;
 			}
+
+			GameObject.Instantiate (SpawnEffect, gObj.transform.position, gObj.transform.rotation);
+
 			rb.isKinematic = false;
 			isDead = false;
 
-
-
 		}
-
 	}
 	
 	void die(){
