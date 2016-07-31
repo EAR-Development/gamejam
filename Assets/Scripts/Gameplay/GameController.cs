@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour {
 
 	public static int totalPlayers{ get; set;}
 	public static List<HumanPlayer> playerList{get; set;}
+	public static Camera cam{get; set;}
 
 
 	// Use this for initialization

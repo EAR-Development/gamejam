@@ -20,6 +20,7 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GameController.cam = GetComponent<Camera> ();
 		allPlayer = GameObject.FindGameObjectsWithTag("Player");
 		float fov = GetComponent<Camera> ().fieldOfView;
 		float aspect = GetComponent<Camera> ().aspect;
