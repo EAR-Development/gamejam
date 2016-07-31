@@ -49,7 +49,10 @@ public class HumanPlayer : MonoBehaviour {
 		deaths = 0;
 		GameObject g =Instantiate (playerInfoUi);
 		g.transform.parent = GameObject.Find ("Canvas").transform;
-		g.GetComponent<RectTransform> ().position = new Vector3 ((Screen.width ) / GameController.totalPlayers * playerNumber,200,0);
+
+			g.GetComponent<RectTransform> ().position = new Vector3 ((Screen.width) / (GameController.totalPlayers +1) * playerNumber, Screen.height / 10, 0);
+
+
 		uiUpdater = g.GetComponent<UIUpdater> ();
 			uiUpdater.character = character;
 		uiUpdater.player = this;
@@ -63,7 +66,7 @@ public class HumanPlayer : MonoBehaviour {
 		uiUpdater.repaint ();
 	}
 	public void resetHealthBar(){
-		
+		uiUpdater.resetHealthbar ();
 	}
 
 	//public void

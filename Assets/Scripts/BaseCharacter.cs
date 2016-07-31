@@ -380,6 +380,7 @@ public class BaseCharacter : MonoBehaviour {
 		if (isDead) {
 			return;
 		}
+		player.resetHealthBar ();
 		rb.velocity = Vector3.zero;
 		animator.SetLayerWeight (2, 1);
 		animator.SetTrigger("isDead");		
@@ -397,6 +398,7 @@ public class BaseCharacter : MonoBehaviour {
 		audioSource.clip = audioClips[2];
 		audioSource.Play();
 		*/
+		player.resetHealthBar ();
 		rb.velocity = Vector3.zero;
 		Invoke("spawn", 4.0f);
 		isDead = true;

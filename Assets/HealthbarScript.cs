@@ -26,7 +26,7 @@ public class HealthbarScript : MonoBehaviour {
 			fragmentTransforms [i].transform.parent = transform;
 			fragmentTransforms [i].position = transform.position;
 			Vector3 tempVec=fragmentTransforms[i].position;
-			tempVec.x += i * offsetx;
+			tempVec.x += i * offsetx -fragmentTransforms [i].rect.width ;
 			fragmentTransforms [i].position = tempVec;
 
 		}
