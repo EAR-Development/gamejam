@@ -36,6 +36,8 @@ public class EnvironmentController : MonoBehaviour {
 		if(GetComponent<Animator>()){
 			animator = GetComponent<Animator>();
 		}
+
+		GameController.center = this;
 	}
 	
 	public void Update(){		
@@ -67,6 +69,12 @@ public class EnvironmentController : MonoBehaviour {
 					SetTargetAngle(tempVec);
 				}
 			}
+		}
+
+		Vector3 deltaAngle = currentAngle - targetAngle;
+
+		if (Mathf.Abs(deltaAngle.z) < 15 && (activeRotation == Rotations.LEFT || activeRotation == Rotations.RIGHT)) {
+			activeRotation = Rotations.NOROTATION;
 		}
 
 

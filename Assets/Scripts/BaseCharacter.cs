@@ -352,6 +352,11 @@ public class BaseCharacter : MonoBehaviour {
 
 
 	void spawn(){
+		if (GameController.center.activeRotation != EnvironmentController.Rotations.NOROTATION) {
+			Invoke("spawn", 0.5f);	
+			return;
+		}
+
 		gameObject.SetActive (true);
 		currentHp = maxHp;
 		animator.SetLayerWeight (2, 0);
