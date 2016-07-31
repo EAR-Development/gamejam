@@ -5,7 +5,7 @@ public class CameraController : MonoBehaviour {
 
 	public GameObject[] allPlayer;
 
-	private static float MINIMUMDISTANCE = 18f;
+	private static float MINIMUMDISTANCE = 13f;
 
 	private float xMin;
 	private float xMax;
@@ -37,17 +37,22 @@ public class CameraController : MonoBehaviour {
 	void Update () {
 		calculateContainingRectangle ();
 
-		float d = Mathf.Max (xMax - xMin, yMax - yMin, 20);
+		float d;
 
 		float xDistance = (xMax - xMin) * fovXFactor;
 		float yDistance = (yMax - yMin) * fovYFactor;
 
-		d = Mathf.Max (xDistance, yDistance, MINIMUMDISTANCE);
+
+		if (GameController.center.activeRotation != EnvironmentController.Rotations.NOROTATION) {
+			d = Mathf.Max (xDistance, yDistance, MINIMUMDISTANCE + 5);
+		} else {
+			d = Mathf.Max (xDistance, yDistance, MINIMUMDISTANCE);
+		}
 
 		float speedFactor = 1.8f;
 
 		Vector3 distance = transform.position - new Vector3 ((xMin + xMax) / 2, (yMin + yMax) / 2, -d);
-		if (distance.magnitude > 5) {
+		if (distance.magnitude > 9) {
 			speedFactor = 0.5f;
 		}
 
