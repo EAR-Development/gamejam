@@ -23,6 +23,9 @@ public class ProfM_AnimDefAtk : StateMachineBehaviour
     {
 		//colliders[0].enabled = false;
 		colliders[0].enabled = false;
+		for(int i = 0; i < characterScript.col_fists.Length; i++){
+			characterScript.col_fists[i].GetComponent<Fists>().hitColliders.Clear();
+		}
     }
 	
 	override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

@@ -27,6 +27,9 @@ public class ThreeFaceDownAtk : StateMachineBehaviour
 		colliders[2].enabled = false;
 		colliders[4].enabled = false;
 		colliders[1].enabled = false;
+		for(int i = 0; i < characterScript.col_fists.Length; i++){
+			characterScript.col_fists[i].GetComponent<Fists>().hitColliders.Clear();
+		}
     }
 	
 	override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

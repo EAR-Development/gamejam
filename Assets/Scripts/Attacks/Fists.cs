@@ -7,7 +7,7 @@ public class Fists : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		hitColliders = new List<Colliders>();
+		hitColliders = new List<Collider>();
 	}
 	
 	// Update is called once per frame
@@ -25,22 +25,27 @@ public class Fists : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider col ){
 		if(col.gameObject.tag == "Player"){
-			hitColliders.Add(col);
-		
-			Debug.Log("player hit");
-			if(transform.root.gameObject.name == "ProfM" || transform.root.gameObject.name == "ThomasTomato"){
-				col.attachedRigidbody.AddForce(transform.right * 500);
-			}
-			else if(transform.root.gameObject.name == "3FacePlus1" ){
-				col.attachedRigidbody.AddForce(-transform.right * 500);
+			
+			if(hitColliders.Contains(col)){
+				Debug.Log("player already hit");
 			}
 			else {
-				col.attachedRigidbody.AddForce(transform.forward * 500);
-			}
-			//col.GetComponent<Rigidbody>().AddForce(col.transform.root.transform.forward * 500);
-			BaseCharacter baseCharacter = col.gameObject.GetComponent<BaseCharacter>();
+				hitColliders.Add(col);
+				Debug.Log("player hit");
+				if(transform.root.gameObject.name == "ProfM" || transform.root.gameObject.name == "ThomasTomato"){
+					col.attachedRigidbody.AddForce(transform.right * 500);
+				}
+				else if(transform.root.gameObject.name == "3FacePlus1" ){
+					col.attachedRigidbody.AddForce(-transform.right * 500);
+				}
+				else {
+					col.attachedRigidbody.AddForce(transform.forward * 500);
+				}
+				//col.GetComponent<Rigidbody>().AddForce(col.transform.root.transform.forward * 500);
+				BaseCharacter baseCharacter = col.gameObject.GetComponent<BaseCharacter>();
 
-			baseCharacter.doDamage (10);	
+				baseCharacter.doDamage (10);	
+			}
 		}
 	}
 }
