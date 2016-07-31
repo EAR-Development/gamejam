@@ -97,7 +97,7 @@ public class BaseCharacter : MonoBehaviour {
 
 		if(jumpingMidAir){
 			if(rb.velocity.magnitude>maxAirVelocity){
-				rb.velocity *= 0.9f;
+				rb.velocity *= 0.7f;
 
 			}
 		}
@@ -361,9 +361,7 @@ public class BaseCharacter : MonoBehaviour {
 		}
 		rb.velocity = Vector3.zero;
 		animator.SetLayerWeight (2, 1);
-		animator.SetTrigger("isDead");
-		
-		
+		animator.SetTrigger("isDead");		
 		
 		Invoke("spawn", 4.0f);
 		isDead = true;

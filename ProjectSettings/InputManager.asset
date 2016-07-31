@@ -13,9 +13,9 @@ InputManager:
     positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 10
+    gravity: 3
     dead: 0.001
-    sensitivity: 3
+    sensitivity: 10
     snap: 1
     invert: 0
     type: 0
@@ -63,7 +63,7 @@ InputManager:
     altPositiveButton: 
     gravity: 3
     dead: 0.001
-    sensitivity: 3
+    sensitivity: 10
     snap: 1
     invert: 0
     type: 0
@@ -329,13 +329,13 @@ InputManager:
     m_Name: Player3_x
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: '[3]'
-    positiveButton: '[1]'
+    negativeButton: '[1]'
+    positiveButton: '[3]'
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
     dead: 0.001
-    sensitivity: 3
+    sensitivity: 10
     snap: 1
     invert: 0
     type: 0
