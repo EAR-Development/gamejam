@@ -1354,8 +1354,8 @@ MonoBehaviour:
   - {fileID: 0}
   shouldRotate: 1
   RotationFactor: 0.5
-  rotateTimer: 10
-  blockTimer: 5
+  rotateTimer: 13
+  blockTimer: 6
   rotateCounter: 0
   blockCounter: 0
   preRotationCounter: 0
