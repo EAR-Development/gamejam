@@ -190,56 +190,7 @@ public class BaseCharacter : MonoBehaviour {
 			}
 		}
 
-		//ATTACK
-		//Attack while standing still
-		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0)){
-			if( meleeAttackCounter >= meleeAttackCooldown ){
-				audioSource.clip = audioClips[0];
-				audioSource.Play();
-				animator.SetBool("atkDefault",true);
-				meleeAttackCounter = 0;
-			} 
-		}			
-		//attack while moving on X		
-		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") != 0)){
-			if( meleeAttackCounter >= meleeAttackCooldown ){
-				audioSource.clip = audioClips[0];
-				audioSource.Play();
-				animator.SetBool("atkForward",true);
-				meleeAttackCounter = 0;
-			} 
-		}
-		//Attack up
-		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
-			if( meleeAttackCounter >= meleeAttackCooldown ){
-				audioSource.clip = audioClips[0];
-				audioSource.Play();
-				animator.SetBool("atkUp",true);
-				meleeAttackCounter = 0;
-			} 
-		}
-		//attack while moving down
-		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") < 0)){
-			if( meleeAttackCounter >= meleeAttackCooldown ){
-				audioSource.clip = audioClips[0];
-				audioSource.Play();
-				animator.SetBool("atkDown",true);
-				meleeAttackCounter = 0;
-			} 
-		}
-		//attack while moving up
-		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
-			if( meleeAttackCounter >= meleeAttackCooldown ){
-				audioSource.clip = audioClips[0];
-				audioSource.Play();
-				animator.SetBool("atkForward",true);
-				meleeAttackCounter = 0;
-			} 
-		}
-		
-		if( meleeAttackCounter < meleeAttackCooldown ){
-			meleeAttackCounter += Time.deltaTime;
-		}
+		attack ();
 
 		//Debuff
 		if(slowCounter > 0f){
@@ -488,5 +439,56 @@ public class BaseCharacter : MonoBehaviour {
 
 	}
 
+	public void attack(){
+		//ATTACK
+		//Attack while standing still
+		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				audioSource.clip = audioClips[0];
+				audioSource.Play();
+				animator.SetBool("atkDefault",true);
+				meleeAttackCounter = 0;
+			} 
+		}			
+		//attack while moving on X		
+		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") != 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				audioSource.clip = audioClips[0];
+				audioSource.Play();
+				animator.SetBool("atkForward",true);
+				meleeAttackCounter = 0;
+			} 
+		}
+		//Attack up
+		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				audioSource.clip = audioClips[0];
+				audioSource.Play();
+				animator.SetBool("atkUp",true);
+				meleeAttackCounter = 0;
+			} 
+		}
+		//attack while moving down
+		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") < 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				audioSource.clip = audioClips[0];
+				audioSource.Play();
+				animator.SetBool("atkDown",true);
+				meleeAttackCounter = 0;
+			} 
+		}
+		//attack while moving up
+		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
+			if( meleeAttackCounter >= meleeAttackCooldown ){
+				audioSource.clip = audioClips[0];
+				audioSource.Play();
+				animator.SetBool("atkForward",true);
+				meleeAttackCounter = 0;
+			} 
+		}
 
+		if( meleeAttackCounter < meleeAttackCooldown ){
+			meleeAttackCounter += Time.deltaTime;
+		}
+	}
 }
