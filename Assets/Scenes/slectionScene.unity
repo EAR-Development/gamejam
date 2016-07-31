@@ -823,6 +823,7 @@ MonoBehaviour:
   - {fileID: 106166, guid: f95f15d42cce01c4bba1b4995e05c488, type: 2}
   - {fileID: 161140, guid: 09d85b92b81730e48a3519a0013ee1e0, type: 2}
   - {fileID: 131966, guid: 2350a3582520a5f408868db84cabdb33, type: 2}
+  - {fileID: 169344, guid: 27e29ad56d6818940947392f6a5918ab, type: 2}
   slider: {fileID: 151471870}
   clip: {fileID: 8300000, guid: b9bef0dd58e30af49a1a624bdae7d076, type: 3}
 --- !u!1 &196542343

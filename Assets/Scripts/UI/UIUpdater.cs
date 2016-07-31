@@ -59,7 +59,7 @@ public class UIUpdater : MonoBehaviour {
 
 
 		}
-
+		
 	}
 
 
