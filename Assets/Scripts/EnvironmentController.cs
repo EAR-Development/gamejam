@@ -56,22 +56,25 @@ public class EnvironmentController : MonoBehaviour {
 		rotateCounter += Time.deltaTime;
 		blockCounter += Time.deltaTime;
 
+		Vector3 deltaAngle = currentAngle - targetAngle;
+
 		if (activeRotation == Rotations.PRELEFT || activeRotation == Rotations.PRERIGHT) {
-			rotateCounter += Time.deltaTime;
-			if (rotateCounter > 2f) {
+			if (Mathf.Abs(deltaAngle.z) < 1) {
 				if (activeRotation == Rotations.PRELEFT){
 					activeRotation = Rotations.LEFT;
-					tempVec +=  new Vector3(0f, 0f, 100f);
+					rotationDone = 0;
+					tempVec +=  new Vector3(0f, 0f, 95f);
 					SetTargetAngle(tempVec);
 				}else{
 					activeRotation = Rotations.RIGHT;
-					tempVec -=  new Vector3(0f, 0f, 100f);
+					rotationDone = 0;
+					tempVec -=  new Vector3(0f, 0f, 95f);
 					SetTargetAngle(tempVec);
 				}
 			}
 		}
 
-		Vector3 deltaAngle = currentAngle - targetAngle;
+
 
 		if (Mathf.Abs(deltaAngle.z) < 15 && (activeRotation == Rotations.LEFT || activeRotation == Rotations.RIGHT)) {
 			activeRotation = Rotations.NOROTATION;
@@ -101,22 +104,29 @@ public class EnvironmentController : MonoBehaviour {
 	void rotateLeft(){
 		activeRotation = Rotations.PRELEFT;
 		rotateCounter = 0f;
-		tempVec -=  new Vector3(0f, 0f, 10f);
+		rotationDone = 0;
+		tempVec -=  new Vector3(0f, 0f, 5f);
 		SetTargetAngle(tempVec);
 	}
 	void rotateRight(){
 		activeRotation = Rotations.PRERIGHT;
 		rotateCounter = 0f;
-		tempVec +=  new Vector3(0f, 0f, 10f);
+		rotationDone = 0;
+		tempVec +=  new Vector3(0f, 0f, 5f);
 		SetTargetAngle(tempVec);
 	}
 
-	public void Rotate(Vector3 targetAngle) 	{
-		//public Vector3 targetAngle = new Vector3(0f, 0f, 90f);
+	float rotationDone = 0;
+
+	public void Rotate(Vector3 targetAngle){
+
+		rotationDone += Time.deltaTime * RotationFactor;
+
 		currentAngle = new Vector3(
-		Mathf.LerpAngle(currentAngle.x, targetAngle.x, Time.deltaTime * RotationFactor),
-			Mathf.LerpAngle(currentAngle.y, targetAngle.y, Time.deltaTime * RotationFactor),
-			Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime* RotationFactor));
+			currentAngle.x,
+			currentAngle.y,
+			Mathf.LerpAngle(currentAngle.z, targetAngle.z, rotationDone)
+		);
 
 		transform.eulerAngles = currentAngle;
 	}
