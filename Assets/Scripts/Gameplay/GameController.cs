@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour {
 	public static int totalPlayers{ get; set;}
 	public static List<HumanPlayer> playerList{get; set;}
 	public static Camera cam{get; set;}
-
+	public static EnvironmentController center{get; set;}
 
 	// Use this for initialization
 	void Start () {

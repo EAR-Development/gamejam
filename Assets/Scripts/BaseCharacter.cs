@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class BaseCharacter : MonoBehaviour {
@@ -352,7 +352,15 @@ public class BaseCharacter : MonoBehaviour {
 
 
 	void spawn(){
+
 		player.resetHealthBar ();
+
+		if (GameController.center.activeRotation != EnvironmentController.Rotations.NOROTATION) {
+			Invoke("spawn", 0.5f);	
+			return;
+		}
+
+
 		gameObject.SetActive (true);
 		currentHp = maxHp;
 		animator.SetLayerWeight (2, 0);
