@@ -8,16 +8,20 @@ public class Block : MonoBehaviour {
 
 	[Header("Materials")]
 
-	public Material normalMaterial;
-	public Material slowMaterial;
-	public Material fireMaterial;
+	public Color normalColor = Color.white;
+	public Color slowColor = Color.yellow;
+	public Color fireColor = Color.red;
+	public Color invisColor = Color.magenta;
+	public Color bounceColor = Color.green;
+	public PhysicMaterial bouncePhysicMaterial;
 
 	public Renderer rend;
 	
 	// Use this for initialization
 	void Start () {
-		rend = GetComponent<Renderer> ();
-		rend.enabled = true;
+		//rend = GetComponent<Renderer> ();
+		//rend.enabled = true;
+		setBlockColor(normalColor);
 
 		setRandomType ();
 	}
@@ -28,13 +32,22 @@ public class Block : MonoBehaviour {
 	}
 
 	public void setRandomType(){
-		var rand = Random.Range (0f, 1f);
-		if (rand >= 0.8f) {
-			ChangeBlockType("Slow");
-		}else if (rand >= 0.6f) {
-			ChangeBlockType("Fire");
-		}else{
-			ChangeBlockType("Normal");
+		if (blockType == "Normal") {
+			var rand = Random.Range (0f, 1f);
+			if (rand >= 0.99f) {
+				ChangeBlockType ("Invis");
+			} else if (rand >= 0.95f) {
+				ChangeBlockType ("Slow");
+			} else if (rand >= 0.93f) {
+				ChangeBlockType ("Fire");
+			} else if (rand >= 0.91f) {
+				ChangeBlockType ("Bounce");
+			}
+		} else {
+			var rand = Random.Range (0f, 1f);
+			if (rand <= 0.4f) {
+				ChangeBlockType ("Normal");
+			}
 		}
 	}
 	
@@ -56,14 +69,37 @@ public class Block : MonoBehaviour {
 
 		switch(type){
 		case "Slow":
-			rend.sharedMaterial = slowMaterial;
+			setBlockColor (slowColor);
+			transform.GetComponent<BoxCollider>().material = null;
 			break;
 		case "Fire":
-			rend.sharedMaterial = fireMaterial;
+			setBlockColor (fireColor);
+			transform.GetComponent<BoxCollider>().material = null;
 			break;
 		case "Normal":
-			rend.sharedMaterial = normalMaterial;
+			setBlockColor (normalColor);
+			transform.GetComponent<BoxCollider>().material = null;
 			break;
+		case "Invis":
+			setBlockColor (invisColor);
+			transform.GetComponent<BoxCollider>().material = null;
+			break;
+		case "Bounce":
+			setBlockColor (bounceColor);
+			transform.GetComponent<BoxCollider>().material = bouncePhysicMaterial;
+			break;
+		}
+	}
+
+	void setBlockColor(Color color){
+		foreach (Transform child in transform) {
+			if (child.name.StartsWith ("Cube")) {
+				GameObject childObject = child.gameObject;
+
+				Renderer renderer = childObject.GetComponent<Renderer>();
+				Material mat = renderer.material;
+				mat.SetColor ("_EmissionColor", color);
+			}
 		}
 	}
 	

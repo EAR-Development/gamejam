@@ -109,13 +109,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockType: 
   isVisible: 0
+  normalMaterial: {fileID: 2100000, guid: dac5edd4dea1a5643b95dbffade8a3e3, type: 2}
+  slowMaterial: {fileID: 2100000, guid: 9060ba94f9e879d419a85956cf105199, type: 2}
+  fireMaterial: {fileID: 2100000, guid: d12fdb0acdad17a42a75353cabd8f2d1, type: 2}
+  invisMaterial: {fileID: 2100000, guid: 73f84a885b2255a4f91850909433b9d8, type: 2}
+  rend: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: normalMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: dac5edd4dea1a5643b95dbffade8a3e3, type: 2}
+    - target: {fileID: 0}
+      propertyPath: slowMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9060ba94f9e879d419a85956cf105199, type: 2}
+    - target: {fileID: 0}
+      propertyPath: fireMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: d12fdb0acdad17a42a75353cabd8f2d1, type: 2}
+    - target: {fileID: 0}
+      propertyPath: invisMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 73f84a885b2255a4f91850909433b9d8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 192896}

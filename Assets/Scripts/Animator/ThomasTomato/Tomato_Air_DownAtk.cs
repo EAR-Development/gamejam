@@ -23,15 +23,18 @@ public class Tomato_Air_DownAtk : StateMachineBehaviour
     {
 		colliders[0].enabled = false;
 		colliders[1].enabled = false;
+		for(int i = 0; i < characterScript.col_fists.Length; i++){
+			characterScript.col_fists[i].GetComponent<Fists>().hitColliders.Clear();
+		}
     }
 	
 	override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 		if(characterScript.facingRight){
-			rb.AddForce(new Vector2 (21, -21));
+			rb.AddForce(new Vector2 (14, -14));
 		}
 		else {
-			rb.AddForce(new Vector2 (-21, -21));
+			rb.AddForce(new Vector2 (-14, -14));
 		}
 		
     }
