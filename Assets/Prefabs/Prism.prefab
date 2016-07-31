@@ -404,7 +404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &181006
 GameObject:
   m_ObjectHideFlags: 1
@@ -1176,8 +1176,8 @@ MonoBehaviour:
   isGrounded: 0
   facingRight: 1
   maxHp: 100
-  maxspeed: 20
-  jumpForce: 300
+  maxspeed: 18
+  jumpForce: 420
   meleeAttackCooldown: 1
   doubled: 0
   groundCheck: {fileID: 450964}
@@ -1211,7 +1211,7 @@ MonoBehaviour:
   jumpkeyWasUsed: 0
   groundCheckPause: 0
   isFlying: 0
-  jumpingMidAir: 1
+  jumpingMidAir: 0
   isSided: 0
   walljumpCounter: 3
   onFireHitSoundInterval: 0.4
