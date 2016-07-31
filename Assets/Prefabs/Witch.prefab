@@ -45,6 +45,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &117798
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 435684}
+  m_Layer: 9
+  m_Name: backChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &129778
 GameObject:
   m_ObjectHideFlags: 1
@@ -171,6 +186,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &165948
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 401564}
+  m_Layer: 9
+  m_Name: frontChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &169344
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +210,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 415738}
   - 95: {fileID: 9591300}
-  - 114: {fileID: 11418736}
+  - 114: {fileID: 11480560}
   - 54: {fileID: 5490250}
   - 65: {fileID: 6596132}
   - 82: {fileID: 8291490}
@@ -276,6 +306,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 460842}
+  - 96: {fileID: 9640340}
   m_Layer: 0
   m_Name: CATRigHub002
   m_TagString: Untagged
@@ -296,6 +327,18 @@ Transform:
   - {fileID: 451914}
   m_Father: {fileID: 423582}
   m_RootOrder: 1
+--- !u!4 &401564
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165948}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: -0.065, y: 0.31199998, z: 0.467}
+  m_LocalScale: {x: 0.5425611, y: 0.8191521, z: 1}
+  m_Children: []
+  m_Father: {fileID: 498292}
+  m_RootOrder: 7
 --- !u!4 &405010
 Transform:
   m_ObjectHideFlags: 1
@@ -352,7 +395,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.576, y: 0, z: 0}
+  m_LocalPosition: {x: -1.576, y: -2.33, z: 1.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 483664}
@@ -410,6 +453,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 498292}
   m_RootOrder: 4
+--- !u!4 &435684
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117798}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: -0.065, y: 0.31200045, z: -0.364}
+  m_LocalScale: {x: 0.5425611, y: 0.8191521, z: 1}
+  m_Children: []
+  m_Father: {fileID: 498292}
+  m_RootOrder: 8
 --- !u!4 &437542
 Transform:
   m_ObjectHideFlags: 1
@@ -514,6 +569,8 @@ Transform:
   - {fileID: 431282}
   - {fileID: 405714}
   - {fileID: 473376}
+  - {fileID: 401564}
+  - {fileID: 435684}
   m_Father: {fileID: 415738}
   m_RootOrder: 2
 --- !u!54 &5404436
@@ -539,13 +596,13 @@ Rigidbody:
   m_GameObject: {fileID: 169344}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1.5
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &6549760
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -580,7 +637,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -661,7 +718,66 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11418736
+--- !u!96 &9640340
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199362}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 35f776e03e0c69d4784869a940a96f47, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.3
+  m_StartWidth: 0.2
+  m_EndWidth: 0.04
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4288937925
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4284218275
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4281328987
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 4548954
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+--- !u!114 &11446334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitColliders: []
+--- !u!114 &11480560
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -669,29 +785,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 169344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c216f0587c71cfe43af32d036ded5a7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b0351d642696bb4281bc05100b4bb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
   facingRight: 1
   maxHp: 100
-  maxspeed: 20
+  maxspeed: 18
   jumpForce: 420
   meleeAttackCooldown: 1
   doubled: 0
-  characterClass: 
+  characterClass: Witch
   groundCheck: {fileID: 428606}
-  frontCheck: {fileID: 0}
-  backCheck: {fileID: 0}
+  frontCheck: {fileID: 401564}
+  backCheck: {fileID: 435684}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 492288
   whatIsWall:
     serializedVersion: 2
-    m_Bits: 0
-  assignedPlayer: 2
+    m_Bits: 512
+  assignedPlayer: 1
   debuffTime: 1
-  fireDPS: 0
+  fireDPS: 12
   jumpCooldown: 0.3
   maxAirVelocity: 5
   slowEffect: {fileID: 19846236}
@@ -718,26 +834,14 @@ MonoBehaviour:
   jumpingMidAir: 0
   isSided: 0
   walljumpCounter: 3
-  onFireHitSoundInterval: 0
-  onFireHitSoundCounter: 0
+  onFireHitSoundInterval: 0.4
+  onFireHitSoundCounter: 0.4
   col_fists:
   - {fileID: 6549760}
   - {fileID: 6549760}
   aMeshes:
   - {fileID: 13714858}
   player: {fileID: 0}
---- !u!114 &11446334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitColliders: []
 --- !u!137 &13714858
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: a810eda1afe45cf43b2c3534b4da6533, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1366,15 +1366,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selection: 0
-  max: 5
+  max: 6
   min: 0
   sprites:
   - {fileID: 21300000, guid: dd0d0539cfc79cf469bac1f962d6acc0, type: 3}
-  - {fileID: 21300000, guid: d86eb7357e21e1f42b9449263e16731f, type: 3}
-  - {fileID: 21300000, guid: 7c87132dbdcd64d4380ea0e3e5f3b8a5, type: 3}
-  - {fileID: 21300000, guid: 1091a0e85b9f41e439df8cb12eed4d1f, type: 3}
+  - {fileID: 21300000, guid: 369e458631d737241b132a6cf20be15e, type: 3}
+  - {fileID: 21300000, guid: 31e01b4171e04d441ad9ca8717e20eb9, type: 3}
+  - {fileID: 21300000, guid: 961b3de8ee5e2f641acf12704e92652e, type: 3}
   - {fileID: 21300000, guid: 6385a2af02078174ca594256ea50c4f7, type: 3}
-  - {fileID: 21300000, guid: ea2c8905dde557b47a0e11f8b92275d7, type: 3}
+  - {fileID: 21300000, guid: f8ee9bd5a444a2540a6bb94652103dbb, type: 3}
+  - {fileID: 21300000, guid: ca2ee5da65a15e54a9e6457c4a1150e1, type: 3}
   SelectionImage: {fileID: 829487883}
   nameInput: {fileID: 1360500583}
   teamNumber: 3
@@ -2523,15 +2524,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selection: 0
-  max: 5
+  max: 6
   min: 0
   sprites:
   - {fileID: 21300000, guid: dd0d0539cfc79cf469bac1f962d6acc0, type: 3}
-  - {fileID: 21300000, guid: d86eb7357e21e1f42b9449263e16731f, type: 3}
-  - {fileID: 21300000, guid: 7c87132dbdcd64d4380ea0e3e5f3b8a5, type: 3}
-  - {fileID: 21300000, guid: 1091a0e85b9f41e439df8cb12eed4d1f, type: 3}
+  - {fileID: 21300000, guid: 369e458631d737241b132a6cf20be15e, type: 3}
+  - {fileID: 21300000, guid: 31e01b4171e04d441ad9ca8717e20eb9, type: 3}
+  - {fileID: 21300000, guid: 961b3de8ee5e2f641acf12704e92652e, type: 3}
   - {fileID: 21300000, guid: 6385a2af02078174ca594256ea50c4f7, type: 3}
-  - {fileID: 21300000, guid: ea2c8905dde557b47a0e11f8b92275d7, type: 3}
+  - {fileID: 21300000, guid: f8ee9bd5a444a2540a6bb94652103dbb, type: 3}
+  - {fileID: 21300000, guid: ca2ee5da65a15e54a9e6457c4a1150e1, type: 3}
   SelectionImage: {fileID: 547524487}
   nameInput: {fileID: 1843025951}
   teamNumber: 2
@@ -2929,15 +2931,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selection: 0
-  max: 5
+  max: 6
   min: 0
   sprites:
   - {fileID: 21300000, guid: dd0d0539cfc79cf469bac1f962d6acc0, type: 3}
-  - {fileID: 21300000, guid: d86eb7357e21e1f42b9449263e16731f, type: 3}
-  - {fileID: 21300000, guid: 7c87132dbdcd64d4380ea0e3e5f3b8a5, type: 3}
-  - {fileID: 21300000, guid: 1091a0e85b9f41e439df8cb12eed4d1f, type: 3}
+  - {fileID: 21300000, guid: 369e458631d737241b132a6cf20be15e, type: 3}
+  - {fileID: 21300000, guid: 31e01b4171e04d441ad9ca8717e20eb9, type: 3}
+  - {fileID: 21300000, guid: 961b3de8ee5e2f641acf12704e92652e, type: 3}
   - {fileID: 21300000, guid: 6385a2af02078174ca594256ea50c4f7, type: 3}
-  - {fileID: 21300000, guid: ea2c8905dde557b47a0e11f8b92275d7, type: 3}
+  - {fileID: 21300000, guid: f8ee9bd5a444a2540a6bb94652103dbb, type: 3}
+  - {fileID: 21300000, guid: ca2ee5da65a15e54a9e6457c4a1150e1, type: 3}
   SelectionImage: {fileID: 2091433905}
   nameInput: {fileID: 685215556}
   teamNumber: 4
@@ -5441,15 +5444,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selection: 0
-  max: 5
+  max: 6
   min: 0
   sprites:
   - {fileID: 21300000, guid: dd0d0539cfc79cf469bac1f962d6acc0, type: 3}
-  - {fileID: 21300000, guid: d86eb7357e21e1f42b9449263e16731f, type: 3}
-  - {fileID: 21300000, guid: 7c87132dbdcd64d4380ea0e3e5f3b8a5, type: 3}
-  - {fileID: 21300000, guid: 1091a0e85b9f41e439df8cb12eed4d1f, type: 3}
+  - {fileID: 21300000, guid: 369e458631d737241b132a6cf20be15e, type: 3}
+  - {fileID: 21300000, guid: 31e01b4171e04d441ad9ca8717e20eb9, type: 3}
+  - {fileID: 21300000, guid: 961b3de8ee5e2f641acf12704e92652e, type: 3}
   - {fileID: 21300000, guid: 6385a2af02078174ca594256ea50c4f7, type: 3}
-  - {fileID: 21300000, guid: ea2c8905dde557b47a0e11f8b92275d7, type: 3}
+  - {fileID: 21300000, guid: f8ee9bd5a444a2540a6bb94652103dbb, type: 3}
+  - {fileID: 21300000, guid: ca2ee5da65a15e54a9e6457c4a1150e1, type: 3}
   SelectionImage: {fileID: 302095865}
   nameInput: {fileID: 56794125}
   teamNumber: 1
