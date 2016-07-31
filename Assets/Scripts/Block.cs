@@ -11,6 +11,7 @@ public class Block : MonoBehaviour {
 	public Material normalMaterial;
 	public Material slowMaterial;
 	public Material fireMaterial;
+	public Material invisMaterial;
 
 	public Renderer rend;
 	
@@ -30,7 +31,9 @@ public class Block : MonoBehaviour {
 	public void setRandomType(){
 		if (blockType == "Normal") {
 			var rand = Random.Range (0f, 1f);
-			if (rand >= 0.95f) {
+			if (rand >= 0.98f) {
+				ChangeBlockType ("Invis");
+			} else if (rand >= 0.95f) {
 				ChangeBlockType ("Slow");
 			} else if (rand >= 0.9f) {
 				ChangeBlockType ("Fire");
@@ -68,6 +71,9 @@ public class Block : MonoBehaviour {
 			break;
 		case "Normal":
 			rend.sharedMaterial = normalMaterial;
+			break;
+		case "Invis":
+			rend.sharedMaterial = invisMaterial;
 			break;
 		}
 	}

@@ -163,6 +163,20 @@ public class ThomasTomato : BaseCharacter {
 			}
 		}
 		
+		if(invisCounter > 0f){
+			invisCounter -= Time.deltaTime;
+			for(int i = 0; i < aMeshes.Length; i++){
+				aMeshes[i].enabled = false;
+				//aMeshes[i].gameObject.SetActive(false);
+			}
+			
+			if(invisCounter <= 0f){
+				for(int i = 0; i < aMeshes.Length; i++){
+					aMeshes[i].enabled = true;
+				}	
+			}
+		}
+		
 	}
 	
 
