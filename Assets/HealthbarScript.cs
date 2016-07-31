@@ -65,4 +65,14 @@ public class HealthbarScript : MonoBehaviour {
 		aimHp=character.currentHp/character.maxHp ;
 
 	}
+
+	public	void reset(){
+		//aimHp=character.currentHp/character.maxHp ;
+
+		for (int i = 0; i < fragmentTransforms.Count; i++) {
+			fragmentTransforms[i].gameObject.SetActive (true);
+			fragmentTransforms[i].GetComponent<Animator> ().enabled=false;
+		}
+
+	}
 }

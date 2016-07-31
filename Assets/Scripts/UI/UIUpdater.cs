@@ -68,6 +68,10 @@ public class UIUpdater : MonoBehaviour {
 		aimhp=character.currentHp/character.maxHp ;
 	}
 
+	public void resetHealthbar(){
+		hpbar.reset ();
+	}
+
 
 
 

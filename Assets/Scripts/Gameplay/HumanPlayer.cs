@@ -11,7 +11,7 @@ public class HumanPlayer : MonoBehaviour {
 	public int playerNumber;
 	UIUpdater uiUpdater;
 	bool instantiateUI=false;
-	BaseCharacter character;
+	public BaseCharacter character;
 	public GameObject characterPrefab;
 	public int teamNumber;
 
@@ -43,12 +43,13 @@ public class HumanPlayer : MonoBehaviour {
 			character=	Instantiate (characterPrefab).GetComponent<BaseCharacter>();//TODO spawnpunkte?
 			character.assignedPlayer=playerNumber;
 			character.setUpLayers ();
+			character.player = this;
 			character.transform.position = GameObject.Find ("Player" + playerNumber + "_spawn").transform.position;
 		kills = 0;
 		deaths = 0;
 		GameObject g =Instantiate (playerInfoUi);
 		g.transform.parent = GameObject.Find ("Canvas").transform;
-		g.GetComponent<RectTransform> ().position = new Vector3 ((Screen.width / 2) / GameController.totalPlayers * playerNumber,200,0);
+		g.GetComponent<RectTransform> ().position = new Vector3 ((Screen.width ) / GameController.totalPlayers * playerNumber,200,0);
 		uiUpdater = g.GetComponent<UIUpdater> ();
 			uiUpdater.character = character;
 		uiUpdater.player = this;
@@ -60,6 +61,9 @@ public class HumanPlayer : MonoBehaviour {
 
 	public void repaint(){
 		uiUpdater.repaint ();
+	}
+	public void resetHealthBar(){
+		
 	}
 
 	//public void

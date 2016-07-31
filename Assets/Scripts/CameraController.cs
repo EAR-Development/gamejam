@@ -52,13 +52,13 @@ public class CameraController : MonoBehaviour {
 		xMax = -10;
 		yMin = 10;
 		yMax = 0;
-		foreach (GameObject player in allPlayer) {
-			float x = player.transform.position.x;
+		foreach (HumanPlayer player in GameController.playerList) {
+			float x = player.character.transform.position.x;
 
 			xMin = Mathf.Min (x, xMin);
 			xMax = Mathf.Max (x, xMax);
 
-			float y = player.transform.position.y;
+			float y = player.character.transform.position.y;
 
 			yMin = Mathf.Min (y, yMin);
 			yMax = Mathf.Max (y, yMax);

@@ -67,6 +67,8 @@ public class BaseCharacter : MonoBehaviour {
 
 	private ParticleSystem deathParticles;
 
+	public HumanPlayer player;
+
 	void Start () {
 
 		//jumpDisabled = true;
