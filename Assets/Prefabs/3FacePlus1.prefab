@@ -300,8 +300,8 @@ GameObject:
   - 95: {fileID: 9584136}
   - 114: {fileID: 11484628}
   - 54: {fileID: 5449748}
-  - 65: {fileID: 6598792}
   - 82: {fileID: 8281198}
+  - 136: {fileID: 13608188}
   m_Layer: 17
   m_Name: 3FacePlus1
   m_TagString: Player
@@ -1110,18 +1110,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5514138, y: 0.29523516, z: 0.52}
   m_Center: {x: 0.0022694056, y: 0.059054136, z: 0}
---- !u!65 &6598792
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161140}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: -0.35, y: 0.93, z: 0.5}
-  m_Center: {x: 0.0040991297, y: 0.38, z: 0}
 --- !u!82 &8281198
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1357,6 +1345,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+--- !u!136 &13608188
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.21
+  m_Height: 0.9
+  m_Direction: 1
+  m_Center: {x: -0.06, y: 0.4, z: 0}
 --- !u!137 &13704908
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
