@@ -134,6 +134,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 471976}
+  - 136: {fileID: 13614810}
+  - 114: {fileID: 11441964}
   m_Layer: 0
   m_Name: joint4
   m_TagString: Untagged
@@ -247,6 +249,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 476120}
+  - 136: {fileID: 13670842}
+  - 114: {fileID: 11464042}
   m_Layer: 0
   m_Name: joint23
   m_TagString: Untagged
@@ -565,7 +569,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117472}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.957, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449802}
@@ -1028,7 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 0
   facingRight: 1
-  maxHp: 0
+  maxHp: 100
   maxspeed: 20
   jumpForce: 400
   meleeAttackCooldown: 0
@@ -1047,7 +1051,7 @@ MonoBehaviour:
   slowEffect: {fileID: 19870114}
   fireEffect: {fileID: 19805052}
   borderDeathEffect: {fileID: 0}
-  currentHp: 0
+  currentHp: 100
   meleeAttackCounter: 0
   speedFactor: 1
   jumpFactor: 1
@@ -1070,6 +1074,19 @@ MonoBehaviour:
   col_fists:
   - {fileID: 13661230}
   - {fileID: 13621212}
+  - {fileID: 13614810}
+  - {fileID: 13670842}
+--- !u!114 &11441964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11454996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1092,6 +1109,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11464042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &13614810
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114732}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.1
+  m_Height: 0.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13621212
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1111,6 +1152,19 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.1
+  m_Height: 0.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &13670842
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126346}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
@@ -1141,7 +1195,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 83a1416c589bec54c82d8885275525a3, type: 2}
+  - {fileID: 2100000, guid: 004612dd3115d344ca78aaf149d620dc, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
