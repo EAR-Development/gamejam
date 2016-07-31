@@ -8,19 +8,20 @@ public class Block : MonoBehaviour {
 
 	[Header("Materials")]
 
-	public Material normalMaterial;
-	public Material slowMaterial;
-	public Material fireMaterial;
-	public Material invisMaterial;
-	public Material bounceMaterial;
+	public Color normalColor = Color.white;
+	public Color slowColor = Color.yellow;
+	public Color fireColor = Color.red;
+	public Color invisColor = Color.magenta;
+	public Color bounceColor = Color.green;
 	public PhysicMaterial bouncePhysicMaterial;
 
 	public Renderer rend;
 	
 	// Use this for initialization
 	void Start () {
-		rend = GetComponent<Renderer> ();
-		rend.enabled = true;
+		//rend = GetComponent<Renderer> ();
+		//rend.enabled = true;
+		setBlockColor(normalColor);
 
 		setRandomType ();
 	}
@@ -68,25 +69,39 @@ public class Block : MonoBehaviour {
 
 		switch(type){
 		case "Slow":
-			rend.sharedMaterial = slowMaterial;
+			setBlockColor (slowColor);
 			transform.GetComponent<BoxCollider>().material = null;
 			break;
 		case "Fire":
-			rend.sharedMaterial = fireMaterial;
+			setBlockColor (fireColor);
 			transform.GetComponent<BoxCollider>().material = null;
 			break;
 		case "Normal":
-			rend.sharedMaterial = normalMaterial;
+			setBlockColor (normalColor);
 			transform.GetComponent<BoxCollider>().material = null;
 			break;
 		case "Invis":
-			rend.sharedMaterial = invisMaterial;
+			setBlockColor (invisColor);
 			transform.GetComponent<BoxCollider>().material = null;
 			break;
 		case "Bounce":
-			rend.sharedMaterial = bounceMaterial;
+			setBlockColor (bounceColor);
 			transform.GetComponent<BoxCollider>().material = bouncePhysicMaterial;
 			break;
+		}
+	}
+
+	void setBlockColor(Color color){
+		foreach (Transform child in transform) {
+			print (child);
+
+			if (child.name.StartsWith ("Cube")) {
+				GameObject childObject = child.gameObject;
+
+				Renderer renderer = childObject.GetComponent<Renderer>();
+				Material mat = renderer.material;
+				mat.SetColor ("_EmissionColor", color);
+			}
 		}
 	}
 	
