@@ -136,7 +136,7 @@ GameObject:
   - 4: {fileID: 471976}
   - 136: {fileID: 13614810}
   - 114: {fileID: 11441964}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - 4: {fileID: 476120}
   - 136: {fileID: 13670842}
   - 114: {fileID: 11464042}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: joint23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
