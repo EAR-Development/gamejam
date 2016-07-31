@@ -183,6 +183,7 @@ GameObject:
   - 114: {fileID: 11418736}
   - 54: {fileID: 5490250}
   - 65: {fileID: 6596132}
+  - 82: {fileID: 8291490}
   m_Layer: 18
   m_Name: Witch
   m_TagString: Player
@@ -569,6 +570,80 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.49102926, z: 0.8236761}
   m_Center: {x: 0, y: 0.3051734, z: 0.0140423775}
+--- !u!82 &8291490
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169344}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9591300
 Animator:
   serializedVersion: 3
@@ -604,32 +679,53 @@ MonoBehaviour:
   jumpForce: 420
   meleeAttackCooldown: 1
   doubled: 0
+  characterClass: 
   groundCheck: {fileID: 428606}
+  frontCheck: {fileID: 0}
+  backCheck: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 492288
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 0
   assignedPlayer: 2
   debuffTime: 1
+  fireDPS: 0
   jumpCooldown: 0.3
   maxAirVelocity: 5
   slowEffect: {fileID: 19846236}
   fireEffect: {fileID: 19843920}
+  SpawnEffect: {fileID: 0}
+  borderDeathEffect: {fileID: 0}
   currentHp: 100
-  meleeAttackCounter: 0
+  meleeAttackCounter: 1
   speedFactor: 1
   jumpFactor: 1
   slowCounter: 0
   fireCounter: 0
+  invisCounter: 0
+  audioSource: {fileID: 8291490}
+  audioClips:
+  - {fileID: 8300000, guid: 81be2f3788526144e9b45dd698e5cd3a, type: 3}
+  - {fileID: 8300000, guid: cf06be64b11037344b5c37fe17480a38, type: 3}
+  - {fileID: 8300000, guid: f64f20053dc90ac4b9c9b8485e29d06e, type: 3}
   rb: {fileID: 5490250}
   animator: {fileID: 9591300}
   jumpkeyWasUsed: 0
   groundCheckPause: 0
   isFlying: 0
   jumpingMidAir: 0
-  sidedRight: 0
-  sidedLeft: 0
+  isSided: 0
+  walljumpCounter: 3
+  onFireHitSoundInterval: 0
+  onFireHitSoundCounter: 0
   col_fists:
   - {fileID: 6549760}
+  - {fileID: 6549760}
+  aMeshes:
+  - {fileID: 13714858}
+  player: {fileID: 0}
 --- !u!114 &11446334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -641,6 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitColliders: []
 --- !u!137 &13714858
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -3773,6 +3870,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: aMeshes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: col_fists.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Controller
       value: 
