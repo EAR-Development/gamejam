@@ -210,7 +210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &125660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1045,7 @@ MonoBehaviour:
     m_Bits: 492288
   assignedPlayer: 1
   debuffTime: 1
-  fireDPS: 100
+  fireDPS: 12
   jumpCooldown: 0
   maxAirVelocity: 0
   slowEffect: {fileID: 19870114}

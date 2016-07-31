@@ -958,7 +958,7 @@ MonoBehaviour:
     m_Bits: 492288
   assignedPlayer: 2
   debuffTime: 1
-  fireDPS: 100
+  fireDPS: 12
   jumpCooldown: 0
   maxAirVelocity: 0
   slowEffect: {fileID: 19835460}

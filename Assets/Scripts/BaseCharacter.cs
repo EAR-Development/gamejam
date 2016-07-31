@@ -365,7 +365,7 @@ public class BaseCharacter : MonoBehaviour {
 		
 		
 		
-		Invoke("spawn", 3);
+		Invoke("spawn", 4.0f);
 		isDead = true;
 		rb.isKinematic = true;
 	}
@@ -379,7 +379,7 @@ public class BaseCharacter : MonoBehaviour {
 		audioSource.Play();
 		*/
 		rb.velocity = Vector3.zero;
-		Invoke("spawn", 3);
+		Invoke("spawn", 4.0f);
 		isDead = true;
 		gameObject.SetActive (false);
 		deathParticles = (ParticleSystem)Object.Instantiate (borderDeathEffect, transform.position, transform.rotation);
@@ -408,6 +408,7 @@ public class BaseCharacter : MonoBehaviour {
 				onFireHitSoundCounter = 0;
 			}
 		}
+		
 		if (currentHp <= 0) {
 			audioSource.clip = audioClips[2];
 			audioSource.Play();
