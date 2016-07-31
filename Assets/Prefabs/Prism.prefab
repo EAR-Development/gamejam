@@ -1188,10 +1188,14 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 492288
+<<<<<<< HEAD
   whatIsWall:
     serializedVersion: 2
     m_Bits: 512
   assignedPlayer: 1
+=======
+  assignedPlayer: 3
+>>>>>>> origin/master
   debuffTime: 1
   fireDPS: 12
   jumpCooldown: 0.5
@@ -1205,6 +1209,7 @@ MonoBehaviour:
   jumpFactor: 1
   slowCounter: 0
   fireCounter: 0
+  invisCounter: 0
   audioSource: {fileID: 8207822}
   audioClips:
   - {fileID: 8300000, guid: 89b74e4543720214dab4e20c6ccf7af7, type: 3}
@@ -1224,6 +1229,11 @@ MonoBehaviour:
   col_fists:
   - {fileID: 6509920}
   - {fileID: 6566400}
+<<<<<<< HEAD
+=======
+  aMeshes:
+  - {fileID: 13747036}
+>>>>>>> origin/master
   player: {fileID: 0}
 --- !u!136 &13682452
 CapsuleCollider:

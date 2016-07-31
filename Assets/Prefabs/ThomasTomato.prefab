@@ -975,6 +975,7 @@ MonoBehaviour:
   jumpFactor: 1
   slowCounter: 0
   fireCounter: 0
+  invisCounter: 0
   audioSource: {fileID: 8259384}
   audioClips:
   - {fileID: 8300000, guid: 26e5a19675b61ea41a2f3d4ff64923b1, type: 3}
@@ -994,6 +995,10 @@ MonoBehaviour:
   col_fists:
   - {fileID: 13688006}
   - {fileID: 13650184}
+  aMeshes:
+  - {fileID: 13794290}
+  - {fileID: 13759552}
+  - {fileID: 13788588}
   player: {fileID: 0}
 --- !u!135 &13516044
 SphereCollider:

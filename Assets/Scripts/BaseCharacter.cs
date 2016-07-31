@@ -47,6 +47,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	public float slowCounter = 0f;
 	public float fireCounter = 0f;
+	public float invisCounter = 0f;
 
 	public AudioSource audioSource;
 	public AudioClip[] audioClips;
@@ -65,6 +66,7 @@ public class BaseCharacter : MonoBehaviour {
 	public float onFireHitSoundCounter;
 	
 	public Collider[] col_fists;
+	public SkinnedMeshRenderer[] aMeshes;
 
 	private ParticleSystem deathParticles;
 
@@ -253,6 +255,20 @@ public class BaseCharacter : MonoBehaviour {
 				fem.enabled = false;
 			}
 		}
+		
+		if(invisCounter > 0f){
+			invisCounter -= Time.deltaTime;
+			for(int i = 0; i < aMeshes.Length; i++){
+				aMeshes[i].enabled = false;
+				//aMeshes[i].gameObject.SetActive(false);
+			}
+			
+			if(invisCounter <= 0f){
+				for(int i = 0; i < aMeshes.Length; i++){
+					aMeshes[i].enabled = true;
+				}	
+			}
+		}
 	}
 		
 	void OnTriggerEnter(Collider col)
@@ -287,6 +303,9 @@ public class BaseCharacter : MonoBehaviour {
 			case "Water":
 				break;
 			case "Bounce":
+				break;
+			case "Invis":
+				invisCounter = debuffTime;
 				break;
 			case "Slow":
 				slowCounter = debuffTime;
@@ -362,6 +381,7 @@ public class BaseCharacter : MonoBehaviour {
 		if (isDead) {
 			return;
 		}
+		player.resetHealthBar ();
 		rb.velocity = Vector3.zero;
 		animator.SetLayerWeight (2, 1);
 		animator.SetTrigger("isDead");		
@@ -379,6 +399,7 @@ public class BaseCharacter : MonoBehaviour {
 		audioSource.clip = audioClips[2];
 		audioSource.Play();
 		*/
+		player.resetHealthBar ();
 		rb.velocity = Vector3.zero;
 		Invoke("spawn", 4.0f);
 		isDead = true;

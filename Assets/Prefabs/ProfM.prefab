@@ -969,6 +969,7 @@ MonoBehaviour:
   jumpFactor: 1
   slowCounter: 0
   fireCounter: 0
+  invisCounter: 0
   audioSource: {fileID: 8231916}
   audioClips:
   - {fileID: 8300000, guid: 142bc4cb5d585334cb29ae64bd85dd70, type: 3}
@@ -989,6 +990,8 @@ MonoBehaviour:
   - {fileID: 6578012}
   - {fileID: 6527402}
   - {fileID: 6592578}
+  aMeshes:
+  - {fileID: 13730722}
   player: {fileID: 0}
 --- !u!114 &11412424
 MonoBehaviour:
