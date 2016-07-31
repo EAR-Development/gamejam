@@ -8,6 +8,10 @@ public class GameController : MonoBehaviour {
 	public static List<HumanPlayer> playerList{get; set;}
 	public static Camera cam{get; set;}
 	public static EnvironmentController center{get; set;}
+	public static int maxLife{get; set;}
+
+
+
 
 	// Use this for initialization
 	void Start () {
