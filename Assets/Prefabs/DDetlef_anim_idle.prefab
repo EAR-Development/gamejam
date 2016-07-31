@@ -1037,12 +1037,16 @@ MonoBehaviour:
   jumpForce: 420
   meleeAttackCooldown: 0
   doubled: 0
+  characterClass: DesctructionDetlef
   groundCheck: {fileID: 439178}
   frontCheck: {fileID: 458930}
   backCheck: {fileID: 451522}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 492288
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 0
   assignedPlayer: 1
   debuffTime: 1
   fireDPS: 12
@@ -1057,6 +1061,7 @@ MonoBehaviour:
   jumpFactor: 1
   slowCounter: 0
   fireCounter: 0
+  invisCounter: 0
   audioSource: {fileID: 8282162}
   audioClips:
   - {fileID: 8300000, guid: ffa064c158547044e9bd23ad899d0702, type: 3}
@@ -1078,6 +1083,8 @@ MonoBehaviour:
   - {fileID: 13621212}
   - {fileID: 13614810}
   - {fileID: 13670842}
+  aMeshes: []
+  player: {fileID: 0}
 --- !u!114 &11441964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1089,6 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitColliders: []
 --- !u!114 &11454996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1100,6 +1108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitColliders: []
 --- !u!114 &11456120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1111,6 +1120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitColliders: []
 --- !u!114 &11464042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1122,6 +1132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitColliders: []
 --- !u!136 &13614810
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -4331,7 +4342,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: characterClass
+      value: DesctructionDetlef
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117472}

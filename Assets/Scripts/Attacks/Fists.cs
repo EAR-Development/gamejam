@@ -32,7 +32,7 @@ public class Fists : MonoBehaviour {
 			else {
 				hitColliders.Add(col);
 				Debug.Log("player hit");
-				if(transform.root.gameObject.name == "ProfM" || transform.root.gameObject.name == "ThomasTomato"){
+				if(col.GetComponent<BaseCharacter>().characterClass == "ProfM" || col.GetComponent<BaseCharacter>().characterClass == "ThomasTomato"){
 					col.attachedRigidbody.AddForce(transform.right * 500);
 				}
 				else if(transform.root.gameObject.name == "3FacePlus1" ){

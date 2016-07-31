@@ -1267,6 +1267,7 @@ MonoBehaviour:
   jumpForce: 420
   meleeAttackCooldown: 1
   doubled: 0
+  characterClass: 3FacePlus1
   groundCheck: {fileID: 480044}
   frontCheck: {fileID: 453752}
   backCheck: {fileID: 453424}
@@ -4808,6 +4809,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: Priority
       value: 162
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: characterClass
+      value: 3FacePlus1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

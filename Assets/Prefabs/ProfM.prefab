@@ -946,6 +946,7 @@ MonoBehaviour:
   jumpForce: 420
   meleeAttackCooldown: 1
   doubled: 0
+  characterClass: ProfM
   groundCheck: {fileID: 445258}
   frontCheck: {fileID: 405764}
   backCheck: {fileID: 490772}
@@ -4183,6 +4184,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Volume
       value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: characterClass
+      value: ProfM
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

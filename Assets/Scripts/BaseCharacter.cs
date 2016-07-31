@@ -14,6 +14,7 @@ public class BaseCharacter : MonoBehaviour {
 	public float meleeAttackCooldown;
 
 	public bool doubled = false;
+	public string characterClass;
 
 	public Transform groundCheck;
 	public Transform frontCheck;

@@ -952,6 +952,7 @@ MonoBehaviour:
   jumpForce: 420
   meleeAttackCooldown: 1
   doubled: 0
+  characterClass: ThomasTomato
   groundCheck: {fileID: 475162}
   frontCheck: {fileID: 437406}
   backCheck: {fileID: 404914}
@@ -4290,6 +4291,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: maxAirVelocity
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: characterClass
+      value: ThomasTomato
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

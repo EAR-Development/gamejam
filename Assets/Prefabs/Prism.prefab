@@ -1182,6 +1182,7 @@ MonoBehaviour:
   jumpForce: 420
   meleeAttackCooldown: 1
   doubled: 0
+  characterClass: Prism
   groundCheck: {fileID: 450964}
   frontCheck: {fileID: 440802}
   backCheck: {fileID: 472146}
@@ -4400,6 +4401,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: jumpingMidAir
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: characterClass
+      value: Prism
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
