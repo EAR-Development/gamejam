@@ -395,6 +395,7 @@ public class BaseCharacter : MonoBehaviour {
 		if(fireCounter <= 0f){
 			audioSource.clip = audioClips[1];
 			audioSource.Play();
+			animator.SetTrigger("gotHit");
 		}
 		else {
 			if(onFireHitSoundCounter < onFireHitSoundInterval ){
@@ -403,6 +404,7 @@ public class BaseCharacter : MonoBehaviour {
 			else {
 				audioSource.clip = audioClips[1];
 				audioSource.Play();
+				animator.SetTrigger("gotHit");
 				onFireHitSoundCounter = 0;
 			}
 		}
