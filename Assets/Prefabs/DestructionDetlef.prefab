@@ -1107,7 +1107,8 @@ MonoBehaviour:
   - {fileID: 13687788}
   - {fileID: 13685862}
   - {fileID: 13659770}
-  aMeshes: []
+  aMeshes:
+  - {fileID: 13702276}
   player: {fileID: 0}
 --- !u!114 &11446126
 MonoBehaviour:
