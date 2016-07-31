@@ -41,9 +41,10 @@ public class HumanPlayer : MonoBehaviour {
 	void Update () {
 		if(instantiateUI){
 			character=	Instantiate (characterPrefab).GetComponent<BaseCharacter>();//TODO spawnpunkte?
+			character.player = this;
 			character.assignedPlayer=playerNumber;
 			character.setUpLayers ();
-			character.player = this;
+
 			character.transform.position = GameObject.Find ("Player" + playerNumber + "_spawn").transform.position;
 		kills = 0;
 		deaths = 0;

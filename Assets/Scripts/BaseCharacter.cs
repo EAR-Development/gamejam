@@ -352,6 +352,7 @@ public class BaseCharacter : MonoBehaviour {
 
 
 	void spawn(){
+		player.resetHealthBar ();
 		gameObject.SetActive (true);
 		currentHp = maxHp;
 		animator.SetLayerWeight (2, 0);
@@ -381,7 +382,7 @@ public class BaseCharacter : MonoBehaviour {
 		if (isDead) {
 			return;
 		}
-		player.resetHealthBar ();
+
 		rb.velocity = Vector3.zero;
 		animator.SetLayerWeight (2, 1);
 		animator.SetTrigger("isDead");		
@@ -441,10 +442,10 @@ public class BaseCharacter : MonoBehaviour {
 	}
 
 	public void setUpLayers(){
-		gameObject.layer = LayerMask.NameToLayer ("Team" + assignedPlayer + "Body" );
+		gameObject.layer = LayerMask.NameToLayer ("Team" + player.teamNumber + "Body" );
 		for(int i=0;i<col_fists.Length;i++){
 
-			col_fists [i].gameObject.layer = LayerMask.NameToLayer("Team" + assignedPlayer +  "Attack");
+			col_fists [i].gameObject.layer = LayerMask.NameToLayer("Team" + player.teamNumber +  "Attack");
 		
 
 		}

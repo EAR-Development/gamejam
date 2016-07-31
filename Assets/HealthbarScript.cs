@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 
@@ -68,11 +69,18 @@ public class HealthbarScript : MonoBehaviour {
 
 	public	void reset(){
 		//aimHp=character.currentHp/character.maxHp ;
-
+		uiHp=1;
 		for (int i = 0; i < fragmentTransforms.Count; i++) {
-			print ("asdfasd");
-			fragmentTransforms[i].gameObject.SetActive (true);
-			fragmentTransforms[i].GetComponent<Animator> ().enabled=false;
+			
+			fragmentTransforms [i].transform.GetChild (0).gameObject.SetActive (true);
+			fragmentTransforms [i].GetComponent<Animator> ().Play ("respawnHealthbar");
+		//fragmentTransforms[i].GetComponent<Animator> ().enabled=false;
+			//fragmentTransforms [i].transform.GetChild (0).gameObject.SetActive (true);
+			//Color c = fragmentTransforms [i].transform.GetChild (0).GetComponent<Image> ().color;
+			//c.a = 1;
+			//fragmentTransforms [i].transform.GetChild (0).GetComponent<Image>().color=c;
+			//fragmentTransforms [i].transform.GetChild (0).GetComponent<Animator> ().;
+
 		}
 
 	}
