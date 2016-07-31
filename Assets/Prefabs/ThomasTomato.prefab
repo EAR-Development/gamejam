@@ -33,6 +33,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &105136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 437406}
+  m_Layer: 9
+  m_Name: frontChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &112812
 GameObject:
   m_ObjectHideFlags: 1
@@ -109,6 +124,7 @@ GameObject:
   - 54: {fileID: 5443632}
   - 114: {fileID: 11481700}
   - 135: {fileID: 13516044}
+  - 82: {fileID: 8259384}
   m_Layer: 16
   m_Name: ThomasTomato
   m_TagString: Player
@@ -248,6 +264,21 @@ GameObject:
   - 4: {fileID: 402022}
   m_Layer: 0
   m_Name: Finger_1 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &178488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 404914}
+  m_Layer: 9
+  m_Name: backChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,6 +462,18 @@ Transform:
   - {fileID: 424528}
   m_Father: {fileID: 484318}
   m_RootOrder: 1
+--- !u!4 &404914
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.28099996, y: 0.36200047, z: 0}
+  m_LocalScale: {x: 0.54256105, y: 0.8191521, z: 1}
+  m_Children: []
+  m_Father: {fileID: 423138}
+  m_RootOrder: 4
 --- !u!4 &405174
 Transform:
   m_ObjectHideFlags: 1
@@ -475,12 +518,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.122, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 474872}
   - {fileID: 405686}
   - {fileID: 463724}
+  - {fileID: 437406}
+  - {fileID: 404914}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &424528
@@ -544,6 +589,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 459546}
   m_RootOrder: 0
+--- !u!4 &437406
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105136}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.36799997, y: 0.362, z: -0}
+  m_LocalScale: {x: 0.54256105, y: 0.8191521, z: 1}
+  m_Children: []
+  m_Father: {fileID: 423138}
+  m_RootOrder: 3
 --- !u!4 &441778
 Transform:
   m_ObjectHideFlags: 1
@@ -762,6 +819,80 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &8259384
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130510}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 45
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9582490
 Animator:
   serializedVersion: 3
@@ -820,26 +951,26 @@ MonoBehaviour:
   meleeAttackCooldown: 1
   doubled: 0
   groundCheck: {fileID: 475162}
-  frontCheck: {fileID: 0}
-  backCheck: {fileID: 0}
+  frontCheck: {fileID: 437406}
+  backCheck: {fileID: 404914}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 492288
   assignedPlayer: 2
   debuffTime: 1
-  fireDPS: 0
+  fireDPS: 12
   jumpCooldown: 0
   maxAirVelocity: 0
   slowEffect: {fileID: 19835460}
   fireEffect: {fileID: 19830682}
   borderDeathEffect: {fileID: 0}
-  currentHp: 0
+  currentHp: 100
   meleeAttackCounter: 0
   speedFactor: 1
   jumpFactor: 1
   slowCounter: 0
   fireCounter: 0
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 8259384}
   audioClips:
   - {fileID: 8300000, guid: 26e5a19675b61ea41a2f3d4ff64923b1, type: 3}
   - {fileID: 8300000, guid: edcbf6a8e3c527b4b9ac4c2361fba6ea, type: 3}
@@ -853,6 +984,8 @@ MonoBehaviour:
   jumpingMidAir: 0
   isSided: 0
   walljumpCounter: 3
+  onFireHitSoundInterval: 0.4
+  onFireHitSoundCounter: 0.4
   col_fists:
   - {fileID: 13688006}
   - {fileID: 13650184}
@@ -916,7 +1049,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 96f29c9573ed52e499285229e08d1e07, type: 2}
+  - {fileID: 2100000, guid: dbf6771948426984cb3007424163e65b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -960,7 +1093,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 96f29c9573ed52e499285229e08d1e07, type: 2}
+  - {fileID: 2100000, guid: dbf6771948426984cb3007424163e65b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1004,7 +1137,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 96f29c9573ed52e499285229e08d1e07, type: 2}
+  - {fileID: 2100000, guid: f5327b2a45bb12c4f85d31b67403ef43, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -4127,6 +4260,18 @@ Prefab:
       propertyPath: whatIsGround.m_Bits
       value: 492288
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 8259384}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130510}
