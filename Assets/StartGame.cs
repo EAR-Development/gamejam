@@ -29,6 +29,7 @@ public class StartGame : MonoBehaviour {
 			if(boxes[i].selection!=0){
 				HumanPlayer p = Instantiate (playerPrefab).GetComponent<HumanPlayer>();
 				p.teamNumber = boxes [i].teamNumber;
+
 				GameController.playerList.Add (p);
 				p.nameHuman = boxes [i].nameInput.text;
 				playerCount++;

@@ -416,6 +416,16 @@ public class BaseCharacter : MonoBehaviour {
 		}
 	}
 
+	public void setUpLayers(){
+		gameObject.layer = LayerMask.NameToLayer ("Team" + assignedPlayer + "Body" );
+		for(int i=0;i<col_fists.Length;i++){
+
+			col_fists [i].gameObject.layer = LayerMask.NameToLayer("Team" + assignedPlayer +  "Attack");
+		
+
+		}
+
+	}
 
 
 }
