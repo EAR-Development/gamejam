@@ -332,7 +332,6 @@ public class BaseCharacter : MonoBehaviour {
 			transform.Rotate(new Vector3(0,180,0));
 		}
 		if (inputMovementstrength > 0 && !facingRight) {
-
 			facingRight = !facingRight;
 			transform.Rotate(new Vector3(0,180,0));
 		}
