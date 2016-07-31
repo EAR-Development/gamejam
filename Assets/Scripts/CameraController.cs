@@ -67,6 +67,9 @@ public class CameraController : MonoBehaviour {
 		yMin = 10;
 		yMax = 0;
 		foreach (HumanPlayer player in GameController.playerList) {
+			if(player.character.currentHp>0){
+				
+			
 			float x = player.character.transform.position.x;
 
 			xMin = Mathf.Min (x-2,xMin);
@@ -76,6 +79,7 @@ public class CameraController : MonoBehaviour {
 
 			yMin = Mathf.Min (y-2, yMin);
 			yMax = Mathf.Max (y+2, yMax);
+			}
 		}
 	}
 }

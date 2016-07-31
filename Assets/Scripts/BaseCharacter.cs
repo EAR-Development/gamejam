@@ -412,7 +412,8 @@ public class BaseCharacter : MonoBehaviour {
 		
 			Invoke ("spawn", 4.0f);
 		} else {
-			GameController.reportLost ();
+			
+			GameController.reportLost (player);
 		}
 		isDead = true;
 		rb.isKinematic = true;
@@ -428,8 +429,17 @@ public class BaseCharacter : MonoBehaviour {
 		*/
 		player.deaths ++;
 		player.lifesLeft--;
+
+		if (player.lifesLeft > 0) {
+
+
+			Invoke ("spawn", 4.0f);
+		} else {
+
+			GameController.reportLost (player);
+		}
+
 		rb.velocity = Vector3.zero;
-		Invoke("spawn", 4.0f);
 		isDead = true;
 		gameObject.SetActive (false);
 		deathParticles = (ParticleSystem)Object.Instantiate (borderDeathEffect, transform.position, transform.rotation);

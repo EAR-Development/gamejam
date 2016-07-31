@@ -22,7 +22,9 @@ public class GameController : MonoBehaviour {
 	
 	}
 
-	public static void reportLost(){
+	public static void reportLost(HumanPlayer p){
+
+
 		playersLeft = 0;
 		int tleft;
 		List<int> countedTeams= new List<int>();

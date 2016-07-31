@@ -52,16 +52,16 @@ public class ThomasTomato : BaseCharacter {
 
 				if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") < 0) {
 					if (rb.velocity.x > 0) {
-						print ("rechts zu rechts");
+						
 					} else {
-						print ("rechts zu links");
+						
 					}
 				} else {
 					if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") > 0) {
 						if (rb.velocity.x > 0) {
-							print ("links zu rechts");
+							
 						} else {
-							print ("links zu links");
+							
 						}
 					}
 				} 
