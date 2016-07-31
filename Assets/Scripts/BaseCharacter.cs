@@ -354,13 +354,13 @@ public class BaseCharacter : MonoBehaviour {
 
 	void spawn(){
 
-		player.resetHealthBar ();
+	
 
 		if (GameController.center.activeRotation != EnvironmentController.Rotations.NOROTATION) {
 			Invoke("spawn", 0.5f);	
 			return;
 		}
-
+		player.resetHealthBar ();
 
 		gameObject.SetActive (true);
 		currentHp = maxHp;
@@ -409,7 +409,7 @@ public class BaseCharacter : MonoBehaviour {
 		audioSource.clip = audioClips[2];
 		audioSource.Play();
 		*/
-		player.resetHealthBar ();
+
 		rb.velocity = Vector3.zero;
 		Invoke("spawn", 4.0f);
 		isDead = true;

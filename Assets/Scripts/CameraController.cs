@@ -51,7 +51,7 @@ public class CameraController : MonoBehaviour {
 			speedFactor = 0.5f;
 		}
 
-		print (distance.magnitude);
+
 
 		//ZOOM
 		Vector3 zoomVector = Vector3.Lerp (new Vector3(0,0,transform.position.z), new Vector3 (0,0, -d), Time.deltaTime * 2);

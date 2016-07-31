@@ -46,6 +46,7 @@ public class HealthbarScript : MonoBehaviour {
 				
 				//fragmentTransforms [(int)(uiHp * 10)].gameObject.SetActive (false);
 				fragmentTransforms [(int)(uiHp*10)].GetComponent<Animator> ().enabled=true;
+				fragmentTransforms [(int)(uiHp * 10)].GetComponent<Animator> ().Play ("delete");
 
 			}
 		}
