@@ -44,7 +44,17 @@ public class CameraController : MonoBehaviour {
 
 		d = Mathf.Max (xDistance, yDistance, MINIMUMDISTANCE);
 
-		transform.position = Vector3.Lerp (transform.position, new Vector3 ((xMin + xMax) / 2, (yMin + yMax) / 2, -d), Time.deltaTime / 1.8f);
+		float speedFactor = 1.8f;
+
+		Vector3 distance = transform.position - new Vector3 ((xMin + xMax) / 2, (yMin + yMax) / 2, -d);
+		if (distance.magnitude > 5) {
+			speedFactor = 0.5f;
+		}
+
+		print (distance.magnitude);
+
+
+		transform.position = Vector3.Lerp (transform.position, new Vector3 ((xMin + xMax) / 2, (yMin + yMax) / 2, -d), Time.deltaTime / speedFactor);
 	}
 
 	void calculateContainingRectangle(){
