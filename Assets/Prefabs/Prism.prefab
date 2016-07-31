@@ -404,7 +404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &181006
 GameObject:
   m_ObjectHideFlags: 1
@@ -1214,6 +1214,8 @@ MonoBehaviour:
   jumpingMidAir: 1
   isSided: 0
   walljumpCounter: 3
+  onFireHitSoundInterval: 0.4
+  onFireHitSoundCounter: 0.4
   col_fists:
   - {fileID: 6509920}
   - {fileID: 6566400}

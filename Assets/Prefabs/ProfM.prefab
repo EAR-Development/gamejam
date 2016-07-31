@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &106930
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.0499287, y: -11.747518, z: 13.6102085}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414920}
@@ -954,7 +954,7 @@ MonoBehaviour:
     m_Bits: 492288
   assignedPlayer: 1
   debuffTime: 1
-  fireDPS: 0
+  fireDPS: 100
   jumpCooldown: 0.5
   maxAirVelocity: 0
   slowEffect: {fileID: 19817540}
@@ -980,6 +980,8 @@ MonoBehaviour:
   jumpingMidAir: 0
   isSided: 0
   walljumpCounter: 3
+  onFireHitSoundInterval: 0.4
+  onFireHitSoundCounter: 0.4
   col_fists:
   - {fileID: 6578012}
   - {fileID: 6527402}

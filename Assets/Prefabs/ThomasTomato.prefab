@@ -835,7 +835,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 45
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -958,7 +958,7 @@ MonoBehaviour:
     m_Bits: 492288
   assignedPlayer: 2
   debuffTime: 1
-  fireDPS: 0
+  fireDPS: 100
   jumpCooldown: 0
   maxAirVelocity: 0
   slowEffect: {fileID: 19835460}
@@ -984,6 +984,8 @@ MonoBehaviour:
   jumpingMidAir: 0
   isSided: 0
   walljumpCounter: 3
+  onFireHitSoundInterval: 0.4
+  onFireHitSoundCounter: 0.4
   col_fists:
   - {fileID: 13688006}
   - {fileID: 13650184}

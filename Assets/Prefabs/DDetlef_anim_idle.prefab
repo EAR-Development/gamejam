@@ -1045,7 +1045,7 @@ MonoBehaviour:
     m_Bits: 492288
   assignedPlayer: 1
   debuffTime: 1
-  fireDPS: 0
+  fireDPS: 100
   jumpCooldown: 0
   maxAirVelocity: 0
   slowEffect: {fileID: 19870114}
@@ -1071,6 +1071,8 @@ MonoBehaviour:
   jumpingMidAir: 0
   isSided: 0
   walljumpCounter: 3
+  onFireHitSoundInterval: 0.4
+  onFireHitSoundCounter: 0.4
   col_fists:
   - {fileID: 13661230}
   - {fileID: 13621212}

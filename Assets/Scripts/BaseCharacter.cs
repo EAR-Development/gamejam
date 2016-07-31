@@ -60,6 +60,8 @@ public class BaseCharacter : MonoBehaviour {
 	public bool isSided;
 
 	public int walljumpCounter = 3;
+	public float onFireHitSoundInterval;
+	public float onFireHitSoundCounter;
 	
 	public Collider[] col_fists;
 
@@ -392,8 +394,20 @@ public class BaseCharacter : MonoBehaviour {
 
 	public void doDamage(float dmg){
 		currentHp -= dmg;
-		audioSource.clip = audioClips[1];
-		audioSource.Play();
+		if(fireCounter <= 0f){
+			audioSource.clip = audioClips[1];
+			audioSource.Play();
+		}
+		else {
+			if(onFireHitSoundCounter < onFireHitSoundInterval ){
+				onFireHitSoundCounter += Time.deltaTime;
+			}
+			else {
+				audioSource.clip = audioClips[1];
+				audioSource.Play();
+				onFireHitSoundCounter = 0;
+			}
+		}
 		if (currentHp <= 0) {
 			audioSource.clip = audioClips[2];
 			audioSource.Play();
