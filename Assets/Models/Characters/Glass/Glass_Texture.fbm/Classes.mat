@@ -20,7 +20,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 73f2a58143918d54591de779c93798eb, type: 3}
+          m_Texture: {fileID: 2800000, guid: a181ca8e3c62f3e4b8f183f6c586b032, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -70,7 +70,7 @@ Material:
           name: _DetailAlbedoMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
+          m_Scale: {x: 0, y: 0}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -103,7 +103,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0.5
+        second: 0.54
       data:
         first:
           name: _BumpScale
@@ -127,7 +127,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 0
+        second: 0.38
     m_Colors:
       data:
         first:
