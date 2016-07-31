@@ -355,36 +355,42 @@ public class BaseCharacter : MonoBehaviour {
 	void spawn(){
 
 	
+		if(player.lifesLeft>0){
 
-		if (GameController.center.activeRotation != EnvironmentController.Rotations.NOROTATION) {
-			Invoke("spawn", 0.5f);	
-			return;
-		}
-		player.resetHealthBar ();
+			if (GameController.center.activeRotation != EnvironmentController.Rotations.NOROTATION) {
+				Invoke("spawn", 0.5f);	
+				return;
+			}
+			player.resetHealthBar ();
 
-		gameObject.SetActive (true);
-		currentHp = maxHp;
-		animator.SetLayerWeight (2, 0);
+			gameObject.SetActive (true);
+			currentHp = maxHp;
+			animator.SetLayerWeight (2, 0);
 
-		slowCounter = 0f;
-		fireCounter = 0f;
+			slowCounter = 0f;
+			fireCounter = 0f;
 
-		Destroy (deathParticles);
+			Destroy (deathParticles);
 
-		var sem = slowEffect.emission;
-		var fem = fireEffect.emission;
-		sem.enabled = false;
-		fem.enabled = false;
+			var sem = slowEffect.emission;
+			var fem = fireEffect.emission;
+			sem.enabled = false;
+			fem.enabled = false;
 
-		var gObj = GameObject.Find("Player" + assignedPlayer + "_spawn");
+			var gObj = GameObject.Find("Player" + assignedPlayer + "_spawn");
 
-		rb.velocity = Vector3.zero;
-		if (gObj){
-			transform.position = gObj.transform.position;
 			rb.velocity = Vector3.zero;
+			if (gObj){
+				transform.position = gObj.transform.position;
+				rb.velocity = Vector3.zero;
+			}
+			rb.isKinematic = false;
+			isDead = false;
+
+
+
 		}
-		rb.isKinematic = false;
-		isDead = false;
+
 	}
 	
 	void die(){
@@ -392,6 +398,8 @@ public class BaseCharacter : MonoBehaviour {
 			return;
 		}
 
+		player.deaths ++;
+		player.lifesLeft--;
 		rb.velocity = Vector3.zero;
 		animator.SetLayerWeight (2, 1);
 		animator.SetTrigger("isDead");		
@@ -409,7 +417,8 @@ public class BaseCharacter : MonoBehaviour {
 		audioSource.clip = audioClips[2];
 		audioSource.Play();
 		*/
-
+		player.deaths ++;
+		player.lifesLeft--;
 		rb.velocity = Vector3.zero;
 		Invoke("spawn", 4.0f);
 		isDead = true;

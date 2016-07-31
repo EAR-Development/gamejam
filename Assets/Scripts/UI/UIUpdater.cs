@@ -72,7 +72,15 @@ public class UIUpdater : MonoBehaviour {
 		hpbar.reset ();
 	}
 
+	public void grayOut(){
 
+		//for(int i=0;i<transform.GetChildCount;i++){
+
+
+
+
+		//}
+	}
 
 
 }
