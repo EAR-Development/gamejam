@@ -821,20 +821,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0351d642696bb4281bc05100b4bb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHp: 100
+  isGrounded: 0
+  facingRight: 1
   maxHp: 100
   maxspeed: 10
   jumpForce: 260
-  meleeAttackCounter: 1
   meleeAttackCooldown: 1
-  rb: {fileID: 0}
-  animator: {fileID: 0}
+  doubled: 0
   groundCheck: {fileID: 0}
+  frontCheck: {fileID: 0}
+  backCheck: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 768
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 0
   assignedPlayer: 1
-  slowEffekt: {fileID: 0}
+  debuffTime: 1
+  fireDPS: 0
+  jumpCooldown: 0
+  maxAirVelocity: 5
+  slowEffect: {fileID: 0}
+  fireEffect: {fileID: 0}
+  borderDeathEffect: {fileID: 0}
+  currentHp: 100
+  meleeAttackCounter: 1
+  speedFactor: 1
+  jumpFactor: 1
+  slowCounter: 0
+  fireCounter: 0
+  invisCounter: 0
+  audioSource: {fileID: 0}
+  audioClips: []
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  jumpkeyWasUsed: 0
+  groundCheckPause: 0
+  isFlying: 0
+  jumpingMidAir: 1
+  isSided: 0
+  walljumpCounter: 3
+  onFireHitSoundInterval: 0
+  onFireHitSoundCounter: 0
+  col_fists: []
+  aMeshes: []
+  player: {fileID: 0}
 --- !u!137 &13786434
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -889,7 +921,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: maxAirVelocity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: groundCheckPause
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: jumpingMidAir
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176682}

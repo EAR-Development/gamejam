@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class StartGame : MonoBehaviour {
 
 
 	public SelectorBox[] boxes;
 	public GameObject playerPrefab;
+	public GameObject[] playableCharacters;
+
 
 	// Use this for initialization
 	void Start () {
 	
+		GameController.playerList = new List<HumanPlayer> ();
+
 	}
 	
 	// Update is called once per frame
@@ -24,9 +28,13 @@ public class StartGame : MonoBehaviour {
 
 			if(boxes[i].selection!=0){
 				HumanPlayer p = Instantiate (playerPrefab).GetComponent<HumanPlayer>();
+				p.teamNumber = boxes [i].teamNumber;
+
+				GameController.playerList.Add (p);
 				p.nameHuman = boxes [i].nameInput.text;
 				playerCount++;
 				p.playerNumber = playerCount;
+				p.characterPrefab=playableCharacters[boxes[i].selection -1];
 			}
 			GameController.totalPlayers = playerCount;
 
