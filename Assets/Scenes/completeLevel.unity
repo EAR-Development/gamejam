@@ -440,6 +440,18 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.7499999
       objectReference: {fileID: 0}
+    - target: {fileID: 11431256, guid: 9a525eca57cea80408cdc1a6180fea07, type: 2}
+      propertyPath: rotationStartDelay
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431256, guid: 9a525eca57cea80408cdc1a6180fea07, type: 2}
+      propertyPath: rotateTimer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431256, guid: 9a525eca57cea80408cdc1a6180fea07, type: 2}
+      propertyPath: blockTimer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c4ac99b50207b44f91d389f3f38a08a, type: 2}
   m_IsPrefabParent: 0
