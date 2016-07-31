@@ -10,9 +10,20 @@ public class SelectorBox : MonoBehaviour {
 	public Sprite[] sprites;
 	public Image SelectionImage;
 	public Text nameInput;
+	public int teamNumber=1;
+	public Image arrowLeft;
+	public Image arrowRight;
+	public Sprite[] arrows;
+	public Sprite[] teamBarSprites;
+	public Image teamBar;
+	public int maxTeams;
+
 
 	// Use this for initialization
 	void Start () {
+		arrowLeft.sprite=arrows[teamNumber-1];
+		arrowRight.sprite=arrows[teamNumber-1];
+		teamBar.sprite=teamBarSprites[teamNumber-1];
 
 	}
 	
@@ -23,10 +34,25 @@ public class SelectorBox : MonoBehaviour {
 
 	}
 
+	public void switchTeam(){
+
+		if (teamNumber < maxTeams) {
+			teamNumber++;
+		} else {
+			teamNumber = 1;
+		}
+
+		arrowLeft.sprite=arrows[teamNumber-1];
+		arrowRight.sprite=arrows[teamNumber-1];
+		teamBar.sprite=teamBarSprites[teamNumber-1];
+
+	}
+
 	public void up(){
 		if(selection<max){
 			selection++;
 			SelectionImage.sprite=sprites[selection];
+			GameController.sceneSound.Play();
 		}
 	}
 
@@ -34,6 +60,7 @@ public class SelectorBox : MonoBehaviour {
 		if(selection>min){
 			selection--;
 			SelectionImage.sprite=sprites[selection];
+			GameController.sceneSound.Play();
 		}
 	
 
