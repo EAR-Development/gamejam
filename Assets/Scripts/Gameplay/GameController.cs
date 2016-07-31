@@ -20,6 +20,20 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		int playersLeft=0;
+
+		for(int i=0;i< playerList.Count;i++){
+			if(playerList[i].lifesLeft!=0){
+				playersLeft++;
+			}
+
+		}
+
+		if(playersLeft==1){
+			
+		}
+
 	}
+
+
 }
