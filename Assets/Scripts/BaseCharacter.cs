@@ -359,10 +359,11 @@ public class BaseCharacter : MonoBehaviour {
 		}
 		rb.velocity = Vector3.zero;
 		animator.SetLayerWeight (2, 1);
-		//audioSource.clip = audioClips[2];
-		//audioSource.Play();
-
 		animator.SetTrigger("isDead");
+		
+		audioSource.clip = audioClips[2];
+		audioSource.Play();
+
 		Invoke("spawn", 3);
 		isDead = true;
 		rb.isKinematic = true;
@@ -372,6 +373,9 @@ public class BaseCharacter : MonoBehaviour {
 		if (isDead) {
 			return;
 		}
+		audioSource.clip = audioClips[2];
+		audioSource.Play();
+		
 		rb.velocity = Vector3.zero;
 		Invoke("spawn", 3);
 		isDead = true;
