@@ -2593,7 +2593,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401140, guid: f95f15d42cce01c4bba1b4995e05c488, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528354, guid: f95f15d42cce01c4bba1b4995e05c488, type: 2}
+      propertyPath: m_Size.x
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528354, guid: f95f15d42cce01c4bba1b4995e05c488, type: 2}
+      propertyPath: m_Size.z
+      value: 0.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f95f15d42cce01c4bba1b4995e05c488, type: 2}
@@ -4185,6 +4193,22 @@ Prefab:
     - target: {fileID: 415738, guid: 27e29ad56d6818940947392f6a5918ab, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418736, guid: 27e29ad56d6818940947392f6a5918ab, type: 2}
+      propertyPath: maxspeed
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490250, guid: 27e29ad56d6818940947392f6a5918ab, type: 2}
+      propertyPath: m_Drag
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596132, guid: 27e29ad56d6818940947392f6a5918ab, type: 2}
+      propertyPath: m_Size.z
+      value: 0.6634499
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596132, guid: 27e29ad56d6818940947392f6a5918ab, type: 2}
+      propertyPath: m_Center.z
+      value: -0.003232479
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27e29ad56d6818940947392f6a5918ab, type: 2}
