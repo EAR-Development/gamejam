@@ -938,7 +938,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1059,10 +1059,10 @@ MonoBehaviour:
   fireCounter: 0
   audioSource: {fileID: 8282162}
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: ffa064c158547044e9bd23ad899d0702, type: 3}
+  - {fileID: 8300000, guid: ec237a4a48194ff4a91b072ba47dae8f, type: 3}
+  - {fileID: 8300000, guid: 12547e642507a3e429d445be1e4e7831, type: 3}
+  - {fileID: 8300000, guid: a3981fc7722420d44a14b35b6e71840c, type: 3}
   rb: {fileID: 5487152}
   animator: {fileID: 9505306}
   jumpkeyWasUsed: 0
@@ -1127,7 +1127,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114732}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   m_Radius: 0.1
   m_Height: 0.1
@@ -1140,12 +1140,12 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111012}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   m_Radius: 0.1
   m_Height: 0.1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.05, z: 0}
 --- !u!136 &13661230
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1153,12 +1153,12 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110426}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   m_Radius: 0.1
   m_Height: 0.1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.05, y: 0, z: 0}
 --- !u!136 &13670842
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1166,7 +1166,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126346}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   m_Radius: 0.1
   m_Height: 0.1
