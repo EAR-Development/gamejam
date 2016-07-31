@@ -13,7 +13,7 @@ public class ThreeFaceDownAtk : StateMachineBehaviour
 		characterScript = animator.GetComponent<BaseCharacter>();
 		colliders = characterScript.col_fists;
 		
-		colliders[3].enabled = true;
+		//colliders[3].enabled = true;
 		colliders[2].enabled = true;
 		colliders[4].enabled = true;
 		colliders[1].enabled = true;
@@ -23,7 +23,7 @@ public class ThreeFaceDownAtk : StateMachineBehaviour
     // This will be called once the animator has transitioned out of the state.
     override public void OnStateExit (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-		colliders[3].enabled = false;
+		//colliders[3].enabled = false;
 		colliders[2].enabled = false;
 		colliders[4].enabled = false;
 		colliders[1].enabled = false;

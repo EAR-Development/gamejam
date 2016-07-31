@@ -1211,7 +1211,7 @@ MonoBehaviour:
   jumpkeyWasUsed: 0
   groundCheckPause: 0
   isFlying: 0
-  jumpingMidAir: 1
+  jumpingMidAir: 0
   isSided: 0
   walljumpCounter: 3
   onFireHitSoundInterval: 0.4
