@@ -1972,6 +1972,7 @@ MonoBehaviour:
   tempVec: {x: 0, y: 0, z: 0}
   aBlocks:
   - {fileID: 0}
+  rotate: 1
   rotateTimer: 10
   blockTimer: 5
   rotateCounter: 0
@@ -10562,9 +10563,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 176396, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
+    - target: {fileID: 5452996, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
@@ -31261,7 +31262,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 176396, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 176396, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
       propertyPath: m_Name
@@ -31270,6 +31271,10 @@ Prefab:
     - target: {fileID: 11467006, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
       propertyPath: assignedPlayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452996, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2b004396dd75ab43a24dc61626bf19e, type: 2}

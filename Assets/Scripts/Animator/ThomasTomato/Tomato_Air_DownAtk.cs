@@ -4,13 +4,13 @@ public class Tomato_Air_DownAtk : StateMachineBehaviour
 {
 	public Rigidbody rb;
 	public Collider[] colliders;
-	public ThomasTomato characterScript;
+	public BaseCharacter characterScript;
 	
     // This will be called when the animator first transitions to this state.
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 		rb = animator.GetComponent<Rigidbody>();
-		characterScript = animator.GetComponent<ThomasTomato>();
+		characterScript = animator.GetComponent<BaseCharacter>();
 		colliders = characterScript.col_fists;
 		
 		colliders[0].enabled = true;
@@ -23,15 +23,18 @@ public class Tomato_Air_DownAtk : StateMachineBehaviour
     {
 		colliders[0].enabled = false;
 		colliders[1].enabled = false;
+		for(int i = 0; i < characterScript.col_fists.Length; i++){
+			characterScript.col_fists[i].GetComponent<Fists>().hitColliders.Clear();
+		}
     }
 	
 	override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 		if(characterScript.facingRight){
-			rb.AddForce(new Vector2 (21, -21));
+			rb.AddForce(new Vector2 (14, -14));
 		}
 		else {
-			rb.AddForce(new Vector2 (-21, -21));
+			rb.AddForce(new Vector2 (-14, -14));
 		}
 		
     }
