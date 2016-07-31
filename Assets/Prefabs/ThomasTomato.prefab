@@ -921,6 +921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitColliders: []
 --- !u!114 &11447868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -932,6 +933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitColliders: []
 --- !u!114 &11481700
 MonoBehaviour:
   m_ObjectHideFlags: 1
