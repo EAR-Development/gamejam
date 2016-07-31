@@ -1217,7 +1217,7 @@ MonoBehaviour:
   jumpkeyWasUsed: 0
   groundCheckPause: 0
   isFlying: 0
-  jumpingMidAir: 0
+  jumpingMidAir: 1
   isSided: 0
   walljumpCounter: 3
   onFireHitSoundInterval: 0.4
@@ -4395,6 +4395,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: jumpingMidAir
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

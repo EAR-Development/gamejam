@@ -1280,7 +1280,7 @@ MonoBehaviour:
   debuffTime: 1
   fireDPS: 12
   jumpCooldown: 0.5
-  maxAirVelocity: 0
+  maxAirVelocity: 5
   slowEffect: {fileID: 19824510}
   fireEffect: {fileID: 19827498}
   borderDeathEffect: {fileID: 0}
@@ -1290,6 +1290,7 @@ MonoBehaviour:
   jumpFactor: 1
   slowCounter: 0
   fireCounter: 0
+  invisCounter: 0
   audioSource: {fileID: 8281198}
   audioClips:
   - {fileID: 8300000, guid: 07dbd5b98ebc58e4888d30dfc47f8cec, type: 3}
@@ -1301,7 +1302,7 @@ MonoBehaviour:
   jumpkeyWasUsed: 0
   groundCheckPause: 0
   isFlying: 0
-  jumpingMidAir: 0
+  jumpingMidAir: 1
   isSided: 0
   walljumpCounter: 3
   onFireHitSoundInterval: 0.4
@@ -1312,6 +1313,7 @@ MonoBehaviour:
   - {fileID: 6581658}
   - {fileID: 6546616}
   - {fileID: 6584478}
+  aMeshes: []
   player: {fileID: 0}
 --- !u!114 &11487014
 MonoBehaviour:
@@ -4790,7 +4792,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: jumpingMidAir
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxAirVelocity
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 161140}
