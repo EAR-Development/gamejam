@@ -163,6 +163,7 @@ GameObject:
   - 4: {fileID: 481556}
   - 136: {fileID: 13666694}
   - 114: {fileID: 11410808}
+  - 96: {fileID: 9698892}
   m_Layer: 14
   m_Name: joint15
   m_TagString: Untagged
@@ -180,6 +181,7 @@ GameObject:
   - 4: {fileID: 476038}
   - 136: {fileID: 13687788}
   - 114: {fileID: 11401926}
+  - 96: {fileID: 9608780}
   m_Layer: 14
   m_Name: joint20
   m_TagString: Untagged
@@ -1019,6 +1021,100 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!96 &9608780
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128370}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9bc33b3e00fa7c144ac0796393b18754, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.3
+  m_StartWidth: 0.2
+  m_EndWidth: 0.04
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4292540927
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4290311423
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4286967039
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 9408399
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+--- !u!96 &9698892
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128114}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9bc33b3e00fa7c144ac0796393b18754, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.3
+  m_StartWidth: 0.2
+  m_EndWidth: 0.04
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4292540927
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4290311423
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4286967039
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 9408399
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!114 &11401926
 MonoBehaviour:
   m_ObjectHideFlags: 1
