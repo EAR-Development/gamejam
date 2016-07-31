@@ -42,6 +42,7 @@ public class HealthbarScript : MonoBehaviour {
 			uiHp -= Time.deltaTime;
 
 			if (fragmentTransforms [(int)(uiHp*10)].gameObject.activeSelf) {
+				
 				//fragmentTransforms [(int)(uiHp * 10)].gameObject.SetActive (false);
 				fragmentTransforms [(int)(uiHp*10)].GetComponent<Animator> ().enabled=true;
 
