@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour {
 	public static int playersLeft{get; set;}
 	public static int TeamsLeft{get; set;}
 	public static int teams{get; set;}
+	public static scoreboard board{get; set;}
 
 
 
@@ -20,14 +21,16 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
+
+
 	}
 
 	public static void reportLost(HumanPlayer p){
 
 
 		playersLeft = 0;
-		int tleft;
 		List<int> countedTeams= new List<int>();
+		List<HumanPlayer> winnerTeam= new List<HumanPlayer>();
 		for(int i=0;i< playerList.Count;i++){
 			if(playerList[i].lifesLeft!=0){
 				if(!countedTeams.Contains(playerList[i].teamNumber)){
@@ -40,7 +43,27 @@ public class GameController : MonoBehaviour {
 		}
 
 		if(countedTeams.Count==1) {
-			print ("WIIIIIIIIN");
+
+		
+			for(int i=0;i< playerList.Count;i++){
+				if(playerList[i].lifesLeft!=0){
+					if(playerList[i].teamNumber==countedTeams[0]){
+						
+						winnerTeam.Add (playerList[i]);
+
+
+					}
+				
+				}
+
+			}
+
+			board.gameObject.SetActive (true);
+			board.setTeamBar (countedTeams [0], winnerTeam);
+
+				
+
+
 		}
 
 	}
