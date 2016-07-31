@@ -20,6 +20,7 @@ public class BaseCharacter : MonoBehaviour {
 	public Transform backCheck;
 	float groundRadius = 0.1f;
 	public LayerMask whatIsGround;
+	public LayerMask whatIsWall;
 
 	public int assignedPlayer = 1;
 
@@ -318,10 +319,10 @@ public class BaseCharacter : MonoBehaviour {
 	void checkGroundStatus(){
 		isGrounded =  Physics.OverlapSphere (groundCheck.position, groundRadius, whatIsGround).Length!=0;
 	}
-
+		
 	void checkSideStatus(){
-		bool isfrontSided = Physics.OverlapSphere (frontCheck.position, groundRadius, whatIsGround).Length!=0;
-		bool isbackSided = Physics.OverlapSphere (backCheck.position, groundRadius, whatIsGround).Length!=0;
+		bool isfrontSided = Physics.OverlapSphere (frontCheck.position, groundRadius, whatIsWall).Length!=0;
+		bool isbackSided = Physics.OverlapSphere (backCheck.position, groundRadius, whatIsWall).Length!=0;
 
 		isSided = isfrontSided || isbackSided;
 
