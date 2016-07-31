@@ -70,6 +70,7 @@ public class BaseCharacter : MonoBehaviour {
 	public SkinnedMeshRenderer[] aMeshes;
 
 	private ParticleSystem deathParticles;
+	//public trailRenderer
 
 	public HumanPlayer player;
 
