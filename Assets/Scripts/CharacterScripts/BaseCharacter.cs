@@ -96,10 +96,17 @@ public class BaseCharacter : MonoBehaviour {
 			checkGroundStatus ();
 			checkSideStatus ();
 		}
-
+		
+		float inputMovementstrength = 0;
 		calculateDebuffFactors ();
-
-		float inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
+		if(Input.GetAxisRaw ("Player" + assignedPlayer + "_x") != 0){
+			 inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
+		}
+		else if(Input.GetAxis ("Player" + assignedPlayer + "_x_ctrlr") != 0){
+			inputMovementstrength = Input.GetAxisRaw ("Player" + assignedPlayer + "_x_ctrlr");
+		}
+		
+		//float inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
 		applyHorizontalMovement (inputMovementstrength);
 	}
 		
@@ -125,8 +132,7 @@ public class BaseCharacter : MonoBehaviour {
 		bool jumpKeyDown = false;
 
 		// JUMP
-
-
+		//keyboard controls
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") != 0){
 
 			if(jumpkeyWasUsed == false)
@@ -136,6 +142,19 @@ public class BaseCharacter : MonoBehaviour {
 			}
 		}
 		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump") == 0){
+			jumpkeyWasUsed = false;
+		}  
+		
+		//controller controls
+		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump_ctrlr") != 0){
+
+			if(jumpkeyWasUsed == false)
+			{
+				jumpKeyDown = true;
+				jumpkeyWasUsed = true;
+			}
+		}
+		if( Input.GetAxisRaw("Player" + assignedPlayer + "_jump_ctrlr") == 0){
 			jumpkeyWasUsed = false;
 		}  
 			
@@ -149,7 +168,8 @@ public class BaseCharacter : MonoBehaviour {
 
 				animator.SetTrigger("jump");
 			} else {
-
+				
+				//keyboard controls
 				if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") < 0) {
 					Vector3 tempVel=rb.velocity;
 					if (rb.velocity.x > 0) {
@@ -165,6 +185,33 @@ public class BaseCharacter : MonoBehaviour {
 				} else {
 					Vector3 tempVel=rb.velocity;
 					if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") > 0) {
+						if (rb.velocity.x > 0) {
+							
+							//print ("links zu links");
+						} else {
+							tempVel.x = tempVel.x * -1;
+							rb.velocity = tempVel;
+							//print ("links zu rechts");
+						}
+					}
+				} 
+				
+				//Controller controls
+				if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x_ctrlr") < 0) {
+					Vector3 tempVel=rb.velocity;
+					if (rb.velocity.x > 0) {
+						//print ("rechts zu links");
+
+						tempVel.x = tempVel.x * -1;
+						rb.velocity = tempVel;
+
+
+					} else {
+					//	print ("rechts zu rechts");
+					}
+				} else {
+					Vector3 tempVel=rb.velocity;
+					if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x_ctrlr") > 0) {
 						if (rb.velocity.x > 0) {
 							
 							//print ("links zu links");
@@ -454,7 +501,7 @@ public class BaseCharacter : MonoBehaviour {
 	public virtual void attack(){
 		//ATTACK
 		//Attack while standing still
-		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0)){
+		if(( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0)) || ( Input.GetButtonDown("Player" + assignedPlayer + "_action_ctrlr") && (Input.GetAxis ("Player" + assignedPlayer + "_x_ctrlr") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y_ctrlr") == 0))){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
 				audioSource.clip = audioClips[0];
 				audioSource.Play();
@@ -463,7 +510,8 @@ public class BaseCharacter : MonoBehaviour {
 			} 
 		}			
 		//attack while moving on X		
-		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") != 0)){
+		else if(( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") != 0))
+			||	( Input.GetButtonDown("Player" + assignedPlayer + "_action_ctrlr") && (Input.GetAxis ("Player" + assignedPlayer + "_x_ctrlr") != 0))){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
 				audioSource.clip = audioClips[0];
 				audioSource.Play();
@@ -472,7 +520,8 @@ public class BaseCharacter : MonoBehaviour {
 			} 
 		}
 		//Attack up
-		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
+		else if(( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0))
+		||	( Input.GetButtonDown("Player" + assignedPlayer + "_action_ctrlr") && (Input.GetAxis ("Player" + assignedPlayer + "_y_ctrlr") > 0))){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
 				audioSource.clip = audioClips[0];
 				audioSource.Play();
@@ -481,7 +530,8 @@ public class BaseCharacter : MonoBehaviour {
 			} 
 		}
 		//attack while moving down
-		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") < 0)){
+		else if(( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") < 0))
+		||	( Input.GetButtonDown("Player" + assignedPlayer + "_action_ctrlr") && (Input.GetAxis ("Player" + assignedPlayer + "_y_ctrlr") < 0))){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
 				audioSource.clip = audioClips[0];
 				audioSource.Play();
@@ -490,7 +540,8 @@ public class BaseCharacter : MonoBehaviour {
 			} 
 		}
 		//attack while moving up
-		else if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0)){
+		else if(( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0))
+		||	( Input.GetButtonDown("Player" + assignedPlayer + "_action_ctrlr") && (Input.GetAxis ("Player" + assignedPlayer + "_y_ctrlr") > 0))){
 			if( meleeAttackCounter >= meleeAttackCooldown ){
 				audioSource.clip = audioClips[0];
 				audioSource.Play();
