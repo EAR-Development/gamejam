@@ -378,6 +378,7 @@ public class BaseCharacter : MonoBehaviour {
 		}
 		isDead = true;
 		rb.isKinematic = true;
+		gameObject.SetActive (false);
 	}
 
 	void dieFromBorder(){
