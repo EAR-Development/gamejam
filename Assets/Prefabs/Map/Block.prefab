@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.716789, y: 4.067918, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -109,10 +110,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockType: 
   isVisible: 0
-  normalMaterial: {fileID: 2100000, guid: dac5edd4dea1a5643b95dbffade8a3e3, type: 2}
-  slowMaterial: {fileID: 2100000, guid: 9060ba94f9e879d419a85956cf105199, type: 2}
-  fireMaterial: {fileID: 2100000, guid: d12fdb0acdad17a42a75353cabd8f2d1, type: 2}
-  invisMaterial: {fileID: 2100000, guid: 73f84a885b2255a4f91850909433b9d8, type: 2}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  slowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  fireColor: {r: 1, g: 0, b: 0, a: 1}
+  invisColor: {r: 1, g: 0, b: 1, a: 1}
+  bounceColor: {r: 0, g: 1, b: 0, a: 1}
+  bouncePhysicMaterial: {fileID: 0}
   rend: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:

@@ -73,7 +73,7 @@ public class BaseCharacter : MonoBehaviour {
 	public SkinnedMeshRenderer[] aMeshes;
 
 	private ParticleSystem deathParticles;
-	//public trailRenderer
+	public TrailRenderer[] trailRenderer;
 
 	public HumanPlayer player;
 
@@ -214,16 +214,25 @@ public class BaseCharacter : MonoBehaviour {
 		
 		if(invisCounter > 0f){
 			invisCounter -= Time.deltaTime;
+			//disable meshes
 			for(int i = 0; i < aMeshes.Length; i++){
-				aMeshes[i].enabled = false;
-				//aMeshes[i].gameObject.SetActive(false);
+				aMeshes[i].enabled = false;					
+			}
+			//disable trailRenderers
+			for(int i = 0; i < trailRenderer.Length; i++){
+				trailRenderer[i].enabled = false;			
 			}
 			
+			//enable again
 			if(invisCounter <= 0f){
 				for(int i = 0; i < aMeshes.Length; i++){
 					aMeshes[i].enabled = true;
 				}	
+				for(int i = 0; i < trailRenderer.Length; i++){
+					trailRenderer[i].enabled = true;			
+				}
 			}
+			
 		}
 	}
 		

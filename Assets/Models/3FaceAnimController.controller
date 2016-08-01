@@ -99,7 +99,34 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!114 &11428960
+--- !u!114 &11416712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f51952ec11d08438aaba701f64d7aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliders: []
+  characterScript: {fileID: 0}
+--- !u!114 &11421278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72da6780c552fa84885c301ed471ba80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  colliders: []
+  characterScript: {fileID: 0}
+--- !u!114 &11431516
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -112,33 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliders: []
   characterScript: {fileID: 0}
---- !u!114 &11434594
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66fcb5f3122cf4143b3fea0da17e9db3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colliders: []
-  characterScript: {fileID: 0}
---- !u!114 &11453494
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69170a2d98189ad4f863f06b50d8eb19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colliders: []
-  characterScript: {fileID: 0}
---- !u!114 &11466170
+--- !u!114 &11445480
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -151,7 +152,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliders: []
   characterScript: {fileID: 0}
---- !u!114 &11480876
+--- !u!114 &11467046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8054b2f43c75a594c8c9b6d88d5e8938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliders: []
+  characterScript: {fileID: 0}
+--- !u!114 &11497826
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -160,19 +174,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69170a2d98189ad4f863f06b50d8eb19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colliders: []
-  characterScript: {fileID: 0}
---- !u!114 &11496736
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f51952ec11d08438aaba701f64d7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
@@ -867,7 +868,7 @@ AnimatorState:
   - {fileID: 110115886}
   - {fileID: 110176704}
   m_StateMachineBehaviours:
-  - {fileID: 11434594}
+  - {fileID: 11431516}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -893,7 +894,7 @@ AnimatorState:
   - {fileID: 110103050}
   - {fileID: 110103502}
   m_StateMachineBehaviours:
-  - {fileID: 11428960}
+  - {fileID: 11445480}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -944,7 +945,7 @@ AnimatorState:
   - {fileID: 110115014}
   - {fileID: 110174762}
   m_StateMachineBehaviours:
-  - {fileID: 11466170}
+  - {fileID: 11467046}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -970,7 +971,7 @@ AnimatorState:
   - {fileID: 110193288}
   - {fileID: 110164000}
   m_StateMachineBehaviours:
-  - {fileID: 11480876}
+  - {fileID: 11421278}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -996,7 +997,7 @@ AnimatorState:
   - {fileID: 110136076}
   - {fileID: 110162662}
   m_StateMachineBehaviours:
-  - {fileID: 11496736}
+  - {fileID: 11416712}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1022,7 +1023,7 @@ AnimatorState:
   - {fileID: 110113388}
   - {fileID: 110149748}
   m_StateMachineBehaviours:
-  - {fileID: 11453494}
+  - {fileID: 11497826}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
