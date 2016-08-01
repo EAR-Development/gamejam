@@ -32,14 +32,15 @@ public class Fists : MonoBehaviour {
 			else {
 				hitColliders.Add(col);
 				Debug.Log("player hit");
-				if(col.GetComponent<BaseCharacter>().characterClass == "ProfM" || col.GetComponent<BaseCharacter>().characterClass == "ThomasTomato"){
-					col.attachedRigidbody.AddForce(transform.right * 500);
+				if(col.GetComponent<BaseCharacter>().characterClass == "ProfM" || col.GetComponent<BaseCharacter>().characterClass == "Prism"
+					|| col.GetComponent<BaseCharacter>().characterClass == "Witch" ){
+					col.attachedRigidbody.AddForce(transform.right * 3000);
 				}
-				else if(transform.root.gameObject.name == "3FacePlus1" ){
-					col.attachedRigidbody.AddForce(-transform.right * 500);
+				else if(col.GetComponent<BaseCharacter>().characterClass == "3FacePlus1" || col.GetComponent<BaseCharacter>().characterClass == "ThomasTomato" ){
+					col.attachedRigidbody.AddForce(-transform.right * 3000);
 				}
-				else {
-					col.attachedRigidbody.AddForce(transform.forward * 500);
+				else if(col.GetComponent<BaseCharacter>().characterClass == "DestructionDetlef"){
+					col.attachedRigidbody.AddForce(transform.forward * 3000);
 				}
 				//col.GetComponent<Rigidbody>().AddForce(col.transform.root.transform.forward * 500);
 				BaseCharacter baseCharacter = col.gameObject.GetComponent<BaseCharacter>();
