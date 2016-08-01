@@ -1072,15 +1072,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11431256, guid: 9a525eca57cea80408cdc1a6180fea07, type: 2}
       propertyPath: rotateTimer
-      value: 13
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 11431256, guid: 9a525eca57cea80408cdc1a6180fea07, type: 2}
       propertyPath: blockTimer
-      value: 6
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 11431256, guid: 9a525eca57cea80408cdc1a6180fea07, type: 2}
       propertyPath: rotationStartDelay
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5499766, guid: 9a525eca57cea80408cdc1a6180fea07, type: 2}
       propertyPath: m_CollisionDetection
