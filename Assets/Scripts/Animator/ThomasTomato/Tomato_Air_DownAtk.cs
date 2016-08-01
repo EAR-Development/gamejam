@@ -31,10 +31,10 @@ public class Tomato_Air_DownAtk : StateMachineBehaviour
 	override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 		if(characterScript.facingRight){
-			rb.AddForce(new Vector2 (14, -14));
+			rb.AddForce(new Vector2 (140, -140));
 		}
 		else {
-			rb.AddForce(new Vector2 (-14, -14));
+			rb.AddForce(new Vector2 (-140, -140));
 		}
 		
     }

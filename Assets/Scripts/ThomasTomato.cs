@@ -7,7 +7,7 @@ public class ThomasTomato : BaseCharacter {
 		
 	//public Collider[] col_fists;
 
-	public void attack(){
+	public override void attack(){
 		//ATTACK
 		//Attack while standing still
 		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0)){

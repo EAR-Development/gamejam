@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BaseCharacter : MonoBehaviour {
 
@@ -53,6 +54,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	public AudioSource audioSource;
 	public AudioClip[] audioClips;
+	public Sprite hudImage;
 	
 	public Rigidbody rb;
 	public Animator animator;
@@ -439,7 +441,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	}
 
-	public void attack(){
+	public virtual void attack(){
 		//ATTACK
 		//Attack while standing still
 		if( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0)){

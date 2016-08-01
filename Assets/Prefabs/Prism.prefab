@@ -1374,6 +1374,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eddb97dae74a17a42b9e75c838752ff2, type: 3}
   - {fileID: 8300000, guid: da936545398115c428cb2dae169370e0, type: 3}
   - {fileID: 8300000, guid: 9f97b345327a6364d8b8a846ce20a9ec, type: 3}
+  hudImage: {fileID: 21300000, guid: 369e458631d737241b132a6cf20be15e, type: 3}
   rb: {fileID: 5452996}
   animator: {fileID: 9585280}
   jumpkeyWasUsed: 0

@@ -29,6 +29,7 @@ public class UIUpdater : MonoBehaviour {
 		uiMarker.setText (player.nameHuman);
 		rectUiMarker = uiMarker.GetComponent<RectTransform> ();
 		hpbar.character = character;
+		characterImage.sprite = character.hudImage;
 
 	}
 	

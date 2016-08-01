@@ -1107,6 +1107,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: edcbf6a8e3c527b4b9ac4c2361fba6ea, type: 3}
   - {fileID: 8300000, guid: 27e50579dcafe3f418c1bea5c82450d1, type: 3}
   - {fileID: 8300000, guid: 3cc0fbf0c03184a4e8687ef1a24329d0, type: 3}
+  hudImage: {fileID: 21300000, guid: 31e01b4171e04d441ad9ca8717e20eb9, type: 3}
   rb: {fileID: 5443632}
   animator: {fileID: 9582490}
   jumpkeyWasUsed: 0
