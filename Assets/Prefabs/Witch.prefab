@@ -212,8 +212,8 @@ GameObject:
   - 95: {fileID: 9591300}
   - 114: {fileID: 11480560}
   - 54: {fileID: 5490250}
-  - 65: {fileID: 6596132}
   - 82: {fileID: 8291490}
+  - 136: {fileID: 13694676}
   m_Layer: 18
   m_Name: Witch
   m_TagString: Player
@@ -390,7 +390,7 @@ Transform:
   m_LocalRotation: {x: 0.7069613, y: -0.7072514, z: 0.00006762147, w: 0.0010799468}
   m_LocalPosition: {x: -0.06499999, y: 0.05985452, z: 0.010999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.092999995, y: -179.918, z: -89.976395}
   m_Children: []
   m_Father: {fileID: 498292}
   m_RootOrder: 3
@@ -401,7 +401,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.576, y: -2.33, z: 1.03}
+  m_LocalPosition: {x: 3.0052416, y: 6.531198, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -553,7 +553,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.065, y: 0.5250001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 415738}
   m_RootOrder: 0
@@ -630,23 +630,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158920}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.13808976, y: 0.9618413, z: 1.0000001}
-  m_Center: {x: -0.020355241, y: 0.0111829955, z: 0.000010623746}
---- !u!65 &6596132
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169344}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.49102926, z: 0.8236761}
-  m_Center: {x: 0, y: 0.3051734, z: 0.0140423775}
+  m_Size: {x: 0.15, y: 0.7, z: 0.9}
+  m_Center: {x: -0.015, y: 0.012, z: 0.000010623746}
 --- !u!82 &8291490
 AudioSource:
   m_ObjectHideFlags: 1
@@ -863,6 +851,19 @@ MonoBehaviour:
   aMeshes:
   - {fileID: 13714858}
   player: {fileID: 0}
+--- !u!136 &13694676
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!137 &13714858
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
