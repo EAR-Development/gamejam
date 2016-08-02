@@ -17,6 +17,7 @@ public class SelectorBox : MonoBehaviour {
 	public Sprite[] teamBarSprites;
 	public Image teamBar;
 	public int maxTeams;
+	public Toggle toggle;
 
 
 	// Use this for initialization

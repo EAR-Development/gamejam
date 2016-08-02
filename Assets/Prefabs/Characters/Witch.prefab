@@ -323,7 +323,7 @@ Transform:
   m_LocalRotation: {x: -0.0000014423889, y: -0.000036605932, z: -0.039031077, w: 0.999238}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999994}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.00029999999, y: -0.0042, z: -4.4737997}
   m_Children:
   - {fileID: 451914}
   m_Father: {fileID: 423582}
@@ -335,9 +335,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 165948}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -0.065, y: 0.31199998, z: 0.467}
+  m_LocalPosition: {x: -0.065, y: 0.31199998, z: 0.363}
   m_LocalScale: {x: 0.5425611, y: 0.8191521, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children: []
   m_Father: {fileID: 498292}
   m_RootOrder: 7
@@ -363,7 +363,7 @@ Transform:
   m_LocalRotation: {x: 0.00012491428, y: -0.00024809796, z: 0.053939406, w: 0.99854416}
   m_LocalPosition: {x: -0.052867316, y: 0, z: 9.462237e-11}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0158, y: -0.0276, z: 6.184}
   m_Children:
   - {fileID: 460842}
   m_Father: {fileID: 496834}
@@ -401,7 +401,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0052416, y: 6.531198, z: 0}
+  m_LocalPosition: {x: 6.152125, y: 3.6310616, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -419,7 +419,7 @@ Transform:
   m_LocalRotation: {x: -0.0007158952, y: 0.0008114075, z: 0.0002053261, w: 0.9999994}
   m_LocalPosition: {x: 0.20083995, y: -0.000000032720997, z: 4.94073e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.081999995, y: 0.092999995, z: 0.0235}
   m_Children: []
   m_Father: {fileID: 423582}
   m_RootOrder: 0
@@ -432,7 +432,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: -0.7071068, z: 0.0000001192093, w: 0}
   m_LocalPosition: {x: -0.06499999, y: 0.26069447, z: 0.010999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: -90}
   m_Children:
   - {fileID: 422214}
   - {fileID: 400834}
@@ -471,9 +471,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117798}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -0.065, y: 0.31200045, z: -0.364}
+  m_LocalPosition: {x: -0.065, y: 0.31200045, z: -0.298}
   m_LocalScale: {x: 0.5425611, y: 0.8191521, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children: []
   m_Father: {fileID: 498292}
   m_RootOrder: 8
@@ -486,7 +486,7 @@ Transform:
   m_LocalRotation: {x: -0.000016962036, y: -0.00037422852, z: -0.017958833, w: 0.9998387}
   m_LocalPosition: {x: -0.052867338, y: 0.000000006055832, z: -2.3655593e-11}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0026999998, y: -0.042799998, z: -2.0579998}
   m_Children:
   - {fileID: 496834}
   m_Father: {fileID: 451914}
@@ -500,7 +500,7 @@ Transform:
   m_LocalRotation: {x: 0.00000005960465, y: -0.7071068, z: -0.7071068, w: -0.00000005960465}
   m_LocalPosition: {x: -0.06499999, y: 0.46524638, z: 0.010999992}
   m_LocalScale: {x: 0.16475277, y: 0.16475278, z: 0.16475277}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: -180, z: 0}
   m_Children: []
   m_Father: {fileID: 498292}
   m_RootOrder: 1
@@ -513,7 +513,7 @@ Transform:
   m_LocalRotation: {x: -0.000017367665, y: -0.00024727, z: -0.053939484, w: 0.99854416}
   m_LocalPosition: {x: -0.052867316, y: 0, z: 1.4784746e-12}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0034999999, y: -0.028199999, z: -6.184}
   m_Children:
   - {fileID: 437542}
   m_Father: {fileID: 400834}
@@ -527,7 +527,7 @@ Transform:
   m_LocalRotation: {x: 0.000101510916, y: -0.00003723274, z: 0.039030906, w: 0.999238}
   m_LocalPosition: {x: -0.052867364, y: 0, z: -9.462237e-11}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0117999995, y: -0.0037999998, z: 4.4737997}
   m_Children: []
   m_Father: {fileID: 405462}
   m_RootOrder: 0
@@ -566,7 +566,7 @@ Transform:
   m_LocalRotation: {x: 0.000030410889, y: -0.0003745241, z: 0.017958807, w: 0.9998387}
   m_LocalPosition: {x: -0.052867316, y: 0, z: -4.7311186e-11}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0042999997, y: -0.042799998, z: 2.0579998}
   m_Children:
   - {fileID: 405462}
   m_Father: {fileID: 437542}
@@ -607,7 +607,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!54 &5490250
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -799,10 +799,11 @@ MonoBehaviour:
   isGrounded: 0
   facingRight: 1
   maxHp: 100
-  maxspeed: 18
-  jumpForce: 420
+  maxspeed: 16
+  jumpForce: 350
   meleeAttackCooldown: 1
   doubled: 0
+  useController: 0
   characterClass: Witch
   groundCheck: {fileID: 428606}
   frontCheck: {fileID: 401564}
@@ -813,14 +814,14 @@ MonoBehaviour:
   whatIsWall:
     serializedVersion: 2
     m_Bits: 512
-  assignedPlayer: 1
+  assignedPlayer: 4
   debuffTime: 1
   fireDPS: 12
   jumpCooldown: 0.3
   maxAirVelocity: 5
   slowEffect: {fileID: 19846236}
   fireEffect: {fileID: 19843920}
-  SpawnEffect: {fileID: 0}
+  SpawnEffect: {fileID: 178584, guid: 2d60fcde3ef4aa54d922e8e0027b2cad, type: 2}
   borderDeathEffect: {fileID: 0}
   currentHp: 100
   meleeAttackCounter: 1
@@ -840,7 +841,7 @@ MonoBehaviour:
   jumpkeyWasUsed: 0
   groundCheckPause: 0
   isFlying: 0
-  jumpingMidAir: 0
+  jumpingMidAir: 1
   isSided: 0
   walljumpCounter: 3
   onFireHitSoundInterval: 0.4
@@ -850,7 +851,11 @@ MonoBehaviour:
   - {fileID: 6549760}
   aMeshes:
   - {fileID: 13714858}
+  trailRenderer:
+  - {fileID: 9640340}
   player: {fileID: 0}
+  lastHit: {fileID: 0}
+  hitTime: 3
 --- !u!136 &13694676
 CapsuleCollider:
   m_ObjectHideFlags: 1

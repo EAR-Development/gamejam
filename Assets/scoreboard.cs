@@ -29,8 +29,8 @@ public class scoreboard : MonoBehaviour {
 	
 	}
 
+	//public void setTeamBar(int winningteam, List<HumanPlayer> players, List<HumanPlayer> allPlayers){
 	public void setTeamBar(int winningteam, List<HumanPlayer> players){
-		
 		teamName.text=teamNames[winningteam];
 		teamBar.sprite=sprites[winningteam];
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class GameController : MonoBehaviour {
 
 	public static int totalPlayers{ get; set;}
+	public static List<HumanPlayer> allPlayers{get; set;}
 	public static List<HumanPlayer> playerList{get; set;}
 	public static Camera cam{get; set;}
 	public static EnvironmentController center{get; set;}
@@ -33,7 +34,8 @@ public class GameController : MonoBehaviour {
 		List<int> countedTeams= new List<int>();
 		List<HumanPlayer> winnerTeam= new List<HumanPlayer>();
 		for(int i=0;i< playerList.Count;i++){
-			if(playerList[i].lifesLeft!=0){
+			//allPlayers.Add(playerList[i]);
+			if(playerList[i].lifesLeft!=0){			
 				if(!countedTeams.Contains(playerList[i].teamNumber)){
 					countedTeams.Add (playerList[i].teamNumber);
 
@@ -51,7 +53,7 @@ public class GameController : MonoBehaviour {
 					if(playerList[i].teamNumber==countedTeams[0]){
 						
 						winnerTeam.Add (playerList[i]);
-
+						Debug.Log("winners: "+playerList[i]);
 
 					}
 				
@@ -60,8 +62,8 @@ public class GameController : MonoBehaviour {
 			}
 
 			board.gameObject.SetActive (true);
-			board.setTeamBar (countedTeams [0], winnerTeam);
-
+			//board.setTeamBar (countedTeams[0], winnerTeam);
+			board.setTeamBar (countedTeams[0], winnerTeam);
 				
 
 

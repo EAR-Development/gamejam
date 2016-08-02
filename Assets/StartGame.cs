@@ -9,6 +9,7 @@ public class StartGame : MonoBehaviour {
 	public GameObject playerPrefab;
 	public GameObject[] playableCharacters;
 	public Slider slider;
+	public Toggle toggle;
 
 	public AudioClip clip;
 	// Use this for initialization
@@ -38,6 +39,15 @@ public class StartGame : MonoBehaviour {
 				playerCount++;
 				p.playerNumber = playerCount;
 				p.characterPrefab=playableCharacters[boxes[i].selection -1];
+				if(boxes[i].toggle.isOn){
+					p.useController = true;
+				}
+				/*
+				if(boxes[i].toggle.isOn){
+					p.characterPrefab.GetComponent<BaseCharacter>().useController = true;
+					Debug.Log("use controller");
+				}
+				*/
 			}
 			GameController.totalPlayers = playerCount;
 

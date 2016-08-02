@@ -112,20 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliders: []
   characterScript: {fileID: 0}
---- !u!114 &11432030
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc0eff4dfb00b5c40b3728b1ceeaa013, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  colliders: []
-  characterScript: {fileID: 0}
 --- !u!114 &11432456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,6 +121,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f86e5bfa6855c245919cce5edf41d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliders: []
+  characterScript: {fileID: 0}
+--- !u!114 &11442082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6f02ca99829f341a4bbc0108a379a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
@@ -165,6 +164,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliders: []
   characterScript: {fileID: 0}
+--- !u!114 &11465682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50539bc490f323a4a9ed78a7ad0d1e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11487426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1042,7 +1052,7 @@ AnimatorState:
   - {fileID: 110136076}
   - {fileID: 110136860}
   m_StateMachineBehaviours:
-  - {fileID: 11432030}
+  - {fileID: 11442082}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1148,7 +1158,8 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110165908}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 11465682}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

@@ -567,7 +567,7 @@ Transform:
   m_LocalRotation: {x: -0.016912693, y: 0.0026353276, z: -0.0073187756, w: 0.9998267}
   m_LocalPosition: {x: -0.007936583, y: -0.3272093, z: 0.22799847}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.9359, y: 0.3163, z: -0.84419996}
   m_Children:
   - {fileID: 441884}
   m_Father: {fileID: 473366}
@@ -685,7 +685,7 @@ Transform:
   m_LocalRotation: {x: -0.49999997, y: -0.50000006, z: -0.50000006, w: 0.49999997}
   m_LocalPosition: {x: 0, y: 0.525, z: -0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
   m_Children: []
   m_Father: {fileID: 480304}
   m_RootOrder: 1
@@ -776,7 +776,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.004479279, z: -0, w: 0.99999}
   m_LocalPosition: {x: -0.29086322, y: -0.014380468, z: 0.3448158}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.5133, z: 0}
   m_Children: []
   m_Father: {fileID: 473366}
   m_RootOrder: 1
@@ -820,7 +820,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: -0.033, z: 0}
   m_LocalScale: {x: 0.5425611, y: 0.8191521, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children: []
   m_Father: {fileID: 416388}
   m_RootOrder: 0
@@ -831,7 +831,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161140}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 1.953, y: 0, z: -0}
+  m_LocalPosition: {x: 7.894, y: 3.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_Children:
@@ -909,7 +909,7 @@ Transform:
   m_LocalRotation: {x: -0.49999997, y: -0.50000006, z: -0.50000006, w: 0.49999997}
   m_LocalPosition: {x: 0, y: 0.5250001, z: -0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
   m_Children: []
   m_Father: {fileID: 480304}
   m_RootOrder: 0
@@ -953,7 +953,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!54 &5449748
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -983,7 +983,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!54 &5471406
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -998,7 +998,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!54 &5473912
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1013,7 +1013,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!54 &5481998
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1043,7 +1043,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!54 &5499306
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1390,10 +1390,11 @@ MonoBehaviour:
   isGrounded: 0
   facingRight: 1
   maxHp: 100
-  maxspeed: 18
-  jumpForce: 420
+  maxspeed: 17
+  jumpForce: 360
   meleeAttackCooldown: 1
   doubled: 0
+  useController: 0
   characterClass: 3FacePlus1
   groundCheck: {fileID: 480044}
   frontCheck: {fileID: 453752}
@@ -1407,7 +1408,7 @@ MonoBehaviour:
   assignedPlayer: 1
   debuffTime: 1
   fireDPS: 12
-  jumpCooldown: 0.5
+  jumpCooldown: 2.2
   maxAirVelocity: 5
   slowEffect: {fileID: 19824510}
   fireEffect: {fileID: 19827498}
@@ -1453,7 +1454,12 @@ MonoBehaviour:
   - {fileID: 13704908}
   - {fileID: 13766950}
   - {fileID: 13725632}
+  trailRenderer:
+  - {fileID: 9611068}
+  - {fileID: 9661626}
   player: {fileID: 0}
+  lastHit: {fileID: 0}
+  hitTime: 3
 --- !u!114 &11487014
 MonoBehaviour:
   m_ObjectHideFlags: 1

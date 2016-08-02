@@ -15,6 +15,7 @@ public class HumanPlayer : MonoBehaviour {
 	public GameObject characterPrefab;
 	public int teamNumber;
 	public int lifesLeft;
+	public bool useController = false;
 
 	//character char
 	// Use this for initialization
@@ -45,6 +46,9 @@ public class HumanPlayer : MonoBehaviour {
 			character.player = this;
 			character.assignedPlayer=playerNumber;
 			character.setUpLayers ();
+			if(useController){
+				character.useController = true;
+			}
 
 			character.transform.position = GameObject.Find ("Player" + playerNumber + "_spawn").transform.position;
 		kills = 0;

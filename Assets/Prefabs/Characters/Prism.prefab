@@ -339,7 +339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &164604
 GameObject:
   m_ObjectHideFlags: 1
@@ -608,7 +608,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.2715025, y: 6.5, z: 0}
+  m_LocalPosition: {x: -3.64, y: 4.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -816,7 +816,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.525, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 424294}
   m_RootOrder: 1
@@ -884,7 +884,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.009, y: 0.302, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 424294}
   m_RootOrder: 2
@@ -965,7 +965,7 @@ Transform:
   m_LocalRotation: {x: -0.50000006, y: 0.5, z: -0.4999999, w: 0.50000006}
   m_LocalPosition: {x: 0.002, y: -0.016, z: 0.38844442}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
   m_Children: []
   m_Father: {fileID: 424294}
   m_RootOrder: 3
@@ -978,7 +978,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children:
   - {fileID: 464792}
   - {fileID: 425708}
@@ -1338,10 +1338,11 @@ MonoBehaviour:
   isGrounded: 0
   facingRight: 1
   maxHp: 100
-  maxspeed: 18
+  maxspeed: 16
   jumpForce: 420
   meleeAttackCooldown: 1
   doubled: 0
+  useController: 0
   characterClass: Prism
   groundCheck: {fileID: 450964}
   frontCheck: {fileID: 440802}
@@ -1352,7 +1353,7 @@ MonoBehaviour:
   whatIsWall:
     serializedVersion: 2
     m_Bits: 512
-  assignedPlayer: 3
+  assignedPlayer: 2
   debuffTime: 1
   fireDPS: 12
   jumpCooldown: 0.5
@@ -1390,8 +1391,12 @@ MonoBehaviour:
   - {fileID: 6566400}
   aMeshes:
   - {fileID: 13747036}
-  trailRenderer: []
+  trailRenderer:
+  - {fileID: 9629310}
+  - {fileID: 9632426}
   player: {fileID: 0}
+  lastHit: {fileID: 0}
+  hitTime: 3
 --- !u!136 &13682452
 CapsuleCollider:
   m_ObjectHideFlags: 1
