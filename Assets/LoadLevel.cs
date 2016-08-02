@@ -14,7 +14,11 @@ public class LoadLevel : MonoBehaviour {
 	}
 	
 	public void LoadMenu(){
+		GameObject[] selBox = GameObject.FindGameObjectsWithTag("HumanPlayer");
 		
+		for(int i = 0; i < selBox.Length; i++){
+			Destroy(selBox[i]);
+		}
 		Application.LoadLevel(0);
 
 	}

@@ -104,6 +104,11 @@ public class BaseCharacter : MonoBehaviour {
 		
 		float inputMovementstrength = 0;
 		calculateDebuffFactors ();
+		
+		if(controllerNr < 0 || controllerNr > 4){
+			useController = false;
+		}
+		
 		//keyboard
 		if(!useController){
 			if(Input.GetAxisRaw ("Player" + assignedPlayer + "_x") != 0){
@@ -111,7 +116,7 @@ public class BaseCharacter : MonoBehaviour {
 			}
 		}
 		else if(useController){
-			if(Input.GetAxisRaw ("Player" + controllerNr + "_x_ctrlr") != 0){
+			if(Input.GetAxis ("Player" + controllerNr + "_x_ctrlr") != 0){
 				inputMovementstrength = Input.GetAxisRaw ("Player" + controllerNr + "_x_ctrlr");
 			}
 		}
@@ -122,6 +127,7 @@ public class BaseCharacter : MonoBehaviour {
 	}
 		
 	void Update(){
+		
 		
 		if(lastHit){
 			if(hitTime > 0){

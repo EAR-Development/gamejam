@@ -15,6 +15,7 @@ public class HumanPlayer : MonoBehaviour {
 	public GameObject characterPrefab;
 	public int teamNumber;
 	public int lifesLeft;
+	public int maxHp;
 	public bool useController = false;
 	public static int controllerNr {get; set;}
 
@@ -47,6 +48,8 @@ public class HumanPlayer : MonoBehaviour {
 			character.player = this;
 			character.assignedPlayer=playerNumber;
 			character.setUpLayers ();
+			character.currentHp = maxHp;
+			character.maxHp = maxHp;
 			
 
 			character.transform.position = GameObject.Find ("Player" + playerNumber + "_spawn").transform.position;

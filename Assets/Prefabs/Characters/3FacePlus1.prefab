@@ -1408,8 +1408,8 @@ MonoBehaviour:
   assignedPlayer: 1
   debuffTime: 1
   fireDPS: 12
-  jumpCooldown: 1.7
-  maxAirVelocity: 5
+  jumpCooldown: 1.5
+  maxAirVelocity: 4
   slowEffect: {fileID: 19824510}
   fireEffect: {fileID: 19827498}
   SpawnEffect: {fileID: 178584, guid: 2d60fcde3ef4aa54d922e8e0027b2cad, type: 2}
@@ -1460,6 +1460,8 @@ MonoBehaviour:
   player: {fileID: 0}
   lastHit: {fileID: 0}
   hitTime: 3
+  uiMarker: {fileID: 0}
+  controllerNr: 0
 --- !u!114 &11487014
 MonoBehaviour:
   m_ObjectHideFlags: 1
