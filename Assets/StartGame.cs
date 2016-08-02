@@ -41,6 +41,7 @@ public class StartGame : MonoBehaviour {
 				p.characterPrefab=playableCharacters[boxes[i].selection -1];
 				if(boxes[i].toggle.isOn){
 					p.useController = true;
+					//boxes[i].toggle.isOn = false;
 				}
 				/*
 				if(boxes[i].toggle.isOn){

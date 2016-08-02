@@ -532,7 +532,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 4
+    joyNum: 3
   - serializedVersion: 3
     m_Name: Player2_y_ctrlr
     descriptiveName: 
@@ -548,7 +548,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 4
+    joyNum: 3
   - serializedVersion: 3
     m_Name: Player2_jump_ctrlr
     descriptiveName: 
@@ -564,7 +564,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 4
+    joyNum: 3
   - serializedVersion: 3
     m_Name: Player2_action_ctrlr
     descriptiveName: 
@@ -580,7 +580,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 4
+    joyNum: 3
   - serializedVersion: 3
     m_Name: Player1_y_ctrlr
     descriptiveName: 
