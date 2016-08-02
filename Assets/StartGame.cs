@@ -24,15 +24,19 @@ public class StartGame : MonoBehaviour {
 	void Update () {
 	
 	}
+	
+	public void AssignController(){
+		
+	}
 
 	public void changeScene(int scene){
-		if(boxes[0].selection!=0){
+		if(boxes[0].selection > 0){
 			GameController.sceneSound.clip = clip;
 			GameController.sceneSound.Play();
 			int playerCount=0;
 			for(int i=0;i<boxes.Length;i++){
 
-				if(boxes[i].selection!=0){
+				if(boxes[i].selection > 0){
 					HumanPlayer p = Instantiate (playerPrefab).GetComponent<HumanPlayer>();
 					p.teamNumber = boxes [i].teamNumber;
 					p.lifesLeft = (int)slider.value;
@@ -44,6 +48,7 @@ public class StartGame : MonoBehaviour {
 					p.characterPrefab=playableCharacters[boxes[i].selection -1];
 					if(boxes[i].toggle.isOn){
 						p.useController = true;
+						HumanPlayer.controllerNr = playerCount;
 						//boxes[i].toggle.isOn = false;
 					}
 					/*

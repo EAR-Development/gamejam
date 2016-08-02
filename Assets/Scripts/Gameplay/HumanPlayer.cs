@@ -36,7 +36,7 @@ public class HumanPlayer : MonoBehaviour {
 
 	void Start () {
 		
-		
+		controllerNr = 0;
 
 
 	}
@@ -66,14 +66,14 @@ public class HumanPlayer : MonoBehaviour {
 		uiUpdater.player = this;
 			instantiateUI = false;
 			
-			if(useController){
-			useController = false;
-				
+			if(this.useController){
+				this.useController = false;
+				controllerNr++;
 				character.useController = true;
 				Debug.Log("controllerNr "+controllerNr);
-				character.controllerNr = -controllerNr+4;
-				Debug.Log("controllerNr "+controllerNr);
-				controllerNr++;
+				character.controllerNr = HumanPlayer.controllerNr;
+				Debug.Log("controllerNr "+character.controllerNr);
+				
 				
 			}
 			uiUpdater.repaint();
