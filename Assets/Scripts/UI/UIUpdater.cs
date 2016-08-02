@@ -30,6 +30,7 @@ public class UIUpdater : MonoBehaviour {
 		rectUiMarker = uiMarker.GetComponent<RectTransform> ();
 		hpbar.character = character;
 		characterImage.sprite = character.hudImage;
+		character.uiMarker = uiMarker;
 
 	}
 	

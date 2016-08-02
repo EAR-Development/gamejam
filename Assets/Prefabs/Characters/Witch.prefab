@@ -817,7 +817,7 @@ MonoBehaviour:
   assignedPlayer: 4
   debuffTime: 1
   fireDPS: 12
-  jumpCooldown: 0.3
+  jumpCooldown: 0.9
   maxAirVelocity: 5
   slowEffect: {fileID: 19846236}
   fireEffect: {fileID: 19843920}

@@ -28,6 +28,12 @@ public class UiMarker : MonoBehaviour {
 		color = c;
 	}
 	
+	public void setAlphaChannel(int alpha){
+		Color tempColor = arrow1.color;
+		tempColor.a = alpha;
+		arrow1.color = tempColor;
+	}
+	
 	// Update is called once per frame
 	void Update () {
 	

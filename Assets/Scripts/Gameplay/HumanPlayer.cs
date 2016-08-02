@@ -16,6 +16,7 @@ public class HumanPlayer : MonoBehaviour {
 	public int teamNumber;
 	public int lifesLeft;
 	public bool useController = false;
+	public static int controllerNr {get; set;}
 
 	//character char
 	// Use this for initialization
@@ -34,7 +35,7 @@ public class HumanPlayer : MonoBehaviour {
 
 	void Start () {
 		
-	
+		
 
 
 	}
@@ -46,9 +47,7 @@ public class HumanPlayer : MonoBehaviour {
 			character.player = this;
 			character.assignedPlayer=playerNumber;
 			character.setUpLayers ();
-			if(useController){
-				character.useController = true;
-			}
+			
 
 			character.transform.position = GameObject.Find ("Player" + playerNumber + "_spawn").transform.position;
 		kills = 0;
@@ -63,6 +62,17 @@ public class HumanPlayer : MonoBehaviour {
 			uiUpdater.character = character;
 		uiUpdater.player = this;
 			instantiateUI = false;
+			
+			if(useController){
+			useController = false;
+				
+				character.useController = true;
+				Debug.Log("controllerNr "+controllerNr);
+				character.controllerNr = -controllerNr+4;
+				Debug.Log("controllerNr "+controllerNr);
+				controllerNr++;
+				
+			}
 			uiUpdater.repaint();
 		}
 

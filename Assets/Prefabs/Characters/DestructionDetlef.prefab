@@ -1304,10 +1304,13 @@ MonoBehaviour:
   - {fileID: 13659770}
   aMeshes:
   - {fileID: 13702276}
-  trailRenderer: []
+  trailRenderer:
+  - {fileID: 9698892}
+  - {fileID: 9608780}
   player: {fileID: 0}
   lastHit: {fileID: 0}
   hitTime: 3
+  uiMarker: {fileID: 0}
 --- !u!114 &11446126
 MonoBehaviour:
   m_ObjectHideFlags: 1

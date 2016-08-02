@@ -79,6 +79,8 @@ public class BaseCharacter : MonoBehaviour {
 	public HumanPlayer player;
 	public HumanPlayer lastHit;
 	public float hitTime = 3.0f;
+	public UiMarker uiMarker;
+	public int controllerNr = 0;
 
 	void Start () {
 
@@ -102,12 +104,18 @@ public class BaseCharacter : MonoBehaviour {
 		
 		float inputMovementstrength = 0;
 		calculateDebuffFactors ();
-		if(Input.GetAxisRaw ("Player" + assignedPlayer + "_x") != 0){
-			 inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
+		//keyboard
+		if(!useController){
+			if(Input.GetAxisRaw ("Player" + assignedPlayer + "_x") != 0){
+				inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
+			}
 		}
-		else if(Input.GetAxis ("Player" + assignedPlayer + "_x_ctrlr") != 0){
-			inputMovementstrength = Input.GetAxisRaw ("Player" + assignedPlayer + "_x_ctrlr");
+		else if(useController){
+			if(Input.GetAxisRaw ("Player" + controllerNr + "_x_ctrlr") != 0){
+				inputMovementstrength = Input.GetAxisRaw ("Player" + controllerNr + "_x_ctrlr");
+			}
 		}
+		
 		
 		//float inputMovementstrength = Input.GetAxis ("Player" + assignedPlayer + "_x");
 		applyHorizontalMovement (inputMovementstrength);
@@ -158,15 +166,15 @@ public class BaseCharacter : MonoBehaviour {
 				jumpkeyWasUsed = false;
 			}  	
 		}
-		else {
-			if( Input.GetButtonDown("Player" + assignedPlayer + "_jump_ctrlr") ){
+		else if(useController){
+			if( Input.GetButtonDown("Player" + controllerNr + "_jump_ctrlr") ){
 				if(jumpkeyWasUsed == false)
 				{
 					jumpKeyDown = true;
 					jumpkeyWasUsed = true;
 				}
 			}
-			if( !Input.GetButtonDown("Player" + assignedPlayer + "_jump_ctrlr")){
+			if( !Input.GetButtonDown("Player" + controllerNr + "_jump_ctrlr")){
 				jumpkeyWasUsed = false;
 			}  
 		}
@@ -197,7 +205,7 @@ public class BaseCharacter : MonoBehaviour {
 						//	print ("rechts zu rechts");
 						}
 					}				
-					else {
+					else if(useController){
 						Vector3 tempVel=rb.velocity;
 						if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x") > 0) {
 							if (rb.velocity.x > 0) {
@@ -213,7 +221,7 @@ public class BaseCharacter : MonoBehaviour {
 				}
 				else {
 					//Controller controls
-					if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x_ctrlr") < 0) {
+					if (Input.GetAxisRaw ("Player" + controllerNr + "_x_ctrlr") < 0) {
 						Vector3 tempVel=rb.velocity;
 						if (rb.velocity.x > 0) {
 							//print ("rechts zu links");
@@ -227,7 +235,7 @@ public class BaseCharacter : MonoBehaviour {
 						}
 					} else {
 						Vector3 tempVel=rb.velocity;
-						if (Input.GetAxisRaw ("Player" + assignedPlayer + "_x_ctrlr") > 0) {
+						if (Input.GetAxisRaw ("Player" + controllerNr + "_x_ctrlr") > 0) {
 							if (rb.velocity.x > 0) {
 								
 								//print ("links zu links");
@@ -285,6 +293,8 @@ public class BaseCharacter : MonoBehaviour {
 			for(int i = 0; i < trailRenderer.Length; i++){
 				trailRenderer[i].enabled = false;			
 			}
+			//shrink playerMarker
+			uiMarker.GetComponent<RectTransform>().localScale = new Vector3(0.42f, 0.42f, 0.42f);
 			
 			//enable again
 			if(invisCounter <= 0f){
@@ -294,6 +304,7 @@ public class BaseCharacter : MonoBehaviour {
 				for(int i = 0; i < trailRenderer.Length; i++){
 					trailRenderer[i].enabled = true;			
 				}
+					uiMarker.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 			}
 			
 		}
@@ -571,9 +582,9 @@ public class BaseCharacter : MonoBehaviour {
 				} 
 			}
 		}
-		else {
+		else if(useController){
 			//Attack while standing still
-			if(( Input.GetButtonDown("Player" + assignedPlayer + "_action_ctrlr") && (Input.GetAxis ("Player" + assignedPlayer + "_x_ctrlr") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y_ctrlr") == 0))){
+			if(( Input.GetButtonDown("Player" + controllerNr + "_action_ctrlr") && (Input.GetAxis ("Player" + controllerNr + "_x_ctrlr") == 0)&& (Input.GetAxis ("Player" + controllerNr + "_y_ctrlr") == 0))){
 				if( meleeAttackCounter >= meleeAttackCooldown ){
 					audioSource.clip = audioClips[0];
 					audioSource.Play();
@@ -582,7 +593,7 @@ public class BaseCharacter : MonoBehaviour {
 				} 
 			}			
 			//attack while moving on X		
-			else if(( Input.GetButtonDown("Player" + assignedPlayer + "_action_ctrlr") && (Input.GetAxis ("Player" + assignedPlayer + "_x_ctrlr") != 0))){
+			else if(( Input.GetButtonDown("Player" + controllerNr + "_action_ctrlr") && (Input.GetAxis ("Player" + controllerNr + "_x_ctrlr") != 0))){
 				if( meleeAttackCounter >= meleeAttackCooldown ){
 					audioSource.clip = audioClips[0];
 					audioSource.Play();
@@ -591,7 +602,7 @@ public class BaseCharacter : MonoBehaviour {
 				} 
 			}
 			//Attack up
-			else if(( Input.GetButtonDown("Player" + assignedPlayer + "_action_ctrlr") && (Input.GetAxis ("Player" + assignedPlayer + "_y_ctrlr") > 0))){
+			else if(( Input.GetButtonDown("Player" + controllerNr + "_action_ctrlr") && (Input.GetAxis ("Player" + controllerNr + "_y_ctrlr") > 0))){
 				if( meleeAttackCounter >= meleeAttackCooldown ){
 					audioSource.clip = audioClips[0];
 					audioSource.Play();
@@ -600,7 +611,7 @@ public class BaseCharacter : MonoBehaviour {
 				} 
 			}
 			//attack while moving down
-			else if(( Input.GetButtonDown("Player" + assignedPlayer + "_action_ctrlr") && (Input.GetAxis ("Player" + assignedPlayer + "_y_ctrlr") < 0))){
+			else if(( Input.GetButtonDown("Player" + controllerNr + "_action_ctrlr") && (Input.GetAxis ("Player" + controllerNr + "_y_ctrlr") < 0))){
 				if( meleeAttackCounter >= meleeAttackCooldown ){
 					audioSource.clip = audioClips[0];
 					audioSource.Play();
@@ -609,7 +620,7 @@ public class BaseCharacter : MonoBehaviour {
 				} 
 			}
 			//attack while moving up
-			else if(( Input.GetButtonDown("Player" + assignedPlayer + "_action_ctrlr") && (Input.GetAxis ("Player" + assignedPlayer + "_y_ctrlr") > 0))){
+			else if(( Input.GetButtonDown("Player" + controllerNr + "_action_ctrlr") && (Input.GetAxis ("Player" + controllerNr + "_y_ctrlr") > 0))){
 				if( meleeAttackCounter >= meleeAttackCooldown ){
 					audioSource.clip = audioClips[0];
 					audioSource.Play();

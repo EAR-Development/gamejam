@@ -10,6 +10,7 @@ TagManager:
   - Solid
   - Border
   - Block
+  - HumanPlayer
   layers:
   - Default
   - TransparentFX

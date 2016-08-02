@@ -34,13 +34,13 @@ public class Block : MonoBehaviour {
 	public void setRandomType(){
 		if (blockType == "Normal") {
 			var rand = Random.Range (0f, 1f);
-			if (rand >= 0.98f) {
+			if (rand >= 0.97f) {
 				ChangeBlockType ("Invis");
-			} else if (rand >= 0.93f) {
+			} else if (rand >= 0.92f) {
 				ChangeBlockType ("Slow");
-			} else if (rand >= 0.91f) {
+			} else if (rand >= 0.89f) {
 				ChangeBlockType ("Fire");
-			} else if (rand >= 0.87f) {
+			} else if (rand >= 0.84f) {
 				ChangeBlockType ("Bounce");
 			}
 		} else {
