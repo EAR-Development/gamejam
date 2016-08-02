@@ -32,10 +32,10 @@ public class Fists : MonoBehaviour {
 			else {
 				hitColliders.Add(col);
 				Debug.Log("player hit");
-				if( col.GetComponent<BaseCharacter>().characterClass == "Prism" || col.GetComponent<BaseCharacter>().characterClass == "3FacePlus1" ){
+				if(col.GetComponent<BaseCharacter>().characterClass == "ProfM" || col.GetComponent<BaseCharacter>().characterClass == "Prism" || col.GetComponent<BaseCharacter>().characterClass == "3FacePlus1" ){
 					col.attachedRigidbody.AddForce(transform.right * 2000);
 				}
-				else if(col.GetComponent<BaseCharacter>().characterClass == "ProfM" || col.GetComponent<BaseCharacter>().characterClass == "ThomasTomato" ){
+				else if( col.GetComponent<BaseCharacter>().characterClass == "ThomasTomato" ){
 					col.attachedRigidbody.AddForce(-transform.right * 2000);
 				}
 				else if(col.GetComponent<BaseCharacter>().characterClass == "DestructionDetlef"|| col.GetComponent<BaseCharacter>().characterClass == "Witch"){
