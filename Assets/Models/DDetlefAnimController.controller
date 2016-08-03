@@ -237,9 +237,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.087499976
-  m_TransitionOffset: 0
-  m_ExitTime: 0.44561413
+  m_TransitionDuration: 0.19999999
+  m_TransitionOffset: 0.0062016225
+  m_ExitTime: 0.25499803
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -537,7 +537,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.13333331
+  m_TransitionDuration: 0.2
   m_TransitionOffset: 0
   m_ExitTime: 0.33333337
   m_HasExitTime: 0
@@ -852,7 +852,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.071549416
+  m_TransitionDuration: 0.2
   m_TransitionOffset: 0
   m_ExitTime: 0.33333337
   m_HasExitTime: 0
@@ -1152,7 +1152,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: GotHit
-  m_Speed: 0.6
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110131778}

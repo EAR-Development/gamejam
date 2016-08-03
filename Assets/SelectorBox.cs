@@ -18,7 +18,7 @@ public class SelectorBox : MonoBehaviour {
 	public Image teamBar;
 	public int maxTeams;
 	public Toggle toggle;
-
+	public int playerNr = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -30,9 +30,26 @@ public class SelectorBox : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-
-
+	/*
+		if(Input.GetButtonDown("Player" + playerNr + "_start_ctrlr")){
+			playerNr++;			
+			Debug.Log("controller start"+playerNr);
+			toggle.isOn = true;
+		}
+	
+		if(Input.GetButtonDown("Player" + playerNr + "_action_ctrlr")){
+			//playerNr++;
+			selection--;
+			Debug.Log("controller start"+playerNr);
+			//toggle.isOn = true;
+		}
+		if(Input.GetButtonDown("Player" + playerNr + "_jump_ctrlr")){
+			//playerNr++;
+			selection++;
+			Debug.Log("controller start"+playerNr);
+			//toggle.isOn = true;
+		}
+		*/
 	}
 
 	public void switchTeam(){

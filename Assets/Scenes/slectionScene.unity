@@ -1084,6 +1084,7 @@ MonoBehaviour:
   slider: {fileID: 151471870}
   hpSlider: {fileID: 1714594856}
   toggle: {fileID: 0}
+  playerNr: 0
   clip: {fileID: 8300000, guid: b9bef0dd58e30af49a1a624bdae7d076, type: 3}
 --- !u!1 &196542343
 GameObject:
@@ -2142,6 +2143,7 @@ MonoBehaviour:
   teamBar: {fileID: 1688665436}
   maxTeams: 4
   toggle: {fileID: 133200995}
+  playerNr: 3
 --- !u!1 &508564388
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,6 +3536,7 @@ MonoBehaviour:
   teamBar: {fileID: 68002975}
   maxTeams: 4
   toggle: {fileID: 635208370}
+  playerNr: 2
 --- !u!1 &945407144
 GameObject:
   m_ObjectHideFlags: 0
@@ -4091,6 +4094,7 @@ MonoBehaviour:
   teamBar: {fileID: 2023978144}
   maxTeams: 4
   toggle: {fileID: 142854261}
+  playerNr: 4
 --- !u!1 &1129077937
 GameObject:
   m_ObjectHideFlags: 0
@@ -7370,6 +7374,7 @@ MonoBehaviour:
   teamBar: {fileID: 118471334}
   maxTeams: 4
   toggle: {fileID: 1744660596}
+  playerNr: 1
 --- !u!1 &2102277660
 GameObject:
   m_ObjectHideFlags: 0

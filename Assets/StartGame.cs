@@ -11,6 +11,7 @@ public class StartGame : MonoBehaviour {
 	public Slider slider;
 	public Slider hpSlider;
 	public Toggle toggle;
+	public int playerNr;
 
 	public AudioClip clip;
 	// Use this for initialization
@@ -22,7 +23,7 @@ public class StartGame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 	
 	public void AssignController(){
