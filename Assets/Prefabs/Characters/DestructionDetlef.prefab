@@ -205,7 +205,7 @@ GameObject:
   - 114: {fileID: 11433400}
   - 54: {fileID: 5481020}
   - 82: {fileID: 8249154}
-  m_Layer: 15
+  m_Layer: 17
   m_Name: DestructionDetlef
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -835,7 +835,7 @@ Transform:
   m_LocalRotation: {x: 4.7467155e-23, y: -7.7977017e-16, z: 0.9969861, w: -0.07758095}
   m_LocalPosition: {x: 0.01335976, y: 1.7763567e-16, z: -0.0716612}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -171.101}
   m_Children: []
   m_Father: {fileID: 401448}
   m_RootOrder: 0
@@ -1380,8 +1380,8 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   m_Radius: 0.1
-  m_Height: 0.1
-  m_Direction: 1
+  m_Height: 0.35
+  m_Direction: 0
   m_Center: {x: 0.05, y: 0, z: 0}
 --- !u!136 &13685862
 CapsuleCollider:
@@ -1406,9 +1406,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   m_Radius: 0.1
-  m_Height: 0.1
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.05, z: 0}
+  m_Height: 0.35
+  m_Direction: 0
+  m_Center: {x: -0.02, y: -0.05, z: 0}
 --- !u!137 &13702276
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

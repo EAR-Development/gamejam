@@ -99,6 +99,90 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!114 &11404092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2f4e5b146ecda47a1201d8a4ae61ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  colliders: []
+  characterScript: {fileID: 0}
+--- !u!114 &11453518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0eff4dfb00b5c40b3728b1ceeaa013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  colliders: []
+  characterScript: {fileID: 0}
+--- !u!114 &11465782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0399a6e42e4bf9c459c89f9eaf36deef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  colliders: []
+  characterScript: {fileID: 0}
+--- !u!114 &11481822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2f4e5b146ecda47a1201d8a4ae61ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  colliders: []
+  characterScript: {fileID: 0}
+--- !u!114 &11484164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72da6780c552fa84885c301ed471ba80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  colliders: []
+  characterScript: {fileID: 0}
+--- !u!114 &11498806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0399a6e42e4bf9c459c89f9eaf36deef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  colliders: []
+  characterScript: {fileID: 0}
 --- !u!206 &20646236
 BlendTree:
   m_ObjectHideFlags: 1
@@ -789,7 +873,7 @@ AnimatorState:
   - {fileID: 110115886}
   - {fileID: 110163156}
   m_StateMachineBehaviours:
-  - {fileID: 0}
+  - {fileID: 11404092}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -815,7 +899,7 @@ AnimatorState:
   - {fileID: 110103050}
   - {fileID: 110125750}
   m_StateMachineBehaviours:
-  - {fileID: 0}
+  - {fileID: 11465782}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -866,7 +950,7 @@ AnimatorState:
   - {fileID: 110115014}
   - {fileID: 110198976}
   m_StateMachineBehaviours:
-  - {fileID: 0}
+  - {fileID: 11498806}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -892,7 +976,7 @@ AnimatorState:
   - {fileID: 110193288}
   - {fileID: 110147296}
   m_StateMachineBehaviours:
-  - {fileID: 0}
+  - {fileID: 11484164}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -918,7 +1002,7 @@ AnimatorState:
   - {fileID: 110136076}
   - {fileID: 110166670}
   m_StateMachineBehaviours:
-  - {fileID: 0}
+  - {fileID: 11453518}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -944,7 +1028,7 @@ AnimatorState:
   - {fileID: 110113388}
   - {fileID: 110102780}
   m_StateMachineBehaviours:
-  - {fileID: 0}
+  - {fileID: 11481822}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1048,8 +1132,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110139458}
-  m_StateMachineBehaviours:
-  - {fileID: 0}
+  m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

@@ -540,7 +540,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2889819, y: 3.553145, z: 0}
+  m_LocalPosition: {x: 6.635, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1045,6 +1045,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11447868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1057,6 +1059,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11481700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1086,7 +1090,7 @@ MonoBehaviour:
   whatIsWall:
     serializedVersion: 2
     m_Bits: 512
-  assignedPlayer: 2
+  assignedPlayer: 1
   debuffTime: 1
   fireDPS: 12
   jumpCooldown: 0
@@ -1132,6 +1136,8 @@ MonoBehaviour:
   player: {fileID: 0}
   lastHit: {fileID: 0}
   hitTime: 3
+  uiMarker: {fileID: 0}
+  controllerNr: 0
 --- !u!135 &13516044
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1142,8 +1148,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.23
-  m_Center: {x: -0.02, y: 0.32, z: 0}
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0.36, z: 0}
 --- !u!135 &13523170
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1163,7 +1169,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192564}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 0
   m_Radius: 0.15
   m_Height: 0.7
@@ -1176,7 +1182,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112812}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 0
   m_Radius: 0.15
   m_Height: 0.7
