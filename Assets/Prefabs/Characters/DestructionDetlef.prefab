@@ -205,7 +205,7 @@ GameObject:
   - 114: {fileID: 11433400}
   - 54: {fileID: 5481020}
   - 82: {fileID: 8249154}
-  m_Layer: 17
+  m_Layer: 15
   m_Name: DestructionDetlef
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131966}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -1.06, y: 4.6, z: 0}
+  m_LocalPosition: {x: 5.74698, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children:
@@ -1223,6 +1223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11410808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1235,6 +1237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11433400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1311,6 +1315,7 @@ MonoBehaviour:
   lastHit: {fileID: 0}
   hitTime: 3
   uiMarker: {fileID: 0}
+  controllerNr: 0
 --- !u!114 &11446126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1323,6 +1328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11458690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1335,6 +1342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!136 &13640868
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1344,7 +1353,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.10898268
+  m_Radius: 0.135
   m_Height: 0.7200632
   m_Direction: 1
   m_Center: {x: 0, y: 0.38, z: 0}
