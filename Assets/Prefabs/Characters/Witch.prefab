@@ -138,6 +138,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &150564
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 479594}
+  - 136: {fileID: 13616790}
+  - 54: {fileID: 5441828}
+  m_Layer: 14
+  m_Name: HeadCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &157496
 GameObject:
   m_ObjectHideFlags: 1
@@ -401,7 +418,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.9593635, y: 3.5, z: -0.40317556}
+  m_LocalPosition: {x: -2.708835, y: 2.1000004, z: 4.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -528,7 +545,8 @@ Transform:
   m_LocalPosition: {x: -0.052867364, y: 0, z: -9.462237e-11}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
   m_LocalEulerAnglesHint: {x: 0.0117999995, y: -0.0037999998, z: 4.4737997}
-  m_Children: []
+  m_Children:
+  - {fileID: 479594}
   m_Father: {fileID: 405462}
   m_RootOrder: 0
 --- !u!4 &473376
@@ -544,6 +562,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 498292}
   m_RootOrder: 6
+--- !u!4 &479594
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02, y: -0.109, z: -0.007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 460842}
+  m_RootOrder: 0
 --- !u!4 &483664
 Transform:
   m_ObjectHideFlags: 1
@@ -599,6 +630,21 @@ Rigidbody:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158920}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!54 &5441828
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150564}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -819,6 +865,7 @@ MonoBehaviour:
   assignedPlayer: 2
   debuffTime: 1
   fireDPS: 12
+  specialReady: 0
   jumpCooldown: 0.9
   maxAirVelocity: 4
   slowEffect: {fileID: 19846236}
@@ -851,7 +898,7 @@ MonoBehaviour:
   onFireHitSoundCounter: 0.4
   col_fists:
   - {fileID: 6549760}
-  - {fileID: 6549760}
+  - {fileID: 13616790}
   aMeshes:
   - {fileID: 13714858}
   trailRenderer:
@@ -861,6 +908,19 @@ MonoBehaviour:
   hitTime: 3
   uiMarker: {fileID: 0}
   controllerNr: 0
+--- !u!136 &13616790
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.08
+  m_Height: 0.8
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13694676
 CapsuleCollider:
   m_ObjectHideFlags: 1

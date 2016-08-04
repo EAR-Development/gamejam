@@ -26,16 +26,19 @@ public class DD_AirAtkDown : StateMachineBehaviour
 		for(int i = 0; i < characterScript.col_fists.Length; i++){
 			characterScript.col_fists[i].GetComponent<Fists>().hitColliders.Clear();
 		}
+		characterScript.specialReady = false;
     }
 	
 	override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-		
-		if(characterScript.facingRight){
-			rb.AddForce(new Vector2 (8, 10));
-		}
-		else {
-			rb.AddForce(new Vector2 (-8, 10));
+		if(characterScript.specialReady){
+			if(characterScript.facingRight){
+				rb.AddForce(new Vector2 (8, 10));
+			}
+			else {
+				rb.AddForce(new Vector2 (-8, 10));
+			}
+			
 		}
     }
 

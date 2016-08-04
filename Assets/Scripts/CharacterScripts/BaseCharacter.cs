@@ -29,6 +29,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	public float debuffTime = 1f;
 	public float fireDPS;
+	public bool specialReady = false;
 
 	public float jumpCooldown;
 
@@ -151,6 +152,7 @@ public class BaseCharacter : MonoBehaviour {
 			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x*10));
 			if(isGrounded){
 				animator.SetBool("isGrounded", true);
+				specialReady = true;
 			}
 			else {
 				animator.SetBool("isGrounded", false);
