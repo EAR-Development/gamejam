@@ -929,7 +929,7 @@ MonoBehaviour:
   m_MinValue: 1
   m_MaxValue: 15
   m_WholeNumbers: 1
-  m_Value: 4
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6638,7 +6638,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423138, guid: d8520561773495e4c961a781bb4a5913, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 423138, guid: d8520561773495e4c961a781bb4a5913, type: 2}
       propertyPath: m_LocalRotation.z
@@ -6646,11 +6646,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423138, guid: d8520561773495e4c961a781bb4a5913, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: 423138, guid: d8520561773495e4c961a781bb4a5913, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 423138, guid: d8520561773495e4c961a781bb4a5913, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 130510, guid: d8520561773495e4c961a781bb4a5913, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8520561773495e4c961a781bb4a5913, type: 2}

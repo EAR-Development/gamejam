@@ -468,7 +468,7 @@ public class BaseCharacter : MonoBehaviour {
 		if (player.lifesLeft > 0) {
 			
 		
-			Invoke ("spawn", 4.0f);
+			Invoke ("spawn", 3.2f);
 		} else {
 			
 			GameController.reportLost (player);
@@ -496,7 +496,7 @@ public class BaseCharacter : MonoBehaviour {
 		if (player.lifesLeft > 0) {
 
 
-			Invoke ("spawn", 4.0f);
+			Invoke ("spawn", 3.2f);
 		} else {
 
 			GameController.reportLost (player);
