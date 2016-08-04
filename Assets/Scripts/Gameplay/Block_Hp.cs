@@ -23,15 +23,18 @@ public class Block_Hp : MonoBehaviour {
 	
 	void OnCollisionEnter(Collision col ){
 		if(col.gameObject.tag == "Player"){
-			if(healReady){
-				BaseCharacter baseCharacter = col.gameObject.GetComponent<BaseCharacter>();			
-				//baseCharacter.lastHit = this.transform.root.GetComponent<BaseCharacter>().player;
-				baseCharacter.Heal (15.0f);	
-				healTimer = 23;
-				GameObject.Instantiate (baseCharacter.SpawnEffect, col.transform.position, col.transform.rotation);
-				healReady = false;
+			if(col.gameObject.GetComponent<BaseCharacter>()){
+				if(col.gameObject.GetComponent<BaseCharacter>().characterClass != "ProfM"){
+					if(healReady){
+						BaseCharacter baseCharacter = col.gameObject.GetComponent<BaseCharacter>();			
+						//baseCharacter.lastHit = this.transform.root.GetComponent<BaseCharacter>().player;
+						baseCharacter.Heal (15.0f);	
+						healTimer = 23;
+						GameObject.Instantiate (baseCharacter.SpawnEffect, col.transform.position, col.transform.rotation);
+						healReady = false;
+					}
+				}
 			}
-			
 		}
 	}
 }
