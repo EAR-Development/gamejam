@@ -406,7 +406,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.917547, y: 3.5, z: 0}
+  m_LocalPosition: {x: 5.928, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -437,7 +437,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36799997, y: 0.362, z: -0}
+  m_LocalPosition: {x: 0.29400015, y: 0.362, z: 0}
   m_LocalScale: {x: 0.54256105, y: 0.8191521, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -567,7 +567,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189240}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: -0.033, z: -0.010000226}
+  m_LocalPosition: {x: 0, y: -0.158, z: -0.010000226}
   m_LocalScale: {x: 0.5425611, y: 0.8191521, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children: []
@@ -729,7 +729,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28099996, y: 0.36200047, z: 0}
+  m_LocalPosition: {x: -0.34899426, y: 0.46039438, z: -0}
   m_LocalScale: {x: 0.54256105, y: 0.8191521, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1045,7 +1045,7 @@ MonoBehaviour:
   facingRight: 1
   maxHp: 100
   maxspeed: 16
-  jumpForce: 370
+  jumpForce: 410
   meleeAttackCooldown: 1
   doubled: 0
   useController: 0
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   assignedPlayer: 2
   debuffTime: 1
   fireDPS: 12
-  jumpCooldown: 1.5
+  jumpCooldown: 1
   maxAirVelocity: 3
   slowEffect: {fileID: 19817540}
   fireEffect: {fileID: 19857272}
@@ -1157,10 +1157,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.15
+  m_Radius: 0.25
   m_Height: 1.3
   m_Direction: 2
-  m_Center: {x: -0.04, y: 0.24, z: 0}
+  m_Center: {x: -0.04, y: 0.3, z: 0}
 --- !u!137 &13730722
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

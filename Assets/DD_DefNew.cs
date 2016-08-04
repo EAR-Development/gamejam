@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DD_AirAtkDown : StateMachineBehaviour
+public class DD_DefNew : StateMachineBehaviour
 {
 	public Rigidbody rb;
 	public Collider[] colliders;
@@ -31,12 +31,6 @@ public class DD_AirAtkDown : StateMachineBehaviour
 	override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 		
-		if(characterScript.facingRight){
-			rb.AddForce(new Vector2 (8, 10));
-		}
-		else {
-			rb.AddForce(new Vector2 (-8, 10));
-		}
     }
 
 

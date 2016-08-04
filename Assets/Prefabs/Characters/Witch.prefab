@@ -401,7 +401,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.152125, y: 3.6310616, z: 0}
+  m_LocalPosition: {x: 5.9593635, y: 3.5, z: -0.40317556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -445,7 +445,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110494}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -0.00032264803, y: -0.083000004, z: -0.056999955}
+  m_LocalPosition: {x: -0.00032264803, y: -0.102, z: -0.056999955}
   m_LocalScale: {x: 0.5425611, y: 0.8191521, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -802,7 +802,7 @@ MonoBehaviour:
   facingRight: 1
   maxHp: 100
   maxspeed: 16
-  jumpForce: 350
+  jumpForce: 440
   meleeAttackCooldown: 1
   doubled: 0
   useController: 0
@@ -816,11 +816,11 @@ MonoBehaviour:
   whatIsWall:
     serializedVersion: 2
     m_Bits: 512
-  assignedPlayer: 4
+  assignedPlayer: 2
   debuffTime: 1
   fireDPS: 12
   jumpCooldown: 0.9
-  maxAirVelocity: 3
+  maxAirVelocity: 4
   slowEffect: {fileID: 19846236}
   fireEffect: {fileID: 19843920}
   SpawnEffect: {fileID: 178584, guid: 2d60fcde3ef4aa54d922e8e0027b2cad, type: 2}

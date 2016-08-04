@@ -649,7 +649,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131966}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 5.74698, y: 3.5, z: 0}
+  m_LocalPosition: {x: 5.74698, y: 3.5, z: -0.394}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children:
@@ -1254,7 +1254,7 @@ MonoBehaviour:
   facingRight: 1
   maxHp: 100
   maxspeed: 21
-  jumpForce: 465
+  jumpForce: 445
   meleeAttackCooldown: 0.7
   doubled: 0
   useController: 0
@@ -1277,6 +1277,7 @@ MonoBehaviour:
   fireEffect: {fileID: 19810212}
   SpawnEffect: {fileID: 178584, guid: 2d60fcde3ef4aa54d922e8e0027b2cad, type: 2}
   borderDeathEffect: {fileID: 0}
+  getHitEffect: {fileID: 0}
   currentHp: 100
   meleeAttackCounter: 1
   speedFactor: 1
