@@ -1312,6 +1312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11445990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1324,6 +1326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11467006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1339,7 +1343,7 @@ MonoBehaviour:
   facingRight: 1
   maxHp: 100
   maxspeed: 16
-  jumpForce: 420
+  jumpForce: 435
   meleeAttackCooldown: 1
   doubled: 0
   useController: 0
@@ -1362,6 +1366,7 @@ MonoBehaviour:
   fireEffect: {fileID: 19832590}
   SpawnEffect: {fileID: 178584, guid: 2d60fcde3ef4aa54d922e8e0027b2cad, type: 2}
   borderDeathEffect: {fileID: 116988, guid: 6ada9514cba187346bacde7d28221d8b, type: 2}
+  getHitEffect: {fileID: 0}
   currentHp: 100
   meleeAttackCounter: 1
   speedFactor: 1
@@ -1397,6 +1402,8 @@ MonoBehaviour:
   player: {fileID: 0}
   lastHit: {fileID: 0}
   hitTime: 3
+  uiMarker: {fileID: 0}
+  controllerNr: 0
 --- !u!136 &13682452
 CapsuleCollider:
   m_ObjectHideFlags: 1

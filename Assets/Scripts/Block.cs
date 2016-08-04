@@ -13,6 +13,8 @@ public class Block : MonoBehaviour {
 	public Color fireColor = Color.red;
 	public Color invisColor = Color.magenta;
 	public Color bounceColor = Color.green;
+	public Color baitColor = Color.gray;
+	public Color hpColor = Color.magenta;
 	public PhysicMaterial bouncePhysicMaterial;
 
 	public Renderer rend;
@@ -43,7 +45,26 @@ public class Block : MonoBehaviour {
 			} else if (rand >= 0.84f) {
 				ChangeBlockType ("Bounce");
 			}
-		} else {
+		} 
+		 else if (blockType == "Invis") {
+			ChangeBlockType ("Invis");
+		}		
+		else if (blockType == "Bounce") {
+			ChangeBlockType ("Bounce");
+		}
+		 else if (blockType == "Slow") {
+			ChangeBlockType ("Slow");
+		}
+		 else if (blockType == "Fire") {
+			ChangeBlockType ("Fire");
+		}
+		else if (blockType == "Bait") {
+			ChangeBlockType ("Bait");
+		}
+		else if (blockType == "HP") {
+			ChangeBlockType ("HP");
+		}
+		else {
 			var rand = Random.Range (0f, 1f);
 			if (rand <= 0.8f) {
 				ChangeBlockType ("Normal");
@@ -87,6 +108,16 @@ public class Block : MonoBehaviour {
 		case "Bounce":
 			setBlockColor (bounceColor);
 			transform.GetComponent<BoxCollider>().material = bouncePhysicMaterial;
+			break;				
+		case "Bait":
+			setBlockColor (baitColor);
+			transform.GetComponent<BoxCollider>().material = null;
+			//transform.GetComponent<BoxCollider>().material = bouncePhysicMaterial;
+			break;		
+		case "HP":
+			setBlockColor (hpColor);
+			transform.GetComponent<BoxCollider>().material = null;
+			//transform.GetComponent<BoxCollider>().material = bouncePhysicMaterial;
 			break;
 		}
 	}

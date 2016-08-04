@@ -67,7 +67,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400250
 Transform:
   m_ObjectHideFlags: 1
@@ -77,6 +77,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.017720222, y: -0.11, z: -0.07}
   m_LocalScale: {x: 1.4221528, y: 1.4221528, z: 1.4221528}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 482684}
   m_RootOrder: 2
@@ -89,6 +90,7 @@ Transform:
   m_LocalRotation: {x: 0.19120997, y: -0.0026533375, z: -0.106029615, w: 0.97580194}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 21.876299, y: -2.8242998, z: -12.9487}
   m_Children: []
   m_Father: {fileID: 482684}
   m_RootOrder: 0
@@ -101,6 +103,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: -0.20216246, w: 0.97935206}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -23.326899}
   m_Children: []
   m_Father: {fileID: 482684}
   m_RootOrder: 1
@@ -111,8 +114,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.491, y: 5.672, z: 5.53}
+  m_LocalPosition: {x: 6.682497, y: 3.8959289, z: -0.24280322}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 469562}
   - {fileID: 480546}
@@ -164,7 +168,7 @@ ParticleSystem:
     minMaxState: 0
   speed: 1
   randomSeed: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   moveWithTransform: 1
@@ -1697,7 +1701,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 1.55
+      scalar: 1.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1826,7 +1830,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 0.04
+      scalar: 0.03
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1967,7 +1971,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0.26
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -4945,7 +4949,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0.81
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2

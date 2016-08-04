@@ -39,6 +39,7 @@ public class BaseCharacter : MonoBehaviour {
 	public ParticleSystem fireEffect;
 	public GameObject SpawnEffect;
 	public ParticleSystem borderDeathEffect;
+	public ParticleSystem getHitEffect;
 
 
 	[Header("Status")]
@@ -147,7 +148,7 @@ public class BaseCharacter : MonoBehaviour {
 		}
 
 		if(animator){
-			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));
+			animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x*10));
 			if(isGrounded){
 				animator.SetBool("isGrounded", true);
 			}
@@ -503,6 +504,8 @@ public class BaseCharacter : MonoBehaviour {
 	}
 
 	public void doDamage(float dmg){
+		
+		//getHitEffect.Play();
 		currentHp -= dmg;
 		if(fireCounter <= 0f){
 			audioSource.clip = audioClips[1];
@@ -526,6 +529,10 @@ public class BaseCharacter : MonoBehaviour {
 			audioSource.Play();
 			die ();
 		}
+	}
+	
+	public void Heal(float amount){		
+		currentHp += amount;		
 	}
 
 	public void setUpLayers(){

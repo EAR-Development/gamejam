@@ -39,16 +39,16 @@ public class Fists : MonoBehaviour {
 				
 				//if(character.facingRight){
 					if(col.GetComponent<BaseCharacter>().characterClass == "ProfM" || col.GetComponent<BaseCharacter>().characterClass == "Prism"  ){
-						col.attachedRigidbody.AddForce(transform.right * 1400);
+						col.attachedRigidbody.AddForce(transform.right * 1700);
 					}
 					else if(  col.GetComponent<BaseCharacter>().characterClass == "ThomasTomato" || col.GetComponent<BaseCharacter>().characterClass == "Witch"){
-						col.attachedRigidbody.AddForce(-transform.right * 1400);
+						col.attachedRigidbody.AddForce(-transform.right * 1700);
 					}
 					else if(  col.GetComponent<BaseCharacter>().characterClass == "3FacePlus1" ){
-						col.attachedRigidbody.AddForce(transform.forward * 1400);
+						col.attachedRigidbody.AddForce(transform.forward * 1700);
 					}
 					else if(col.GetComponent<BaseCharacter>().characterClass == "DestructionDetlef") {
-						col.attachedRigidbody.AddForce(transform.forward * 1400);
+						col.attachedRigidbody.AddForce(transform.forward * 1700);
 					}
 				//}
 				//else {

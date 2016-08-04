@@ -9,6 +9,7 @@ public class EnvironmentController : MonoBehaviour {
 	public GameObject[] aBlocks;
 
 	public bool shouldRotate = true;
+	public bool shouldShuffleBlocks = false;
 	public float RotationFactor = 0.5f;
 
 	[Header("Timer")]
@@ -91,14 +92,16 @@ public class EnvironmentController : MonoBehaviour {
 			rotationStartDelay = 0;
 			rotateCounter = 0f;
 		}
-			
-		if(blockCounter > blockTimer){
-			foreach (GameObject block  in aBlocks) {
-				Block b = block.GetComponent<Block>();
-				b.setRandomType ();
-			}
+				
+		if(shouldShuffleBlocks){		
+			if(blockCounter > blockTimer){			
+				foreach (GameObject block  in aBlocks) {
+					Block b = block.GetComponent<Block>();
+					b.setRandomType ();
+				}
 
-			blockCounter = 0f;
+				blockCounter = 0f;
+			}
 		}
 	}
 

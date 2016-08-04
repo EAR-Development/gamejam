@@ -1076,7 +1076,7 @@ MonoBehaviour:
   facingRight: 1
   maxHp: 100
   maxspeed: 19
-  jumpForce: 420
+  jumpForce: 445
   meleeAttackCooldown: 1
   doubled: 0
   useController: 0
@@ -1099,6 +1099,7 @@ MonoBehaviour:
   fireEffect: {fileID: 19859200}
   SpawnEffect: {fileID: 178584, guid: 2d60fcde3ef4aa54d922e8e0027b2cad, type: 2}
   borderDeathEffect: {fileID: 0}
+  getHitEffect: {fileID: 0}
   currentHp: 100
   meleeAttackCounter: 0
   speedFactor: 1
@@ -1169,7 +1170,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192564}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   m_Radius: 0.15
   m_Height: 0.7
@@ -1182,7 +1183,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112812}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   m_Radius: 0.15
   m_Height: 0.7

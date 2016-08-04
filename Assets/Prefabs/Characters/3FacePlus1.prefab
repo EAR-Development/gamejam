@@ -283,13 +283,13 @@ GameObject:
   - 65: {fileID: 6581658}
   - 114: {fileID: 11493184}
   - 54: {fileID: 5499306}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: FootRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &161140
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +672,7 @@ Transform:
   m_LocalRotation: {x: -2.2462103e-15, y: -4.4795384e-15, z: 0.26111796, w: 0.96530694}
   m_LocalPosition: {x: 0.00000010523945, y: 0, z: -0.000000059604645}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.272799}
   m_Children: []
   m_Father: {fileID: 483552}
   m_RootOrder: 0
@@ -724,7 +724,7 @@ Transform:
   m_LocalRotation: {x: -9.910283e-11, y: -0.0000000017126548, z: 0.26111796, w: 0.96530694}
   m_LocalPosition: {x: 0, y: -0, z: -0.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.272799}
   m_Children: []
   m_Father: {fileID: 411610}
   m_RootOrder: 0
@@ -818,7 +818,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105752}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: -0.033, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 0.5425611, y: 0.8191521, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children: []
@@ -831,7 +831,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161140}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 7.894, y: 3.79, z: 0}
+  m_LocalPosition: {x: 6.0542645, y: 3.4573302, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_Children:
@@ -997,7 +997,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 48
   m_CollisionDetection: 2
 --- !u!54 &5473912
 Rigidbody:
@@ -1334,12 +1334,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143420}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11418882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1352,18 +1354,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11471202
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11471872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1376,6 +1382,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11484628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1391,7 +1399,7 @@ MonoBehaviour:
   facingRight: 1
   maxHp: 100
   maxspeed: 17
-  jumpForce: 360
+  jumpForce: 445
   meleeAttackCooldown: 1
   doubled: 0
   useController: 0
@@ -1408,12 +1416,13 @@ MonoBehaviour:
   assignedPlayer: 1
   debuffTime: 1
   fireDPS: 12
-  jumpCooldown: 1.5
+  jumpCooldown: 0
   maxAirVelocity: 4
   slowEffect: {fileID: 19824510}
   fireEffect: {fileID: 19827498}
   SpawnEffect: {fileID: 178584, guid: 2d60fcde3ef4aa54d922e8e0027b2cad, type: 2}
   borderDeathEffect: {fileID: 0}
+  getHitEffect: {fileID: 0}
   currentHp: 100
   meleeAttackCounter: 1
   speedFactor: 1
@@ -1441,8 +1450,8 @@ MonoBehaviour:
   col_fists:
   - {fileID: 6566986}
   - {fileID: 6520202}
-  - {fileID: 6581658}
-  - {fileID: 6546616}
+  - {fileID: 6509400}
+  - {fileID: 6521054}
   - {fileID: 6584478}
   aMeshes:
   - {fileID: 13748780}
@@ -1468,12 +1477,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172204}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11487652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1486,18 +1497,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11493184
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156424}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!136 &13608188
 CapsuleCollider:
   m_ObjectHideFlags: 1
