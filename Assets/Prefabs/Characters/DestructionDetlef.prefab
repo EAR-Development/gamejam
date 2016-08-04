@@ -1254,7 +1254,7 @@ MonoBehaviour:
   facingRight: 1
   maxHp: 100
   maxspeed: 21
-  jumpForce: 445
+  jumpForce: 455
   meleeAttackCooldown: 0.7
   doubled: 0
   useController: 0
@@ -1271,6 +1271,7 @@ MonoBehaviour:
   assignedPlayer: 3
   debuffTime: 1
   fireDPS: 12
+  specialReady: 0
   jumpCooldown: 0
   maxAirVelocity: 5
   slowEffect: {fileID: 19881784}

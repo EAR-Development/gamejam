@@ -148,6 +148,7 @@ GameObject:
   - 4: {fileID: 479594}
   - 136: {fileID: 13616790}
   - 54: {fileID: 5441828}
+  - 114: {fileID: 11451842}
   m_Layer: 14
   m_Name: HeadCollider
   m_TagString: Untagged
@@ -418,7 +419,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.708835, y: 2.1000004, z: 4.7}
+  m_LocalPosition: {x: -0.6256504, y: -10.507141, z: 10.086398}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -833,6 +834,20 @@ MonoBehaviour:
   hitColliders: []
   rb: {fileID: 0}
   character: {fileID: 0}
+--- !u!114 &11451842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756439a3fa030744dadfee09d93bde28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitColliders: []
+  rb: {fileID: 0}
+  character: {fileID: 0}
 --- !u!114 &11480560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -847,8 +862,8 @@ MonoBehaviour:
   isGrounded: 0
   facingRight: 1
   maxHp: 100
-  maxspeed: 16
-  jumpForce: 440
+  maxspeed: 18
+  jumpForce: 445
   meleeAttackCooldown: 1
   doubled: 0
   useController: 0

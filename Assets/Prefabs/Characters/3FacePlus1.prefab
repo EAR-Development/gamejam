@@ -1416,8 +1416,9 @@ MonoBehaviour:
   assignedPlayer: 1
   debuffTime: 1
   fireDPS: 12
+  specialReady: 0
   jumpCooldown: 0
-  maxAirVelocity: 4
+  maxAirVelocity: 5
   slowEffect: {fileID: 19824510}
   fireEffect: {fileID: 19827498}
   SpawnEffect: {fileID: 178584, guid: 2d60fcde3ef4aa54d922e8e0027b2cad, type: 2}

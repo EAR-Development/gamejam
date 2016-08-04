@@ -1076,8 +1076,8 @@ MonoBehaviour:
   facingRight: 1
   maxHp: 100
   maxspeed: 19
-  jumpForce: 445
-  meleeAttackCooldown: 1
+  jumpForce: 450
+  meleeAttackCooldown: 1.1
   doubled: 0
   useController: 0
   characterClass: ThomasTomato
@@ -1093,6 +1093,7 @@ MonoBehaviour:
   assignedPlayer: 1
   debuffTime: 1
   fireDPS: 12
+  specialReady: 0
   jumpCooldown: 0
   maxAirVelocity: 5
   slowEffect: {fileID: 19835460}

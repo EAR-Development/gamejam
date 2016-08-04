@@ -198,6 +198,16 @@ public class BaseCharacter : MonoBehaviour {
 
 				animator.SetTrigger("jump");
 			} else {
+				/*
+				if((!isSided) && jumpKeyDown){
+					doubled = true;
+					rb.AddForce (new Vector2 (0, jumpForce * jumpFactor));
+					isGrounded = false;
+					groundCheckPause = true;
+					Invoke ("enableGroundCheck",jumpCooldown);
+					Debug.Log("jumpmidair");
+				}
+				*/
 				
 				//keyboard
 				if(!useController){
@@ -495,9 +505,12 @@ public class BaseCharacter : MonoBehaviour {
 		rb.velocity = Vector3.zero;
 		isDead = true;
 		gameObject.SetActive (false);
-		deathParticles = (ParticleSystem)Object.Instantiate (borderDeathEffect, transform.position, transform.rotation);
-		var em = deathParticles.emission;
-		em.enabled = true;
+		if(deathParticles){
+			deathParticles = (ParticleSystem)Object.Instantiate (borderDeathEffect, transform.position, transform.rotation);
+			var em = deathParticles.emission;
+			em.enabled = true;
+		}
+		
 	}
 
 
