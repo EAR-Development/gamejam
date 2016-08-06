@@ -11,7 +11,11 @@ public class StartGame : MonoBehaviour {
 	public Slider slider;
 	public Slider hpSlider;
 	public Toggle toggle;
-	public int playerNr;
+	public static int playerNr = 1;
+	public int playerCount = 0;
+	public int playersReady = 0;
+	public bool changingScene = false;
+	public Button startButton;
 
 	public AudioClip clip;
 	// Use this for initialization
@@ -23,11 +27,63 @@ public class StartGame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(playerNr <= 4){		
+			if(Input.GetButtonUp("Player" + playerNr + "_start_ctrlr")){			
+				AssignController();
+			}				
+		}
+		
+		if((Input.GetButtonUp("Player" + 1 + "_start_ctrlr")) && (boxes[0].selection != 0)){
+			CheckControllerStart();
+		}
 		
 	}
 	
 	public void AssignController(){
+		Debug.Log("controller joined: "+playerNr);
 		
+		
+		if(boxes[0].selection != 0){
+			boxes[playerNr].toggle.isOn = true;
+			boxes[playerNr].assignedController = playerNr;
+			playerNr++;
+		}	
+		else if(boxes[playerNr-1].selection == 0){
+			boxes[playerNr-1].toggle.isOn = true;
+			boxes[playerNr-1].assignedController = playerNr;
+			playerNr++;
+		}	
+		
+	}
+	
+	public void CheckControllerStart(){
+		
+		for(int i = 0; i < boxes.Length; i++){
+			if(boxes[i].assignedController > 0){
+				playerCount++;
+				Debug.Log("playerCount: "+playerCount);
+				if(boxes[i].controllerReady){
+					playersReady++;
+					Debug.Log("playersReady: "+playersReady);
+				}				
+				else {	
+					Debug.Log("player not Ready: "+playersReady);
+				}
+			}
+		}
+		
+		if(playerCount == playersReady){
+			startButton.onClick.Invoke();
+			/*
+			if(!changingScene){
+				changeScene(1);
+				Debug.Log("change scene");
+				changingScene = true;
+			}
+			*/
+		}
+		playersReady = 0;
+		playerCount = 0;
 	}
 
 	public void changeScene(int scene){

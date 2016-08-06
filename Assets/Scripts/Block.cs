@@ -5,6 +5,7 @@ public class Block : MonoBehaviour {
 
 	public string blockType;
 	public bool isVisible;
+	public bool dontChange = false;
 
 	[Header("Materials")]
 
@@ -24,6 +25,7 @@ public class Block : MonoBehaviour {
 		//rend = GetComponent<Renderer> ();
 		//rend.enabled = true;
 		setBlockColor(normalColor);
+		
 
 		setRandomType ();
 	}
@@ -34,41 +36,48 @@ public class Block : MonoBehaviour {
 	}
 
 	public void setRandomType(){
-		if (blockType == "Normal") {
-			var rand = Random.Range (0f, 1f);
-			if (rand >= 0.97f) {
-				ChangeBlockType ("Invis");
-			} else if (rand >= 0.92f) {
-				ChangeBlockType ("Slow");
-			} else if (rand >= 0.89f) {
-				ChangeBlockType ("Fire");
-			} else if (rand >= 0.84f) {
-				ChangeBlockType ("Bounce");
+		if(!dontChange){
+			if (blockType == "Normal") {
+				var rand = Random.Range (0f, 1f);
+				if (rand >= 0.97f) {
+					ChangeBlockType ("Invis");
+				} else if (rand >= 0.92f) {
+					ChangeBlockType ("Slow");
+				} else if (rand >= 0.89f) {
+					ChangeBlockType ("Fire");
+				} else if (rand >= 0.84f) {
+					ChangeBlockType ("Bounce");
+				}
+			} 
+			else {
+				var rand = Random.Range (0f, 1f);
+				if (rand <= 0.6f) {
+					ChangeBlockType ("Normal");
+				}
 			}
-		} 
-		 else if (blockType == "Invis") {
-			ChangeBlockType ("Invis");
-		}		
-		else if (blockType == "Bounce") {
-			ChangeBlockType ("Bounce");
 		}
-		 else if (blockType == "Slow") {
-			ChangeBlockType ("Slow");
-		}
-		 else if (blockType == "Fire") {
-			ChangeBlockType ("Fire");
-		}
-		else if (blockType == "Bait") {
-			ChangeBlockType ("Bait");
-		}
-		else if (blockType == "HP") {
-			ChangeBlockType ("HP");
-		}
-		else {
-			var rand = Random.Range (0f, 1f);
-			if (rand <= 0.8f) {
+		else if(dontChange){
+			if (blockType == "Normal") {
 				ChangeBlockType ("Normal");
 			}
+			else if (blockType == "Invis") {
+				ChangeBlockType ("Invis");
+			}		
+			else if (blockType == "Bounce") {
+				ChangeBlockType ("Bounce");
+			}
+			 else if (blockType == "Slow") {
+				ChangeBlockType ("Slow");
+			}
+			 else if (blockType == "Fire") {
+				ChangeBlockType ("Fire");
+			}
+			else if (blockType == "Bait") {
+				ChangeBlockType ("Bait");
+			}
+			else if (blockType == "HP") {
+				ChangeBlockType ("HP");
+			}		
 		}
 	}
 	

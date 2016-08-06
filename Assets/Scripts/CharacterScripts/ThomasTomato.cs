@@ -43,7 +43,7 @@ public class ThomasTomato : BaseCharacter {
 					if( meleeAttackCounter >= meleeAttackCooldown ){
 						audioSource.clip = audioClips[0];
 						audioSource.Play();
-						animator.SetBool("atkDefault",true);
+						animator.SetBool("atkForward",true);
 						meleeAttackCounter = 0;
 					} 
 				}
