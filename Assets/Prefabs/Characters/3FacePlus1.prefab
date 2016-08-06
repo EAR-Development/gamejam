@@ -1400,7 +1400,7 @@ MonoBehaviour:
   maxHp: 100
   maxspeed: 17
   jumpForce: 445
-  meleeAttackCooldown: 1
+  meleeAttackCooldown: 0.95
   doubled: 0
   useController: 0
   characterClass: 3FacePlus1

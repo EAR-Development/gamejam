@@ -638,7 +638,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 96
   m_CollisionDetection: 2
 --- !u!54 &5441828
 Rigidbody:
@@ -881,8 +881,8 @@ MonoBehaviour:
   debuffTime: 1
   fireDPS: 12
   specialReady: 0
-  jumpCooldown: 0.9
-  maxAirVelocity: 4
+  jumpCooldown: 0.6
+  maxAirVelocity: 4.7
   slowEffect: {fileID: 19846236}
   fireEffect: {fileID: 19843920}
   SpawnEffect: {fileID: 178584, guid: 2d60fcde3ef4aa54d922e8e0027b2cad, type: 2}
@@ -945,10 +945,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
+  m_Radius: 0.25
   m_Height: 1
   m_Direction: 2
-  m_Center: {x: 0, y: 0.35, z: 0}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!137 &13714858
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

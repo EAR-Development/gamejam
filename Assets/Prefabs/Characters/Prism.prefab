@@ -1361,7 +1361,7 @@ MonoBehaviour:
   debuffTime: 1
   fireDPS: 12
   specialReady: 0
-  jumpCooldown: 0.2
+  jumpCooldown: 0.1
   maxAirVelocity: 5
   slowEffect: {fileID: 19803856}
   fireEffect: {fileID: 19832590}

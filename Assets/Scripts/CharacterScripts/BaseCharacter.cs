@@ -631,12 +631,22 @@ public class BaseCharacter : MonoBehaviour {
 			}
 			//Attack up
 			else if(( Input.GetButtonDown("Player" + controllerNr + "_action_ctrlr") && (Input.GetAxis ("Player" + controllerNr + "_y_ctrlr") > 0))){
-				if( meleeAttackCounter >= meleeAttackCooldown ){
-					audioSource.clip = audioClips[0];
-					audioSource.Play();
-					animator.SetBool("atkUp",true);
-					meleeAttackCounter = 0;
-				} 
+				if(isGrounded){
+					if( meleeAttackCounter >= meleeAttackCooldown ){
+						audioSource.clip = audioClips[0];
+						audioSource.Play();
+						animator.SetBool("atkUp",true);
+						meleeAttackCounter = 0;
+					} 
+				}
+				else if(!isGrounded){
+					if( meleeAttackCounter >= meleeAttackCooldown ){
+						audioSource.clip = audioClips[0];
+						audioSource.Play();
+						animator.SetBool("atkUp",true);
+						meleeAttackCounter = 0;
+					} 
+				}
 			}
 			//attack while moving down
 			else if(( Input.GetButtonDown("Player" + controllerNr + "_action_ctrlr") && (Input.GetAxis ("Player" + controllerNr + "_y_ctrlr") < 0))){

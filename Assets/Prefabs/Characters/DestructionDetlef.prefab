@@ -1255,7 +1255,7 @@ MonoBehaviour:
   maxHp: 100
   maxspeed: 21
   jumpForce: 455
-  meleeAttackCooldown: 0.7
+  meleeAttackCooldown: 0.8
   doubled: 0
   useController: 0
   characterClass: DestructionDetlef

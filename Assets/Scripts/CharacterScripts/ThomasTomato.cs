@@ -11,7 +11,7 @@ public class ThomasTomato : BaseCharacter {
 		//ATTACK
 		//Attack while standing still
 		if(!useController){
-			if(( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_x") == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0))){
+			if(( Input.GetButtonDown("Player" + assignedPlayer + "_action") && ((Input.GetAxis ("Player" + assignedPlayer + "_x")) == 0)&& (Input.GetAxis ("Player" + assignedPlayer + "_y") == 0))){
 				if(isGrounded){
 					if( meleeAttackCounter >= meleeAttackCooldown ){
 						audioSource.clip = audioClips[0];
@@ -50,12 +50,22 @@ public class ThomasTomato : BaseCharacter {
 			}
 			//Attack up
 			else if(( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") > 0))){
-				if( meleeAttackCounter >= meleeAttackCooldown ){
-					audioSource.clip = audioClips[0];
-					audioSource.Play();
-					animator.SetBool("atkUp",true);
-					meleeAttackCounter = 0;
-				} 
+				if(isGrounded){
+					if( meleeAttackCounter >= meleeAttackCooldown ){
+						audioSource.clip = audioClips[0];
+						audioSource.Play();
+						animator.SetBool("atkUp",true);
+						meleeAttackCounter = 0;
+					} 
+				}
+				else if(!isGrounded){
+					if( meleeAttackCounter >= meleeAttackCooldown ){
+						audioSource.clip = audioClips[0];
+						audioSource.Play();
+						animator.SetBool("atkUp",true);
+						meleeAttackCounter = 0;
+					} 
+				}
 			}
 			//attack while moving down
 			else if(( Input.GetButtonDown("Player" + assignedPlayer + "_action") && (Input.GetAxis ("Player" + assignedPlayer + "_y") < 0))){

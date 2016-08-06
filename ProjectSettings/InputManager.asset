@@ -393,8 +393,8 @@ InputManager:
     m_Name: Player4_x
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: p
-    positiveButton: i
+    negativeButton: j
+    positiveButton: l
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -409,8 +409,8 @@ InputManager:
     m_Name: Player4_y
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: o
-    positiveButton: l
+    negativeButton: k
+    positiveButton: i
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
