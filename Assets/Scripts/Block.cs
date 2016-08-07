@@ -16,6 +16,7 @@ public class Block : MonoBehaviour {
 	public Color bounceColor = Color.green;
 	public Color baitColor = Color.gray;
 	public Color hpColor = Color.magenta;
+	public Color kothColor = new Color(135,255,0,1);
 	public PhysicMaterial bouncePhysicMaterial;
 
 	public Renderer rend;
@@ -77,7 +78,10 @@ public class Block : MonoBehaviour {
 			}
 			else if (blockType == "HP") {
 				ChangeBlockType ("HP");
-			}		
+			}
+			else if (blockType == "Koth") {
+				ChangeBlockType ("Koth");
+			}			
 		}
 	}
 	
@@ -125,6 +129,11 @@ public class Block : MonoBehaviour {
 			break;		
 		case "HP":
 			setBlockColor (hpColor);
+			transform.GetComponent<BoxCollider>().material = null;
+			//transform.GetComponent<BoxCollider>().material = bouncePhysicMaterial;
+			break;		
+		case "Koth":
+			setBlockColor (kothColor);
 			transform.GetComponent<BoxCollider>().material = null;
 			//transform.GetComponent<BoxCollider>().material = bouncePhysicMaterial;
 			break;

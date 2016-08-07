@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+ using UnityEngine.Events;
 using System.Collections;
 
 public class SelectorBox : MonoBehaviour {
@@ -18,6 +19,7 @@ public class SelectorBox : MonoBehaviour {
 	public Image teamBar;
 	public int maxTeams;
 	public Toggle toggle;
+	public Dropdown dropdown;
 	public int assignedController = 0;
 	public bool controllerReady = false;
 
@@ -32,7 +34,7 @@ public class SelectorBox : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		
+		Debug.Log("gameMode: "+GameController.gameMode);
 	
 		if(Input.GetButtonDown("Player" + assignedController + "_action_ctrlr")){
 			//playerNr++;
@@ -52,6 +54,20 @@ public class SelectorBox : MonoBehaviour {
 		}
 		else {
 			controllerReady = false;
+		}
+		
+	}
+	
+	public void SetGameMode(){
+		int mode = dropdown.value;
+		if(mode == 0){
+			GameController.gameMode = "Original";
+		}
+		else if(mode == 1){
+			GameController.gameMode = "Brawl";
+		}
+		else if(mode == 2){
+			GameController.gameMode = "Koth";
 		}
 		
 	}

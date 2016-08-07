@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Scenes/completeLevel.unity
   - enabled: 1
     path: Assets/Scenes/tueften.unity
+  - enabled: 1
+    path: Assets/Scenes/koth.unity

@@ -14,6 +14,7 @@ public class scoreboard : MonoBehaviour {
 	public Text playername4;
 	public Text teamName;
 	public GameObject[] allPlayers;
+	public Koth_zone kothZone;
 
 	// Use this for initialization
 	void Start () {
@@ -54,25 +55,50 @@ public class scoreboard : MonoBehaviour {
 			}
 		}
 		*/
-		for(int i=0;i< allPlayers.Length;i++){
-			switch (i) {
-			
-			case 0:
-				playername1.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths;
-				break;
-			case 1:
-				playername2.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths;
-				break;
-			case 2:
-				playername3.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths;
-				break;
-			case 3:
-				playername4.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths;
-				break;
-			default:
-				break;
-			}
+		if(GameController.gameMode == "Koth"){
+			kothZone = GameObject.Find("Koth_zone").GetComponent<Koth_zone>();
+			for(int i=0;i< allPlayers.Length;i++){
+				switch (i) {
+				
+				case 0:
+					playername1.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths + " | Team: "+(int)kothZone.teamScore[allPlayers [i].GetComponent<HumanPlayer>().teamNumber-1];
+					break;
+				case 1:
+					playername2.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths + " | Team: "+(int)kothZone.teamScore[allPlayers [i].GetComponent<HumanPlayer>().teamNumber-1];
+					break;
+				case 2:
+					playername3.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths + " | Team: "+(int)kothZone.teamScore[allPlayers [i].GetComponent<HumanPlayer>().teamNumber-1];
+					break;
+				case 3:
+					playername4.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths + " | Team: "+(int)kothZone.teamScore[allPlayers [i].GetComponent<HumanPlayer>().teamNumber-1];
+					break;
+				default:
+					break;
+				}
 
+			}
+		}
+		else {
+			for(int i=0;i< allPlayers.Length;i++){
+				switch (i) {
+				
+				case 0:
+					playername1.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths;
+					break;
+				case 1:
+					playername2.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths;
+					break;
+				case 2:
+					playername3.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths;
+					break;
+				case 3:
+					playername4.text = allPlayers [i].GetComponent<HumanPlayer>().nameHuman + "  " + allPlayers [i].GetComponent<HumanPlayer>().kills+ " / " + allPlayers [i].GetComponent<HumanPlayer>().deaths;
+					break;
+				default:
+					break;
+				}
+
+			}
 		}
 
 	}

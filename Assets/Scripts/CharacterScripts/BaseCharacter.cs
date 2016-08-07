@@ -83,9 +83,13 @@ public class BaseCharacter : MonoBehaviour {
 	public float hitTime = 3.0f;
 	public UiMarker uiMarker;
 	public int controllerNr = 0;
+	public Koth_zone kothZone;
 
 	void Start () {
-
+	
+		if(GameController.gameMode == "Koth"){
+			kothZone = GameObject.Find("Koth_zone").GetComponent<Koth_zone>();
+		}
 		//jumpDisabled = true;
 		//rb = GetComponent<Rigidbody>();
 		groundCheckPause=false;
@@ -316,7 +320,7 @@ public class BaseCharacter : MonoBehaviour {
 			uiMarker.GetComponent<RectTransform>().localScale = new Vector3(0.42f, 0.42f, 0.42f);
 			
 			//enable again
-			if(invisCounter <= 0f){
+			if(invisCounter <= 0f){				
 				for(int i = 0; i < aMeshes.Length; i++){
 					aMeshes[i].enabled = true;
 				}	
@@ -358,8 +362,6 @@ public class BaseCharacter : MonoBehaviour {
 				var fem = fireEffect.emission;
 				fem.enabled = true;
 				break;
-			case "Water":
-				break;
 			case "Bounce":
 				break;
 			case "Invis":
@@ -367,6 +369,7 @@ public class BaseCharacter : MonoBehaviour {
 				break;
 			case "Slow":
 				slowCounter = debuffTime;
+				Debug.Log("slowed");
 				var sem = slowEffect.emission;
 				sem.enabled = true;
 				break;
@@ -458,6 +461,14 @@ public class BaseCharacter : MonoBehaviour {
 		if(lastHit){
 			lastHit.kills++;
 		}
+		
+		if(GameController.gameMode == "Koth"){
+			player.lifesLeft++;			
+			kothZone.playersInZone.Remove(this.gameObject);
+			if(lastHit){
+				kothZone.teamScore[lastHit.teamNumber-1] += 2;
+			}
+		}
 
 		player.deaths ++;
 		player.lifesLeft--;
@@ -485,6 +496,14 @@ public class BaseCharacter : MonoBehaviour {
 		
 		if(lastHit){
 			lastHit.kills++;
+		}
+		
+		if(GameController.gameMode == "Koth"){
+			player.lifesLeft++;
+			if(lastHit){
+				kothZone.teamScore[lastHit.teamNumber-1] += 2;
+			}
+			//GameObject.Find("Koth_zone").GetComponent<Koth_zone>().playersInZone.Remove(this.gameObject);
 		}
 		/*
 		audioSource.clip = audioClips[2];
@@ -520,7 +539,9 @@ public class BaseCharacter : MonoBehaviour {
 
 	public void doDamage(float dmg){
 		
-		//getHitEffect.Play();
+		if(getHitEffect){
+			getHitEffect.Play();
+		}
 		currentHp -= dmg;
 		if(fireCounter <= 0f){
 			audioSource.clip = audioClips[1];

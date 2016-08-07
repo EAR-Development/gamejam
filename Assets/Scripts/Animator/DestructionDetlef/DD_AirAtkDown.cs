@@ -33,10 +33,10 @@ public class DD_AirAtkDown : StateMachineBehaviour
     {
 		if(characterScript.specialReady){
 			if(characterScript.facingRight){
-				rb.AddForce(new Vector2 (8, 10));
+				rb.AddForce(new Vector2 (12, 12));
 			}
 			else {
-				rb.AddForce(new Vector2 (-8, 10));
+				rb.AddForce(new Vector2 (-12, 12));
 			}
 			
 		}

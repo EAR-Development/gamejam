@@ -7,6 +7,7 @@ public class HumanPlayer : MonoBehaviour {
 	public string nameHuman;
 	public int kills;
 	public int deaths;
+	public float score;
 	public GameObject playerInfoUi;
 	public int playerNumber;
 	UIUpdater uiUpdater;
@@ -18,6 +19,7 @@ public class HumanPlayer : MonoBehaviour {
 	public int maxHp;
 	public bool useController = false;
 	public static int controllerNr {get; set;}
+	public string gameMode;
 
 	//character char
 	// Use this for initialization
@@ -70,15 +72,15 @@ public class HumanPlayer : MonoBehaviour {
 				this.useController = false;
 				controllerNr++;
 				character.useController = true;
-				Debug.Log("controllerNr "+controllerNr);
+				//Debug.Log("controllerNr "+controllerNr);
 				character.controllerNr = HumanPlayer.controllerNr;
-				Debug.Log("controllerNr "+character.controllerNr);
+				//Debug.Log("controllerNr "+character.controllerNr);
 				
 				
 			}
 			uiUpdater.repaint();
 		}
-
+		
 	}
 		
 

@@ -87,6 +87,16 @@ public class StartGame : MonoBehaviour {
 	}
 
 	public void changeScene(int scene){
+		if(GameController.gameMode == "Original"){
+			scene = 1;
+		}
+		else if(GameController.gameMode == "Brawl"){
+			scene = 2;
+		}
+		else if(GameController.gameMode == "Koth"){
+			scene = 3;
+		}
+		
 		if(boxes[0].selection > 0){
 			GameController.sceneSound.clip = clip;
 			GameController.sceneSound.Play();
@@ -98,7 +108,7 @@ public class StartGame : MonoBehaviour {
 					p.teamNumber = boxes [i].teamNumber;
 					p.lifesLeft = (int)slider.value;
 					p.maxHp = (int)hpSlider.value;
-					GameController.playerList.Add (p);
+					GameController.playerList.Add (p);					
 					p.nameHuman = boxes [i].nameInput.text;
 					playerCount++;
 					p.playerNumber = playerCount;
@@ -115,6 +125,7 @@ public class StartGame : MonoBehaviour {
 					}
 					*/
 				}
+				
 				GameController.totalPlayers = playerCount;
 
 			}
