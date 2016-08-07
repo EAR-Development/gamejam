@@ -1253,7 +1253,7 @@ MonoBehaviour:
   isGrounded: 0
   facingRight: 1
   maxHp: 100
-  maxspeed: 21
+  maxspeed: 20
   jumpForce: 455
   meleeAttackCooldown: 0.8
   doubled: 0
@@ -1318,6 +1318,7 @@ MonoBehaviour:
   hitTime: 3
   uiMarker: {fileID: 0}
   controllerNr: 0
+  kothZone: {fileID: 0}
 --- !u!114 &11446126
 MonoBehaviour:
   m_ObjectHideFlags: 1

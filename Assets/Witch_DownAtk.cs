@@ -35,10 +35,10 @@ public class Witch_DownAtk : StateMachineBehaviour
 		
 		if(characterScript.isGrounded){
 			if(characterScript.facingRight){
-				rb.AddForce(new Vector2 (7, 5));
+				rb.AddForce(new Vector2 (20, 14));
 			}
 			else {
-				rb.AddForce(new Vector2 (-7, 5));
+				rb.AddForce(new Vector2 (-20, 14));
 			}
 			
 		}
