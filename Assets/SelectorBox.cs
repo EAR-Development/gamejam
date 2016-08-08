@@ -69,6 +69,9 @@ public class SelectorBox : MonoBehaviour {
 		else if(mode == 2){
 			GameController.gameMode = "Koth";
 		}
+		else if(mode == 3){
+			GameController.gameMode = "CTF";
+		}
 		
 	}
 

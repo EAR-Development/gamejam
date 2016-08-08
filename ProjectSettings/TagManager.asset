@@ -11,6 +11,8 @@ TagManager:
   - Border
   - Block
   - HumanPlayer
+  - Flag
+  - CTF_spawn
   layers:
   - Default
   - TransparentFX

@@ -96,6 +96,9 @@ public class StartGame : MonoBehaviour {
 		else if(GameController.gameMode == "Koth"){
 			scene = 3;
 		}
+		else if(GameController.gameMode == "CTF"){
+			scene = 4;
+		}
 		
 		if(boxes[0].selection > 0){
 			GameController.sceneSound.clip = clip;

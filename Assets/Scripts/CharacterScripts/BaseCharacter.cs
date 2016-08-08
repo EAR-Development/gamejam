@@ -84,11 +84,15 @@ public class BaseCharacter : MonoBehaviour {
 	public UiMarker uiMarker;
 	public int controllerNr = 0;
 	public Koth_zone kothZone;
+	public CTF_Flag flag;
 
 	void Start () {
 	
 		if(GameController.gameMode == "Koth"){
 			kothZone = GameObject.Find("Koth_zone").GetComponent<Koth_zone>();
+		}
+		else if(GameController.gameMode == "CTF"){
+			flag = GameObject.FindGameObjectWithTag("Flag").GetComponent<CTF_Flag>();
 		}
 		//jumpDisabled = true;
 		//rb = GetComponent<Rigidbody>();
@@ -357,23 +361,22 @@ public class BaseCharacter : MonoBehaviour {
 			Block tempBlock  = col.gameObject.GetComponent<Block>();
 
 			switch (tempBlock.blockType) {
-			case "Fire":
-				fireCounter = debuffTime;
-				var fem = fireEffect.emission;
-				fem.enabled = true;
-				break;
-			case "Bounce":
-				break;
-			case "Invis":
-				invisCounter = debuffTime * 3;
-				break;
-			case "Slow":
-				slowCounter = debuffTime;
-				Debug.Log("slowed");
-				var sem = slowEffect.emission;
-				sem.enabled = true;
-				break;
-
+				case "Fire":
+					fireCounter = debuffTime;
+					var fem = fireEffect.emission;
+					fem.enabled = true;
+					break;
+				case "Bounce":
+					break;
+				case "Invis":
+					invisCounter = debuffTime * 3;
+					break;
+				case "Slow":
+					slowCounter = debuffTime;
+					Debug.Log("slowed");
+					var sem = slowEffect.emission;
+					sem.enabled = true;
+					break;
 			}
 		}
 	}
@@ -469,6 +472,11 @@ public class BaseCharacter : MonoBehaviour {
 				kothZone.teamScore[lastHit.teamNumber-1] += 2;
 			}
 		}
+		else if(GameController.gameMode == "CTF"){
+			flag.DropFlag();
+		}
+		
+		
 
 		player.deaths ++;
 		player.lifesLeft--;
@@ -504,6 +512,9 @@ public class BaseCharacter : MonoBehaviour {
 				kothZone.teamScore[lastHit.teamNumber-1] += 2;
 			}
 			//GameObject.Find("Koth_zone").GetComponent<Koth_zone>().playersInZone.Remove(this.gameObject);
+		}
+		else if(GameController.gameMode == "CTF"){
+			flag.DropFlag();
 		}
 		/*
 		audioSource.clip = audioClips[2];
@@ -564,6 +575,10 @@ public class BaseCharacter : MonoBehaviour {
 			audioSource.clip = audioClips[2];
 			audioSource.Play();
 			die ();
+		}
+		
+		if(GameController.gameMode == "CTF"){
+			flag.DropFlag();
 		}
 	}
 	
